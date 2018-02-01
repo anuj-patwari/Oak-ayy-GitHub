@@ -31,7 +31,7 @@ public class PullPlanetScript : MonoBehaviour {
 			//Debug.DrawRay(ray.origin, ray.direction * 1000000, Color.green);
 			if (hit.collider != null) {
 				if (hit.collider.tag == "Finish") {
-					Vector2 forceDirection =  transform.position + playerCharacter.gameObject.transform.position;
+					Vector2 forceDirection =  transform.position - playerCharacter.gameObject.transform.position;
 					playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
 					Debug.Log (1);
 				}
