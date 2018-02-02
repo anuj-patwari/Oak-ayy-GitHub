@@ -33,7 +33,6 @@ public class PullPlanetScript : MonoBehaviour {
 				if (hit.collider.tag == "Finish") {
 					Vector2 forceDirection =  transform.position - playerCharacter.gameObject.transform.position;
 					playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
-					Debug.Log (1);
 				}
 			}
 
