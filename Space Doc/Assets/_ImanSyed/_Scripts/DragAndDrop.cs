@@ -24,5 +24,8 @@ public class DragAndDrop : MonoBehaviour {
 	void OnMouseUp(){
 		mouseDown = false;
 	}
-		
+
+	void OnCollisionEnter(Collision col){
+		transform.SetParent (col.transform);
+	}
 }
