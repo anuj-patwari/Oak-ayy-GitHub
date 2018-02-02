@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PC_UFO : MonoBehaviour {
 
 	public float thrust;
-	public Rigidbody2D rb;
+	bool isStarted;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 	
-		rb = GetComponent<Rigidbody2D> ();
-		rb.AddForce (transform.right * thrust);
+
 	}
 	
 	// Update is called once per frame
@@ -19,7 +20,30 @@ public class PC_UFO : MonoBehaviour {
 		
 	}
 
+	void OnMouseDown (){
+		if (!isStarted) {
 
+			GetComponent<Rigidbody2D> ().AddForce (transform.right * thrust);
+			isStarted = true;
+		}
+	}
 
+	void OnCollisionEnter2D (Collision2D col)
+	{
 
+		if (col.gameObject.tag == "Meteor") {
+
+			Destroy (col.gameObject);
+			StartCoroutine (Restart(1));
+		}
+
+	}
+
+	IEnumerator Restart (float restartAfter)
+	{
+
+		yield return new WaitForSeconds (restartAfter);
+		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+
+	}
 }
