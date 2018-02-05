@@ -40,14 +40,12 @@ public class PullPlanetScript : MonoBehaviour {
 
 		if (Input.GetMouseButton (0) && pcIsIn) 
 		{
-			
 
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-			//Debug.DrawRay(ray.origin, ray.direction * 1000000, Color.green);
+			Debug.DrawRay(ray.origin, ray.direction * 1000000, Color.green);
 			if (hit.collider != null) {
-				if (hit.collider.tag == "Finish") {
+				if (hit.collider.tag == "Planet") {
 					if (planetType == Type.pull) {
 						Vector2 forceDirection = transform.position - playerCharacter.gameObject.transform.position;
 						playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
