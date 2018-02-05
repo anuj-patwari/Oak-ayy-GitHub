@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum Type{
+	pull, push, none
+}
+
 public class PullPlanetScript : MonoBehaviour {
 
 	[SerializeField]
@@ -12,10 +17,22 @@ public class PullPlanetScript : MonoBehaviour {
 	[SerializeField]
 	float force;
 
+	[SerializeField]
+	bool hasMoon;
+
+	public Type planetType;
 
 	// Use this for initialization
 	void Start () {
-		
+		if (planetType == Type.push) {
+			GetComponentInChildren<SpriteRenderer> ().color = Color.red;
+		} else if (planetType == Type.none) {
+			GetComponentInChildren<SpriteRenderer> ().enabled = false;
+		}
+
+		if (!hasMoon) {
+			Destroy (transform.GetChild (0).gameObject);
+		}
 	}
 	
 	// Update is called once per frame
@@ -31,8 +48,14 @@ public class PullPlanetScript : MonoBehaviour {
 			//Debug.DrawRay(ray.origin, ray.direction * 1000000, Color.green);
 			if (hit.collider != null) {
 				if (hit.collider.tag == "Finish") {
-					Vector2 forceDirection =  transform.position - playerCharacter.gameObject.transform.position;
-					playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
+					if (planetType == Type.pull) {
+						Vector2 forceDirection = transform.position - playerCharacter.gameObject.transform.position;
+						playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
+					} else if (planetType == Type.push) {
+						Vector2 forceDirection = playerCharacter.gameObject.transform.position - transform.position;
+						playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
+
+					}
 				}
 			}
 
