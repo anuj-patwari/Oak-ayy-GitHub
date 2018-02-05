@@ -45,6 +45,12 @@ public class PC_UFO : MonoBehaviour {
 			Invoke("Restart", 1);
 		}
 
+		/*if (col.gameObject.tag == "Rubber") {
+			Vector3 v = Vector3.Reflect (transform.forward, col.contacts [0].normal);
+			float rot = 90 - Mathf.Atan2 (v.z, v.x) * Mathf.Rad2Deg;
+			transform.eulerAngles = new Vector3 (0, rot, 0);
+		}*/
+
 	}
 
 	public void Restart ()
