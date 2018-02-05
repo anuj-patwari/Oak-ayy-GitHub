@@ -3,28 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum startDirection{
+	up, down, left, right	
+}
+
 public class PC_UFO : MonoBehaviour {
 
 	public float thrust;
 	bool isStarted;
 
-	// Use this for initialization
-	void Start () 
-	{
-	
+	public startDirection sD;
 
-	}
-	
-	// Update is called once per frame
+
 	void Update () {
-		
-	}
-
-	void OnMouseDown (){
 		if (!isStarted) {
+			if (Input.GetMouseButtonDown (0)) {
+				isStarted = true;	
+				if (sD == startDirection.down) {
+					GetComponent<Rigidbody2D> ().AddForce (Vector2.down * thrust);
+				}
+				else if (sD == startDirection.up) {
+					GetComponent<Rigidbody2D> ().AddForce (Vector2.up * thrust);
+				}
+				else if (sD == startDirection.left) {
+					GetComponent<Rigidbody2D> ().AddForce (Vector2.left * thrust);
+				}
+				else if (sD == startDirection.right) {
+					GetComponent<Rigidbody2D> ().AddForce (Vector2.right * thrust);
+				}
 
-			GetComponent<Rigidbody2D> ().AddForce (transform.right * thrust);
-			isStarted = true;
+			}
 		}
 	}
 
@@ -34,15 +42,13 @@ public class PC_UFO : MonoBehaviour {
 		if (col.gameObject.tag == "Meteor") {
 
 			Destroy (col.gameObject);
-			StartCoroutine (Restart(1));
+			Invoke("Restart", 1);
 		}
 
 	}
 
-	IEnumerator Restart (float restartAfter)
+	public void Restart ()
 	{
-
-		yield return new WaitForSeconds (restartAfter);
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 
 	}
