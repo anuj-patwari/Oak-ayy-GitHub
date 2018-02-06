@@ -22,7 +22,7 @@ public class MeteorSpawner : MonoBehaviour {
 		GameObject m = Instantiate (meteor, transform.position, Quaternion.identity);
 		m.GetComponent<Rigidbody2D> ().AddForce (transform.up * -500);
 		m.GetComponent<Rigidbody2D> ().AddForce (transform.right * -300);
-		StartCoroutine (DestroyMeteor (7, m));
+		StartCoroutine (DestroyMeteor (6, m));
 	}
 
 	IEnumerator DestroyMeteor (float delay, GameObject met)

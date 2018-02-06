@@ -43,7 +43,7 @@ public class PullPlanetScript : MonoBehaviour {
 
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-			Debug.DrawRay(ray.origin, ray.direction * 1000000, Color.green);
+			Debug.DrawRay(ray.origin, ray.direction * 10000, Color.green);
 			if (hit.collider != null) {
 				if (hit.collider.tag == "Planet") {
 					if (planetType == Type.pull) {
