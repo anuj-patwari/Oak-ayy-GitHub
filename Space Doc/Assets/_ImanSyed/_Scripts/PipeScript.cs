@@ -17,7 +17,7 @@ public class PipeScript : MonoBehaviour {
 			col.gameObject.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 			pc = col.gameObject;
 			pc.SetActive (false);
-			StartCoroutine(Shoot (1));
+			StartCoroutine(Shoot (1.5f));
 		}
 	}
 

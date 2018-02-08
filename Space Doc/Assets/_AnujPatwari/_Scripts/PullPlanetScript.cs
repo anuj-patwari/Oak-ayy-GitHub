@@ -22,8 +22,9 @@ public class PullPlanetScript : MonoBehaviour {
 
 	public Type planetType;
 
-	// Use this for initialization
+
 	void Start () {
+		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
 		if (planetType == Type.push) {
 			GetComponentInChildren<SpriteRenderer> ().color = Color.red;
 		} else if (planetType == Type.none) {
@@ -35,16 +36,16 @@ public class PullPlanetScript : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 
 		if (Input.GetMouseButton (0) && pcIsIn) 
 		{
-
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+			RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction );
 			Debug.DrawRay(ray.origin, ray.direction * 10000, Color.green);
 			if (hit.collider != null) {
+				
 				if (hit.collider.tag == "Planet") {
 					if (planetType == Type.pull) {
 						Vector2 forceDirection = transform.position - playerCharacter.gameObject.transform.position;
@@ -56,9 +57,7 @@ public class PullPlanetScript : MonoBehaviour {
 					}
 				}
 			}
-
 		}
-
 	}
 		
 

@@ -8,6 +8,9 @@ public class VolcanoScript : MonoBehaviour {
 	Vector3 rot;
 	GameObject pc;
 
+	[SerializeField]
+	float speed;
+
 	// Use this for initialization
 	void Start () {
 		rot = Vector3.zero;
@@ -16,7 +19,7 @@ public class VolcanoScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (activated) {
-			rot.z = -1.5f; 
+			rot.z = speed; 
 			transform.Rotate (rot);
 		}
 	}

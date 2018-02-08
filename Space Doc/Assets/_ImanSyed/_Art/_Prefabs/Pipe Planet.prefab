@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114584609276124894}
   m_Layer: 0
   m_Name: Pipe Planet
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,9 +42,10 @@ GameObject:
   - component: {fileID: 33663335445259786}
   - component: {fileID: 23538389725718364}
   - component: {fileID: 61379917034038452}
+  - component: {fileID: 61100239575614870}
   m_Layer: 0
   m_Name: Pipe Entrance
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,9 +91,10 @@ GameObject:
   - component: {fileID: 33338608538025578}
   - component: {fileID: 23984912056516400}
   - component: {fileID: 61438990068363362}
+  - component: {fileID: 61426856667336500}
   m_Layer: 0
   m_Name: Pipe Exit
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,8 +119,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190870205147158}
   m_LocalRotation: {x: -0, y: -0, z: -0.38268274, w: 0.9238798}
-  m_LocalPosition: {x: 8.994568, y: -3.2268205, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalPosition: {x: 1.1505156, y: -9.831736, z: -0.08426285}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 4584636439746514}
   - {fileID: 4100019771789522}
@@ -319,6 +321,31 @@ CircleCollider2D:
   m_Offset: {x: -0.5406974, y: 0}
   serializedVersion: 2
   m_Radius: 0.05965547
+--- !u!61 &61100239575614870
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1198371125133536}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4986447, y: -0.39539033}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.01972413, y: 1.5674719}
+  m_EdgeRadius: 0
 --- !u!61 &61379917034038452
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -331,7 +358,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000059604645, y: -0.56831694}
+  m_Offset: {x: -0.48468864, y: -0.4164843}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -342,7 +369,32 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1.2216187}
+  m_Size: {x: 0.03062272, y: 1.5252839}
+  m_EdgeRadius: 0
+--- !u!61 &61426856667336500
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788864230489572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.51171494, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.022190869, y: 1.9999999}
   m_EdgeRadius: 0
 --- !u!61 &61438990068363362
 BoxCollider2D:
@@ -356,7 +408,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604645, y: 0}
+  m_Offset: {x: 0.48262832, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -367,7 +419,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1.9999999}
+  m_Size: {x: 0.03474337, y: 1.9999999}
   m_EdgeRadius: 0
 --- !u!114 &114584609276124894
 MonoBehaviour:

@@ -10,9 +10,15 @@ public enum startDirection{
 public class PC_UFO : MonoBehaviour {
 
 	public float thrust;
-	bool isStarted;
+	bool isStarted, shiftCamera;
 
 	public startDirection sD;
+
+	GameManager gm;
+
+	void Start(){
+		gm = FindObjectOfType<GameManager> ();
+	}
 
 
 	void Update () {
@@ -34,6 +40,7 @@ public class PC_UFO : MonoBehaviour {
 
 			}
 		}
+
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
@@ -42,20 +49,17 @@ public class PC_UFO : MonoBehaviour {
 		if (col.gameObject.tag == "Meteor") {
 
 			Destroy (col.gameObject);
-			Invoke("Restart", 1);
+			StartCoroutine(gm.RestartAfter (1));
 		}
 
-		/*if (col.gameObject.tag == "Rubber") {
-			Vector3 v = Vector3.Reflect (transform.forward, col.contacts [0].normal);
-			float rot = 90 - Mathf.Atan2 (v.z, v.x) * Mathf.Rad2Deg;
-			transform.eulerAngles = new Vector3 (0, rot, 0);
-		}*/
+		if (col.gameObject.tag == "Planet") {
+
+			Destroy (gameObject);
+			gm.StartCoroutine(gm.RestartAfter (1));
+		}
+
 
 	}
 
-	public void Restart ()
-	{
-		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 
-	}
 }

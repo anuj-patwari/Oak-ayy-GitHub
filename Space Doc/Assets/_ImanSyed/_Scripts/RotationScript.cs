@@ -9,15 +9,13 @@ public class RotationScript : MonoBehaviour {
 	Vector3 mouseReference, mouseOffset, rot;
 	bool isRotating;
 
-	// Use this for initialization
+
 	void Start () {
 		rot = Vector3.zero;
 	}
-	
-	// Update is called once per frame
+
+
 	void Update () {
-
-
 
 		if (isRotating) {
 			mouseOffset = Input.mousePosition - mouseReference;

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58518483313680784}
   m_Layer: 0
   m_Name: Moon
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,11 +57,10 @@ GameObject:
   - component: {fileID: 23676734139993634}
   - component: {fileID: 114068400785328042}
   - component: {fileID: 58987677716242330}
-  - component: {fileID: 50999267136688530}
   - component: {fileID: 58185897411768164}
   m_Layer: 0
   m_Name: Planet1
-  m_TagString: Finish
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120252658047920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 0.75, y: 0.75, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 4875342122564666}
@@ -115,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796292943966766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.7, y: 4.32, z: 0}
+  m_LocalPosition: {x: -18.229485, y: -2.114915, z: -0.08426285}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4875342122564666}
@@ -219,26 +218,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796292943966766}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!50 &50999267136688530
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1796292943966766}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 3
 --- !u!58 &58185897411768164
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -313,9 +292,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacter: {fileID: 0}
-  force: 100
-  hasMoon: 0
-  planetType: 1
+  force: 150
+  hasMoon: 1
+  planetType: 0
 --- !u!212 &212467218807886106
 SpriteRenderer:
   m_ObjectHideFlags: 1
