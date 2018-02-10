@@ -16,7 +16,7 @@ public class DragAndDrop : MonoBehaviour {
 
 	void Update () {
 
-		if (mouseDown) {
+		if (mouseDown && Input.GetMouseButtonDown(0)) {
 			float distance = Vector3.Distance (transform.position, Camera.main.transform.position);
 			Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 			Vector3 rayPoint = mouseRay.GetPoint (distance);
@@ -26,22 +26,25 @@ public class DragAndDrop : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		mouseDown = true;
-		transform.parent = null;
-		rs.enabled = false;
+		if (!mouseDown) {
+			mouseDown = true;
+			//transform.parent = null;
+			rs.enabled = false;
+		} else {
+			mouseDown = false;
+			rs.enabled = true;
+		}
 	}
 
-	void OnMouseUp(){
+	/*void OnMouseUp(){
 		mouseDown = false;
 		transform.parent = par;
 		rs.enabled = true;
-	}
+	}*/
 
 	void OnCollisionEnter(Collision col){
-		Debug.Log (1);
 		if (col.gameObject.tag == "Planet") {
 			transform.SetParent (col.transform);
-			Debug.Log (12);
 		}
 	}
 }
