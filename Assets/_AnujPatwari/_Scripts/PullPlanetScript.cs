@@ -48,7 +48,6 @@ public class PullPlanetScript : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction );
 			Debug.DrawRay(ray.origin, ray.direction * 10000, Color.green);
 			if (hit.collider != null) {
-				
 				if (hit.collider.tag == "Planet") {
 					if (planetType == Type.pull) {
 						Vector2 forceDirection = transform.position - playerCharacter.gameObject.transform.position;
