@@ -18,6 +18,9 @@ public class PullPlanetScript : MonoBehaviour {
 	float force;
 
 	[SerializeField]
+	GameObject areaOfEffect;
+
+	[SerializeField]
 	bool hasMoon;
 
 	public Type planetType;
@@ -26,9 +29,9 @@ public class PullPlanetScript : MonoBehaviour {
 	void Start () {
 		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
 		if (planetType == Type.push) {
-			GetComponentInChildren<SpriteRenderer> ().color = Color.red;
+			areaOfEffect.GetComponent<SpriteRenderer> ().color = Color.red;
 		} else if (planetType == Type.none) {
-			GetComponentInChildren<SpriteRenderer> ().enabled = false;
+			areaOfEffect.GetComponent<SpriteRenderer> ().enabled = false;
 		}
 
 		if (!hasMoon) {
