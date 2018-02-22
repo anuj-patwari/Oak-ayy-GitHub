@@ -30,10 +30,12 @@ public class PuzzleManager : MonoBehaviour {
 				if (!rs.enabled) {
 					rs.enabled = true;
 					if (hit.collider.tag == "Planet") {
-						puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
-						puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
-						puzzlePiece.transform.rotation.eulerAngles = hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot;
-						Debug.Log (gameObject);
+						if (puzzlePiece.GetComponent<PuzzlePieceScript> ().pieceNum == hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().holeNum) {
+							puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
+							puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
+							puzzlePiece.transform.rotation = Quaternion.Euler(hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
+							Debug.Log (gameObject);
+						}
 					}
 				} else {
 					if (hit.collider.tag == "Puzzle Piece") {
