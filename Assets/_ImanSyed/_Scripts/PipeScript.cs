@@ -13,7 +13,6 @@ public class PipeScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.tag == "Player") {
-			col.gameObject.transform.SetParent (transform);
 			col.gameObject.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 			pc = col.gameObject;
 			pc.SetActive (false);
