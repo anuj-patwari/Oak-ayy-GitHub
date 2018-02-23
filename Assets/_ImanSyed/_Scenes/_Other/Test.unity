@@ -148,9 +148,9 @@ GameObject:
   m_Component:
   - component: {fileID: 233047356}
   - component: {fileID: 233047360}
-  - component: {fileID: 233047359}
   - component: {fileID: 233047358}
   - component: {fileID: 233047357}
+  - component: {fileID: 233047359}
   m_Layer: 0
   m_Name: Puzzle Piece 3
   m_TagString: Puzzle Piece
@@ -164,13 +164,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 233047355}
-  m_LocalRotation: {x: -0.56098604, y: 0.4304587, z: -0.4304587, w: 0.56098604}
-  m_LocalPosition: {x: -1.043, y: -0.477, z: 0.13}
-  m_LocalScale: {x: 0.20000003, y: 0.19999999, z: 0.050000012}
+  m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
+  m_LocalPosition: {x: -9.48, y: -0.477, z: 0.13}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1355530169}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -165, y: -90, z: 89.99999}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 90}
 --- !u!114 &233047357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,15 +227,15 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.27685207, y: 0.49999997, z: 0.5}
+  m_Center: {x: -0.000000014901161, y: 0, z: -0.000000059604645}
 --- !u!33 &233047360
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 233047355}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 9c40dfe842542e043a7a4fd490571e19, type: 3}
 --- !u!1 &279893684
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,9 +344,9 @@ GameObject:
   m_Component:
   - component: {fileID: 369616708}
   - component: {fileID: 369616707}
-  - component: {fileID: 369616706}
   - component: {fileID: 369616705}
   - component: {fileID: 369616709}
+  - component: {fileID: 369616706}
   m_Layer: 0
   m_Name: Puzzle Piece 2
   m_TagString: Puzzle Piece
@@ -388,8 +388,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &369616706
-BoxCollider:
+--- !u!64 &369616706
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -397,29 +397,31 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: aa8f7eab28c2d6d4a9df145402a7c95b, type: 3}
 --- !u!33 &369616707
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 369616704}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: aa8f7eab28c2d6d4a9df145402a7c95b, type: 3}
 --- !u!4 &369616708
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 369616704}
-  m_LocalRotation: {x: -0.53658265, y: -0.46052042, z: 0.46052042, w: 0.53658265}
-  m_LocalPosition: {x: 1.066, y: -0.167, z: 0.13}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.05}
+  m_LocalRotation: {x: -0.50000006, y: -0.5, z: 0.50000006, w: 0.5}
+  m_LocalPosition: {x: 8.2, y: -0.167, z: 0.13}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1355530169}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -8.725, y: -90.00001, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 90.00001}
 --- !u!114 &369616709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,9 +505,9 @@ GameObject:
   m_Component:
   - component: {fileID: 497105547}
   - component: {fileID: 497105546}
-  - component: {fileID: 497105545}
   - component: {fileID: 497105544}
   - component: {fileID: 497105548}
+  - component: {fileID: 497105545}
   m_Layer: 0
   m_Name: Puzzle Piece 1
   m_TagString: Puzzle Piece
@@ -547,8 +549,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &497105545
-BoxCollider:
+--- !u!64 &497105545
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -556,29 +558,31 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 71f4e941534369646ab9e9926ef989ba, type: 3}
 --- !u!33 &497105546
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 497105543}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 71f4e941534369646ab9e9926ef989ba, type: 3}
 --- !u!4 &497105547
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 497105543}
-  m_LocalRotation: {x: 0.6893833, y: -0, z: -0, w: 0.72439677}
-  m_LocalPosition: {x: 0, y: 0.905, z: 0.032}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.05}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 11.48, z: -0.86}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1355530169}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 87.163, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &497105548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,8 +603,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 549296938}
-  - component: {fileID: 549296940}
   - component: {fileID: 549296939}
+  - component: {fileID: 549296940}
   m_Layer: 0
   m_Name: Puzzle Hole 0
   m_TagString: Planet
@@ -615,8 +619,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 549296937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.343, y: -0.49999997, z: 0}
-  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
+  m_LocalPosition: {x: -0.046, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1799385880}
   m_RootOrder: 0
@@ -633,9 +637,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holeNum: 0
-  xRot: {x: -90, y: 90, z: 90}
---- !u!65 &549296940
-BoxCollider:
+  xRot: {x: 90, y: 0, z: 0}
+--- !u!64 &549296940
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -643,9 +647,11 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: c544351919f43d341897240dc8ac1a07, type: 3}
 --- !u!1 &750460648
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,8 +660,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 750460649}
-  - component: {fileID: 750460650}
   - component: {fileID: 750460651}
+  - component: {fileID: 750460650}
   m_Layer: 0
   m_Name: Puzzle Hole 1
   m_TagString: Planet
@@ -670,8 +676,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 750460648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: -0.36}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0, y: -0.163, z: -0.746}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1799385880}
   m_RootOrder: 1
@@ -686,8 +692,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.3734154, y: 0.25589666, z: 0.36721063}
+  m_Center: {x: -0.09567152, y: 0.03229823, z: 0.31639427}
 --- !u!114 &750460651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,7 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holeNum: 1
-  xRot: {x: -90, y: 90, z: 90}
+  xRot: {x: 90, y: 0, z: 0}
 --- !u!1 &769417034
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,8 +910,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 977897815}
-  - component: {fileID: 977897817}
   - component: {fileID: 977897816}
+  - component: {fileID: 977897817}
   m_Layer: 0
   m_Name: Puzzle Hole 3
   m_TagString: Planet
@@ -920,8 +926,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 977897814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.49999997, z: 0.335}
-  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
+  m_LocalPosition: {x: 0.412, y: 0, z: 0.004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1799385880}
   m_RootOrder: 3
@@ -938,9 +944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holeNum: 3
-  xRot: {x: -90, y: 90, z: 90}
---- !u!65 &977897817
-BoxCollider:
+  xRot: {x: 90, y: -90, z: 90}
+--- !u!64 &977897817
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -948,9 +954,11 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 9c40dfe842542e043a7a4fd490571e19, type: 3}
 --- !u!1 &1347222417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1064,7 @@ Transform:
   m_GameObject: {fileID: 1355530168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 11.05, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1627741754}
   - {fileID: 497105547}
@@ -1130,9 +1138,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1627741754}
   - component: {fileID: 1627741753}
-  - component: {fileID: 1627741752}
   - component: {fileID: 1627741751}
   - component: {fileID: 1627741755}
+  - component: {fileID: 1627741752}
   m_Layer: 0
   m_Name: Puzzle Piece 0
   m_TagString: Puzzle Piece
@@ -1174,8 +1182,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1627741752
-BoxCollider:
+--- !u!64 &1627741752
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1183,29 +1191,31 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 7fea6431908473846bab47a8640d3d66, type: 3}
 --- !u!33 &1627741753
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627741750}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 7fea6431908473846bab47a8640d3d66, type: 3}
 --- !u!4 &1627741754
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627741750}
-  m_LocalRotation: {x: -0.4791116, y: 0.5200501, z: -0.5200501, w: 0.4791116}
-  m_LocalPosition: {x: -1.337, y: 0.235, z: 0.13}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.05}
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: -10.37, y: -5.21, z: 0.13}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1355530169}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -184.693, y: -90, z: 89.99999}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
 --- !u!114 &1627741755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,14 +1287,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1799385876}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 5083c35c779b337469a99a7f286e1632, type: 3}
 --- !u!4 &1799385880
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1799385876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 11.05, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
@@ -1294,7 +1304,7 @@ Transform:
   - {fileID: 977897815}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1799385881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1330,8 +1340,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1855569071}
-  - component: {fileID: 1855569073}
   - component: {fileID: 1855569072}
+  - component: {fileID: 1855569073}
   m_Layer: 0
   m_Name: Puzzle Hole 2
   m_TagString: Planet
@@ -1346,8 +1356,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1855569070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.354, y: -0.49999997, z: 0}
-  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
+  m_LocalPosition: {x: 0.199, y: -0.135, z: 0.457}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1799385880}
   m_RootOrder: 2
@@ -1364,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holeNum: 2
-  xRot: {x: -90, y: 90, z: 90}
+  xRot: {x: 0, y: -90, z: 90}
 --- !u!65 &1855569073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1375,8 +1385,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9191324, y: 1.2240196, z: 1}
+  m_Center: {x: -0.006045252, y: 0.057228886, z: 5.0416703e-16}
 --- !u!43 &2117545799
 Mesh:
   m_ObjectHideFlags: 0
