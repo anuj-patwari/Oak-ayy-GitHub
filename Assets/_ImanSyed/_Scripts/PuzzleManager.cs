@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour {
 
+
+	short piecesPut;
 
 	GameObject puzzlePiece;
 
@@ -11,7 +15,7 @@ public class PuzzleManager : MonoBehaviour {
 	RotationScript rs;
 
 	[SerializeField]
-	GameObject planet;
+	Text tex;
 
 	private bool rayHit;
 
@@ -25,7 +29,7 @@ public class PuzzleManager : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 			Physics.Raycast (ray, out hit, 1000);
-			Debug.DrawRay (ray.origin, ray.direction * 10000, Color.green);
+			Debug.DrawRay (ray.origin, ray.direction * 1000, Color.green);
 			if (hit.collider != null) {
 				if (!rs.enabled) {
 					rs.enabled = true;
@@ -34,7 +38,10 @@ public class PuzzleManager : MonoBehaviour {
 							puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
 							puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
 							puzzlePiece.transform.rotation = Quaternion.Euler(hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
-							Debug.Log (gameObject);
+							if (piecesPut == 4) {
+								tex.enabled = true;
+							}
+							piecesPut++;
 						}
 					}
 				} else {
@@ -46,5 +53,9 @@ public class PuzzleManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public void Restart(){
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 }
