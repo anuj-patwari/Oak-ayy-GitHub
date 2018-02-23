@@ -20,6 +20,10 @@ public class PuzzleManager : MonoBehaviour {
 	private bool rayHit;
 
 	void Update () {
+		if (piecesPut == 4 && !tex.enabled) {
+			tex.enabled = true;
+
+		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {
 				rayHit = false;
@@ -38,9 +42,7 @@ public class PuzzleManager : MonoBehaviour {
 							puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
 							puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
 							puzzlePiece.transform.rotation = Quaternion.Euler(hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
-							if (piecesPut == 4) {
-								tex.enabled = true;
-							}
+
 							piecesPut++;
 						}
 					}
