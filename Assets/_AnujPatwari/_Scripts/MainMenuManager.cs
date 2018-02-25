@@ -6,11 +6,6 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour {
 
-	string mainMenuPlay;
-
-	[SerializeField]
-	Object playGame;
-
 	[SerializeField]
 	Sprite toggleSoundSprite, toggleOrigSoundSprite;
 
@@ -20,7 +15,6 @@ public class MainMenuManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		mainMenuPlay = playGame.name;
 		toggleOrigSoundSprite = soundToggleButton.sprite;
 
 	}
@@ -43,6 +37,6 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void MainMenuPlayButton()
 	{
-		SceneManager.LoadScene (mainMenuPlay);
+		SceneManager.LoadScene ("Level 1");
 	}
 }
