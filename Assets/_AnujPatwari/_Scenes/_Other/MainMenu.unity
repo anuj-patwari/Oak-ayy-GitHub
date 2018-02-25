@@ -337,7 +337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2038571255}
+      - m_Target: {fileID: 2038571257}
         m_MethodName: toggleSoundSpriteFn
         m_Mode: 1
         m_Arguments:
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2038571255}
+      - m_Target: {fileID: 2038571257}
         m_MethodName: MainMenuPlayButton
         m_Mode: 1
         m_Arguments:
@@ -620,7 +620,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.30147058, g: 0.30147058, b: 0.30147058, a: 0}
+  m_BackGroundColor: {r: 0.02195069, g: 0.061176468, b: 0.102941155, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2038571255}
+      - m_Target: {fileID: 2038571257}
         m_MethodName: MainMenuPlayButton
         m_Mode: 1
         m_Arguments:
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2038571255}
+      - m_Target: {fileID: 0}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -1790,32 +1790,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2038571256}
-  - component: {fileID: 2038571255}
+  - component: {fileID: 2038571257}
   m_Layer: 5
-  m_Name: GameManager
+  m_Name: MainMenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2038571255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2038571254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34cab30099eed04896e923613537638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
-  mainMenu: {fileID: 102900000, guid: a5edef443beb6644d8c78514b08fd311, type: 3}
-  playGame: {fileID: 102900000, guid: a09055b836d2a9740b33c7ab6fa41c55, type: 3}
-  toggleSoundSprite: {fileID: 21300000, guid: f507ae1407d6c504d85361face649969, type: 3}
-  toggleOrigSoundSprite: {fileID: 21300000, guid: 637f36a21c0e0574abd234eb222758c6,
-    type: 3}
-  soundToggleButton: {fileID: 157247557}
 --- !u!224 &2038571256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1834,3 +1816,19 @@ RectTransform:
   m_AnchoredPosition: {x: 718, y: 442.48254}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2038571257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038571254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637aafaa353fdd042b913b3914187667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playGame: {fileID: 102900000, guid: c27b0f4f78a3284429b482ec496f1f9d, type: 3}
+  toggleSoundSprite: {fileID: 21300000, guid: f507ae1407d6c504d85361face649969, type: 3}
+  toggleOrigSoundSprite: {fileID: 21300000, guid: 637f36a21c0e0574abd234eb222758c6,
+    type: 3}
+  soundToggleButton: {fileID: 157247557}
