@@ -9,23 +9,14 @@ public class GameManager : MonoBehaviour {
 	public static bool gameIsPaused = false;
 	public GameObject pauseMenuUI;
 
-	string mainMenuScene, mainMenuPlay;
+	string mainMenuScene;
 
 	[SerializeField]
-	Object mainMenu, playGame;
-
-	[SerializeField]
-	Sprite toggleSoundSprite, toggleOrigSoundSprite;
-
-	[SerializeField]
-	Image soundToggleButton;
-
+	Object mainMenu;
 
 	void Start ()
 	{
 		mainMenuScene = mainMenu.name;
-		mainMenuPlay = playGame.name;
-		toggleOrigSoundSprite = soundToggleButton.sprite;
 	}
 
 	public IEnumerator RestartAfter (float delay)
@@ -75,21 +66,4 @@ public class GameManager : MonoBehaviour {
 	{
 		Application.Quit ();
 	}
-
-	public void toggleSoundSpriteFn()
-	{
-		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
-			//when sound is on
-			soundToggleButton.sprite = toggleSoundSprite;
-		} else {
-			//when sound is off
-			soundToggleButton.sprite = toggleOrigSoundSprite;
-		}
-	}
-
-	public void MainMenuPlayButton()
-	{
-		SceneManager.LoadScene (mainMenuPlay);
-	}
-
 }
