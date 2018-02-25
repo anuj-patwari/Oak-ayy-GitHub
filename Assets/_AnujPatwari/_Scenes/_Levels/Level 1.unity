@@ -1034,7 +1034,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1949012720}
-  mainMenuScene: MainMenu
+  mainMenu: {fileID: 102900000, guid: a5edef443beb6644d8c78514b08fd311, type: 3}
+  playGame: {fileID: 102900000, guid: a09055b836d2a9740b33c7ab6fa41c55, type: 3}
+  toggleSoundSprite: {fileID: 21300000, guid: f507ae1407d6c504d85361face649969, type: 3}
+  toggleOrigSoundSprite: {fileID: 21300000, guid: 637f36a21c0e0574abd234eb222758c6,
+    type: 3}
+  soundToggleButton: {fileID: 0}
 --- !u!4 &869695138
 Transform:
   m_ObjectHideFlags: 0
@@ -2339,7 +2344,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1786820326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869695137}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1786820326

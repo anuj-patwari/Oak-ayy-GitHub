@@ -2,14 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
 	public static bool gameIsPaused = false;
 	public GameObject pauseMenuUI;
 
+	string mainMenuScene, mainMenuPlay;
+
 	[SerializeField]
-	string mainMenuScene;
+	Object mainMenu, playGame;
+
+	[SerializeField]
+	Sprite toggleSoundSprite, toggleOrigSoundSprite;
+
+	[SerializeField]
+	Image soundToggleButton;
+
+
+	void Start ()
+	{
+		mainMenuScene = mainMenu.name;
+		mainMenuPlay = playGame.name;
+		toggleOrigSoundSprite = soundToggleButton.sprite;
+	}
 
 	public IEnumerator RestartAfter (float delay)
 	{
@@ -50,6 +67,29 @@ public class GameManager : MonoBehaviour {
 
 	public void MainMenu()
 	{
+		Time.timeScale = 1f;
 		SceneManager.LoadScene (mainMenuScene);
 	}
+
+	public void Quit()
+	{
+		Application.Quit ();
+	}
+
+	public void toggleSoundSpriteFn()
+	{
+		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
+			//when sound is on
+			soundToggleButton.sprite = toggleSoundSprite;
+		} else {
+			//when sound is off
+			soundToggleButton.sprite = toggleOrigSoundSprite;
+		}
+	}
+
+	public void MainMenuPlayButton()
+	{
+		SceneManager.LoadScene (mainMenuPlay);
+	}
+
 }
