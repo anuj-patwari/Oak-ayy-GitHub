@@ -9,16 +9,6 @@ public class GameManager : MonoBehaviour {
 	public static bool gameIsPaused = false;
 	public GameObject pauseMenuUI;
 
-	string mainMenuScene;
-
-	[SerializeField]
-	Object mainMenu;
-
-	void Start ()
-	{
-		mainMenuScene = mainMenu.name;
-	}
-
 	public IEnumerator RestartAfter (float delay)
 	{
 		yield return new WaitForSeconds (delay);
@@ -59,7 +49,7 @@ public class GameManager : MonoBehaviour {
 	public void MainMenu()
 	{
 		Time.timeScale = 1f;
-		SceneManager.LoadScene (mainMenuScene);
+		SceneManager.LoadScene ("MainMenu");
 	}
 
 	public void Quit()
