@@ -22,8 +22,10 @@ public class PC_UFO : MonoBehaviour {
 
 
 	void Update () {
-		if (!GetComponent<Renderer> ().isVisible) {
-			Debug.Log (1);
+		Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes (Camera.main);
+		bool visible = GeometryUtility.TestPlanesAABB (frustumPlanes, GetComponent<Renderer> ().bounds);
+		if (!visible) {
+			gm.RestartAfter (1);
 		}
 		if (!isStarted) {
 			if (Input.GetMouseButtonDown (0)) {
