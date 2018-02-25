@@ -16,12 +16,12 @@ public class MainMenuManager : MonoBehaviour {
 	void Start () {
 
 		toggleOrigSoundSprite = soundToggleButton.sprite;
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Screen.orientation = ScreenOrientation.LandscapeLeft;
+
 	}
 
 	public void toggleSoundSpriteFn()
