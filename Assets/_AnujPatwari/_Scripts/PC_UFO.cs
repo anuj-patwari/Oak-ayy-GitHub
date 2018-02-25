@@ -22,19 +22,19 @@ public class PC_UFO : MonoBehaviour {
 
 
 	void Update () {
+		if (!GetComponent<Renderer> ().isVisible) {
+			Debug.Log (1);
+		}
 		if (!isStarted) {
 			if (Input.GetMouseButtonDown (0)) {
 				isStarted = true;	
 				if (sD == startDirection.down) {
 					GetComponent<Rigidbody2D> ().AddForce (Vector2.down * thrust);
-				}
-				else if (sD == startDirection.up) {
+				} else if (sD == startDirection.up) {
 					GetComponent<Rigidbody2D> ().AddForce (Vector2.up * thrust);
-				}
-				else if (sD == startDirection.left) {
+				} else if (sD == startDirection.left) {
 					GetComponent<Rigidbody2D> ().AddForce (Vector2.left * thrust);
-				}
-				else if (sD == startDirection.right) {
+				} else if (sD == startDirection.right) {
 					GetComponent<Rigidbody2D> ().AddForce (Vector2.right * thrust);
 				}
 
@@ -42,6 +42,7 @@ public class PC_UFO : MonoBehaviour {
 		}
 
 	}
+		
 
 	void OnCollisionEnter2D (Collision2D col)
 	{

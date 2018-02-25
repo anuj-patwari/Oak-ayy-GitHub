@@ -28,7 +28,7 @@ public class PuzzleManager : MonoBehaviour {
 			if (Input.GetMouseButtonUp (0)) {
 				rayHit = false;
 			}
-		}
+		} 
 		if (Input.GetMouseButton (0) && !rayHit) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
@@ -41,8 +41,7 @@ public class PuzzleManager : MonoBehaviour {
 						if (puzzlePiece.GetComponent<PuzzlePieceScript> ().pieceNum == hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().holeNum) {
 							puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
 							puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
-							puzzlePiece.transform.rotation = Quaternion.Euler(hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
-
+							puzzlePiece.transform.rotation = Quaternion.Euler (hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
 							piecesPut++;
 						}
 					}
@@ -53,10 +52,11 @@ public class PuzzleManager : MonoBehaviour {
 						puzzlePiece = hit.collider.gameObject;
 					} 
 				}
+			} else {
+				rs.enabled = true;
 			}
 		}
 	}
-
 	public void Restart(){
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
