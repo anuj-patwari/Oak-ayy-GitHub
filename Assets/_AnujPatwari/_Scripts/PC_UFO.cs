@@ -48,7 +48,6 @@ public class PC_UFO : MonoBehaviour {
 		
 	void Rest(){
 		gm.RestartInstant ();
-	
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
