@@ -18,6 +18,9 @@ public class SceneManagerScript : MonoBehaviour {
 	public Slider slider;
 	public Text progressText;
 
+	[SerializeField]
+	GameObject restartUI;
+
 	void Start(){
 		cam = Camera.main;
 	}
@@ -77,6 +80,16 @@ public class SceneManagerScript : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+	}
+
+	public void ShowRestartUI()
+	{
+		restartUI.SetActive (true);
+	}
+
+	public void HideRestartUI()
+	{
+		restartUI.SetActive (false);
 	}
 
 	public void RestartInstant(){
