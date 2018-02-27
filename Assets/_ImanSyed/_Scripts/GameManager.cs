@@ -6,17 +6,16 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+	[SerializeField]
+	Slider slide;
+
+	Camera cam;
+
 	public static bool gameIsPaused = false;
 	public GameObject pauseMenuUI;
 
-	public IEnumerator RestartAfter (float delay)
-	{
-		yield return new WaitForSeconds (delay);
-		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
-	}
-
-	public void RestartInstant(){
-		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+	void Start(){
+		cam = Camera.main;
 	}
 
 	void Update ()
@@ -30,6 +29,13 @@ public class GameManager : MonoBehaviour {
 				Pause ();
 			}
 		}
+	}
+
+	public void CameraScroll(){
+		Vector3 pos = Vector3.zero;
+		pos.z = cam.transform.position.z;
+		pos.x = slide.value;
+		cam.transform.position = pos;
 	}
 
 	public void Resume()
@@ -56,4 +62,15 @@ public class GameManager : MonoBehaviour {
 	{
 		Application.Quit ();
 	}
+
+	public IEnumerator RestartAfter (float delay)
+	{
+		yield return new WaitForSeconds (delay);
+		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+	}
+
+	public void RestartInstant(){
+		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+	}
+
 }

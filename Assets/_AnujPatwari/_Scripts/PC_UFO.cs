@@ -14,59 +14,72 @@ public class PC_UFO : MonoBehaviour {
 
 	public startDirection sD;
 
+
+	[SerializeField]
+	GameObject trailObject;
+
 	GameManager gm;
 
 	void Start(){
 		gm = FindObjectOfType<GameManager> ();
-	}
+		InvokeRepeating ("ShootTrailer", 0, 0.1f);
 
+	}
 
 	void Update () {
-		Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes (Camera.main);
-		bool visible = GeometryUtility.TestPlanesAABB (frustumPlanes, GetComponent<Renderer> ().bounds);
-		if (!visible) {
-			Invoke ("Rest", 1);
-
-		}
+		
 		if (!isStarted) {
-			if (Input.GetMouseButtonDown (0)) {
-				isStarted = true;	
-				if (sD == startDirection.down) {
-					GetComponent<Rigidbody2D> ().AddForce (Vector2.down * thrust);
-				} else if (sD == startDirection.up) {
-					GetComponent<Rigidbody2D> ().AddForce (Vector2.up * thrust);
-				} else if (sD == startDirection.left) {
-					GetComponent<Rigidbody2D> ().AddForce (Vector2.left * thrust);
-				} else if (sD == startDirection.right) {
-					GetComponent<Rigidbody2D> ().AddForce (Vector2.right * thrust);
-				}
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
+			Debug.DrawRay (ray.origin, ray.direction * 10000, Color.green);
+			if (hit.collider != null) {
+				if (hit.collider.gameObject == gameObject) {
+					isStarted = true;	
+					if (sD == startDirection.down) {
+						GetComponent<Rigidbody2D> ().AddForce (Vector2.down * thrust);
+					} else if (sD == startDirection.up) {
+						GetComponent<Rigidbody2D> ().AddForce (Vector2.up * thrust);
+					} else if (sD == startDirection.left) {
+						GetComponent<Rigidbody2D> ().AddForce (Vector2.left * thrust);
+					} else if (sD == startDirection.right) {
+						GetComponent<Rigidbody2D> ().AddForce (Vector2.right * thrust);
+					}
 
+				}
+			}
+		}else {
+			Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes (Camera.main);
+			bool visible = GeometryUtility.TestPlanesAABB (frustumPlanes, GetComponent<Renderer> ().bounds);
+			if (!visible) {
+				Invoke ("Rest", 1);
 			}
 		}
-
 	}
-		
+
+	void ShootTrailer(){
+		GameObject trailBoi = Instantiate (trailObject, transform.position, transform.rotation);
+		trailBoi.GetComponent<Rigidbody2D> ().velocity = gameObject.GetComponent<Rigidbody2D> ().velocity * 500;
+		StartCoroutine(DestroyTrailBoi (0.1f, trailBoi));
+	}
+
 	void Rest(){
 		gm.RestartInstant ();
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-
 		if (col.gameObject.tag == "Meteor") {
-
 			Destroy (col.gameObject);
 			StartCoroutine(gm.RestartAfter (1));
 		}
-
 		if (col.gameObject.tag == "Planet") {
-
 			Destroy (gameObject);
 			gm.StartCoroutine(gm.RestartAfter (1));
 		}
-
-
 	}
 
-
+	IEnumerator DestroyTrailBoi(float delay, GameObject ob){
+		yield return new WaitForSeconds (delay);
+		Destroy (ob);
+	}
 }

@@ -23,6 +23,7 @@ public class PullPlanetScript : MonoBehaviour {
 	[SerializeField]
 	bool hasMoon;
 
+
 	public Type planetType;
 
 
@@ -37,6 +38,8 @@ public class PullPlanetScript : MonoBehaviour {
 		if (!hasMoon) {
 			Destroy (transform.GetChild (0).gameObject);
 		}
+
+
 	}
 	
 
@@ -61,7 +64,8 @@ public class PullPlanetScript : MonoBehaviour {
 			}
 		}
 	}
-		
+
+
 
 	void OnTriggerEnter2D (Collider2D col)
 	{
