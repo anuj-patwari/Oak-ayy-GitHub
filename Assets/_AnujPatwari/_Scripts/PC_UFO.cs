@@ -18,10 +18,10 @@ public class PC_UFO : MonoBehaviour {
 	[SerializeField]
 	GameObject trailObject;
 
-	GameManager gm;
+	SceneManagerScript sms;
 
 	void Start(){
-		gm = FindObjectOfType<GameManager> ();
+		sms = FindObjectOfType<SceneManagerScript> ();
 		InvokeRepeating ("ShootTrailer", 0, 0.1f);
 
 	}
@@ -63,18 +63,18 @@ public class PC_UFO : MonoBehaviour {
 	}
 
 	void Rest(){
-		gm.RestartInstant ();
+		sms.RestartInstant ();
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		if (col.gameObject.tag == "Meteor") {
 			Destroy (col.gameObject);
-			StartCoroutine(gm.RestartAfter (1));
+			StartCoroutine(sms.RestartAfter (1));
 		}
 		if (col.gameObject.tag == "Planet") {
 			Destroy (gameObject);
-			gm.StartCoroutine(gm.RestartAfter (1));
+			sms.StartCoroutine(sms.RestartAfter (1));
 		}
 	}
 
