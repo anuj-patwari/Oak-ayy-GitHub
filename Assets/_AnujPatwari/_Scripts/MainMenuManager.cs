@@ -29,14 +29,21 @@ public class MainMenuManager : MonoBehaviour {
 		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
 			//when sound is on
 			soundToggleButton.sprite = toggleSoundSprite;
+			GetComponent<AudioSource> ().mute = true;
 		} else {
 			//when sound is off
 			soundToggleButton.sprite = toggleOrigSoundSprite;
+			GetComponent<AudioSource> ().mute = false;
 		}
 	}
 
 	public void MainMenuPlayButton()
 	{
 		SceneManager.LoadScene ("Level 1");
+	}
+
+	public void AppQuit()
+	{
+		Application.Quit();
 	}
 }
