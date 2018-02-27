@@ -35,6 +35,7 @@ public class PC_UFO : MonoBehaviour {
 			if (hit.collider != null) {
 				if (hit.collider.gameObject == gameObject) {
 					isStarted = true;	
+					gm.DisableScroll ();
 					if (sD == startDirection.down) {
 						GetComponent<Rigidbody2D> ().AddForce (Vector2.down * thrust);
 					} else if (sD == startDirection.up) {
