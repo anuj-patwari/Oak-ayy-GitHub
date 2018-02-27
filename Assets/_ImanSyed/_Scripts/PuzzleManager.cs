@@ -10,6 +10,7 @@ public class PuzzleManager : MonoBehaviour {
 	short piecesPut;
 
 	GameObject puzzlePiece;
+	public bool world1Complete = false;
 
 	[SerializeField]
 	RotationScript rs;
@@ -22,7 +23,7 @@ public class PuzzleManager : MonoBehaviour {
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
-
+			world1Complete = true;
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {
