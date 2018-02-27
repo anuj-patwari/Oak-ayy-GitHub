@@ -42,6 +42,10 @@ public class SceneManagerScript : MonoBehaviour {
 		cam.transform.position = pos;
 	}
 
+	public void DisableScroll(){
+		slide.gameObject.SetActive (false);
+	}
+
 	public void Resume()
 	{
 		pauseMenuUI.SetActive (false);
