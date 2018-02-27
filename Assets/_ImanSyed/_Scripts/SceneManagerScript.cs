@@ -35,11 +35,17 @@ public class SceneManagerScript : MonoBehaviour {
 		}
 	}
 
-	public void CameraScroll(){
+	public void CameraScroll(bool vertical){
 		Vector3 pos = Vector3.zero;
 		pos.z = cam.transform.position.z;
-		pos.x = cameraSlide.value;
-		cam.transform.position = pos;
+		if (vertical) {
+			pos.y = cameraSlide.value;
+			cam.transform.position = pos;
+		}
+		else{
+			pos.x = cameraSlide.value;
+			cam.transform.position = pos;
+		}
 	}
 
 	public void Resume()
