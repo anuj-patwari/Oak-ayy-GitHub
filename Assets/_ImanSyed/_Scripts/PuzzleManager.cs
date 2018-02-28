@@ -17,6 +17,9 @@ public class PuzzleManager : MonoBehaviour {
 	[SerializeField]
 	Text tex;
 
+	[SerializeField]
+	short worldNum = 1;
+
 	private bool rayHit;
 
 	void Start()
@@ -27,7 +30,7 @@ public class PuzzleManager : MonoBehaviour {
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
-			ggm.WorldCompleted ();
+			ggm.WorldCompleted (worldNum);
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {

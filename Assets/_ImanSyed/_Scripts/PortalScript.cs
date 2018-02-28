@@ -8,7 +8,7 @@ public class PortalScript : MonoBehaviour {
 	string levelName;
 
 	[SerializeField]
-	int levelNumber;
+	float levelNumber;
 
 	GlobalGameManager ggm;
 
@@ -19,11 +19,8 @@ public class PortalScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col){
 		if (col.tag == "Player") {
-			if (ggm.world1levels == levelNumber) {
-				ggm.World1Level ();
-			}
+			ggm.World1Level (levelNumber);
 			SceneManager.LoadScene (levelName);
 		}
 	}
-
 }

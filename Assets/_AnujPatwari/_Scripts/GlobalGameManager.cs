@@ -5,8 +5,8 @@ using UnityEngine;
 public class GlobalGameManager : MonoBehaviour {
 
 
-	public int worldsComplete = 0;
-	public int world1levels = 1;
+	public short worldsComplete = 0;
+	public float world1levels = 1;
 
 
 	// Use this for initialization
@@ -19,13 +19,17 @@ public class GlobalGameManager : MonoBehaviour {
 		
 	}
 
-	public void WorldCompleted()
+	public void WorldCompleted(short worldNum)
 	{
-		worldsComplete++;
+		if (worldNum > worldsComplete) {
+			worldsComplete = worldNum;
+		}
 	}
 
-	public void World1Level()
+	public void World1Level(float levelNumber)
 	{
-		world1levels++;
+		if (levelNumber > world1levels) {
+			world1levels = levelNumber;
+		}
 	}
 }
