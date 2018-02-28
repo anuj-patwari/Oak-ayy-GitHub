@@ -39,7 +39,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void MainMenuPlayButton()
 	{
-		SceneManager.LoadScene ("Level 1");
+		SceneManager.LoadScene ("WorldSelect");
 	}
 
 	public void AppQuit()

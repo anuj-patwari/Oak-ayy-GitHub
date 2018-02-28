@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour {
 
-
+	GlobalGameManager ggm;
 	short piecesPut;
 
 	GameObject puzzlePiece;
-	public bool world1Complete = false;
 
 	[SerializeField]
 	RotationScript rs;
@@ -20,10 +19,15 @@ public class PuzzleManager : MonoBehaviour {
 
 	private bool rayHit;
 
+	void Start()
+	{
+		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
+	}
+
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
-			world1Complete = true;
+			ggm.WorldCompleted ();
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {

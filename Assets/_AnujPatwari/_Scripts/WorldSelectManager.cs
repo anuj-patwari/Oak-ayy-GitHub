@@ -12,24 +12,41 @@ public class WorldSelectManager : MonoBehaviour {
 	[SerializeField]
 	Image world1State, world2State, world3State, world4State;
 
-	PuzzleManager pmw1;
+	GlobalGameManager ggm;
 	// Use this for initialization
 	void Start () {
-		//Need fixed Update to check if the world is complete or not.
-		if (pmw1.world1Complete = true) {
-			world1State.sprite = w1Complete;
-		}
+		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-
-
+		if (ggm.worldsComplete > 0) {
+			world1State.sprite = w1Complete;
+		} else {
+			world1State.sprite = w1Incomplete;
+		}
+		if (ggm.worldsComplete > 1) {
+			world2State.sprite = w2Complete;
+		} else {
+			world2State.sprite = w2Incomplete;
+		}
+		if (ggm.worldsComplete > 2) {
+			world3State.sprite = w3Complete;
+		} else {
+			world3State.sprite = w3Incomplete;
+		}
+		if (ggm.worldsComplete > 3) { 
+			world4State.sprite = w4Complete; 
+		} else {
+			world4State.sprite = w4Incomplete;
+		}
 	}
 
 	public void MainMenu()
 	{
 		SceneManager.LoadScene ("MainMenu");
 	}
+		
 }
