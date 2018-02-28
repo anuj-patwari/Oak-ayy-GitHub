@@ -51,7 +51,7 @@ public class WorldSelectManager : MonoBehaviour {
 
 	public void Level1()
 	{
-		SceneManager.LoadScene ("Level 1");
+		SceneManager.LoadScene ("World1LevelSelect");
 	}
 		
 }

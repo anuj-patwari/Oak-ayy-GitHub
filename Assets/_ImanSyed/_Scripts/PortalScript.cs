@@ -15,6 +15,7 @@ public class PortalScript : MonoBehaviour {
 	void Start ()
 	{
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
+		print (ggm.world1levels);
 	}
 
 	void OnTriggerEnter2D (Collider2D col){
