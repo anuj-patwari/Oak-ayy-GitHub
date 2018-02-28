@@ -84,6 +84,7 @@ public class SceneManagerScript : MonoBehaviour {
 
 	public void ShowRestartUI()
 	{
+		Time.timeScale = 0f;
 		restartUI.SetActive (true);
 	}
 
@@ -93,6 +94,7 @@ public class SceneManagerScript : MonoBehaviour {
 	}
 
 	public void RestartInstant(){
+		Time.timeScale = 1f;
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 	}
 

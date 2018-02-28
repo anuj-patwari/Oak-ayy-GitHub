@@ -25,12 +25,14 @@ public class PuzzleManager : MonoBehaviour {
 	void Start()
 	{
 		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
+		print (ggm.world1levels);
 	}
 
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
 			ggm.WorldCompleted (worldNum);
+			StartCoroutine (LevelCompleted ());
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {
@@ -67,5 +69,16 @@ public class PuzzleManager : MonoBehaviour {
 	}
 	public void Restart(){
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+	}
+
+	public void MainMenu()
+	{
+		SceneManager.LoadScene ("MainMenu");
+	}
+
+	IEnumerator LevelCompleted ()
+	{
+		yield return new WaitForSeconds (2);
+		SceneManager.LoadScene ("World1LevelSelect");
 	}
 }

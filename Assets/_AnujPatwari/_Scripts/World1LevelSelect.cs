@@ -21,19 +21,19 @@ public class World1LevelSelect : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (ggm.world1levels >= 1.1)
+		if (ggm.world1levels >= 1.1f)
 		{
 			level2Button.GetComponent<Button> ().interactable = true;
 		}
-		if (ggm.world1levels >= 1.2)
+		if (ggm.world1levels >= 1.2f)
 		{
 			level3Button.GetComponent<Button> ().interactable = true;
 		}
-		if (ggm.world1levels >= 1.3)
+		if (ggm.world1levels >= 1.3f)
 		{
 			level4Button.GetComponent<Button> ().interactable = true;
 		}
-		if (ggm.world1levels >= 1.4)
+		if (ggm.world1levels == 1.4f)
 		{
 			miniGameButton.GetComponent<Button> ().interactable = true;
 		}
