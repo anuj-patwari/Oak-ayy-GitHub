@@ -48,5 +48,10 @@ public class WorldSelectManager : MonoBehaviour {
 	{
 		SceneManager.LoadScene ("MainMenu");
 	}
+
+	public void Level1()
+	{
+		SceneManager.LoadScene ("Level 1");
+	}
 		
 }
