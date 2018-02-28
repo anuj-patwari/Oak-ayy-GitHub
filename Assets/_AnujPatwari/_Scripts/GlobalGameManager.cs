@@ -6,6 +6,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 
 	public int worldsComplete = 0;
+	public int world1levels = 1;
 
 
 	// Use this for initialization
@@ -21,5 +22,10 @@ public class GlobalGameManager : MonoBehaviour {
 	public void WorldCompleted()
 	{
 		worldsComplete++;
+	}
+
+	public void World1Level()
+	{
+		world1levels++;
 	}
 }
