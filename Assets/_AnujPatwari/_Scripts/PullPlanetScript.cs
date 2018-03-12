@@ -29,17 +29,16 @@ public class PullPlanetScript : MonoBehaviour {
 
 	void Start () {
 		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
-		if (planetType == Type.push) {
-			areaOfEffect.GetComponent<SpriteRenderer> ().color = Color.red;
-		} else if (planetType == Type.none) {
-			areaOfEffect.GetComponent<SpriteRenderer> ().enabled = false;
+		if (areaOfEffect != null) {
+			if (planetType == Type.push) {
+				areaOfEffect.GetComponent<SpriteRenderer> ().color = Color.red;
+			} else if (planetType == Type.none) {
+				areaOfEffect.GetComponent<SpriteRenderer> ().enabled = false;
+			}
 		}
-
 		if (!hasMoon) {
 			Destroy (transform.GetChild (0).gameObject);
 		}
-
-
 	}
 	
 
@@ -69,22 +68,15 @@ public class PullPlanetScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col)
 	{
-
 		if (col.tag == "Player") {
-
 			pcIsIn = true;
 		}
-
 	}
 
 	void OnTriggerExit2D (Collider2D col)
 	{
-
 		if (col.tag == "Player") {
-
 			pcIsIn = false;
 		}
-
 	}
-
 }
