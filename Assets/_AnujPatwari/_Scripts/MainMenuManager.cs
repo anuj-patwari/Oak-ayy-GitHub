@@ -19,6 +19,13 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Start () {
 		toggleOrigSoundSprite = soundToggleButton.sprite;
+<<<<<<< HEAD
+=======
+	}
+	
+	void Update () {
+		
+>>>>>>> ae793b935813230faccfecf0839fa56e46932889
 	}
 
 	public void toggleSoundSpriteFn()
