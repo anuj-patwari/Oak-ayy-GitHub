@@ -19,11 +19,6 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Start () {
 		toggleOrigSoundSprite = soundToggleButton.sprite;
-		Screen.orientation = ScreenOrientation.LandscapeLeft;
-	}
-	
-	void Update () {
-		
 	}
 
 	public void toggleSoundSpriteFn()
