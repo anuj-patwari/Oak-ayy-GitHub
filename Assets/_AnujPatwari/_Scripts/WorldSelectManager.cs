@@ -15,7 +15,6 @@ public class WorldSelectManager : MonoBehaviour {
 	GlobalGameManager ggm;
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
-
 	}
 	
 	void Update () {
