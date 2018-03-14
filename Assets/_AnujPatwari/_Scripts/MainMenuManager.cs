@@ -12,6 +12,11 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField]
 	Image soundToggleButton;
 
+
+	void Awake(){
+		GlobalGameManager.ggm.Load ();
+	}
+
 	// Use this for initialization
 	void Start () {
 

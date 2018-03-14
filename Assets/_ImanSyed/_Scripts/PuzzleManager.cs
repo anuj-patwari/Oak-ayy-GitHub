@@ -25,7 +25,7 @@ public class PuzzleManager : MonoBehaviour {
 	void Start()
 	{
 		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
-		print (ggm.world1levels);
+		print (ggm.worldLevels);
 	}
 
 	void Update () {

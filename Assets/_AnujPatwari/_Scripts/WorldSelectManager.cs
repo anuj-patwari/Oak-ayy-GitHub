@@ -13,13 +13,12 @@ public class WorldSelectManager : MonoBehaviour {
 	Image world1State, world2State, world3State, world4State;
 
 	GlobalGameManager ggm;
-	// Use this for initialization
+
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 		if (ggm.worldsComplete > 0) {

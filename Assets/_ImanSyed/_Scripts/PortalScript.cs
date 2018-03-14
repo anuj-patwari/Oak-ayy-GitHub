@@ -15,12 +15,12 @@ public class PortalScript : MonoBehaviour {
 	void Start ()
 	{
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
-		print (ggm.world1levels);
 	}
 
 	void OnTriggerEnter2D (Collider2D col){
 		if (col.tag == "Player") {
-			ggm.World1Level (levelNumber);
+			ggm.LevelCompleted (levelNumber);
+			ggm.Save ();
 			SceneManager.LoadScene (levelName);
 		}
 	}
