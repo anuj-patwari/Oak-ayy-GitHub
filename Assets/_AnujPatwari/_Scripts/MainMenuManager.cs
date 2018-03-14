@@ -17,16 +17,12 @@ public class MainMenuManager : MonoBehaviour {
 		GlobalGameManager.ggm.Load ();
 	}
 
-	// Use this for initialization
 	void Start () {
-
 		toggleOrigSoundSprite = soundToggleButton.sprite;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		Screen.orientation = ScreenOrientation.LandscapeLeft;
-
 	}
 
 	public void toggleSoundSpriteFn()

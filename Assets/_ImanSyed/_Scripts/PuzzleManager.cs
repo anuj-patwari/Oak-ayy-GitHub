@@ -78,6 +78,7 @@ public class PuzzleManager : MonoBehaviour {
 
 	IEnumerator LevelCompleted ()
 	{
+		ggm.Save ();
 		yield return new WaitForSeconds (2);
 		SceneManager.LoadScene ("World1LevelSelect");
 	}

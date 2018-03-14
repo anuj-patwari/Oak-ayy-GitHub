@@ -25,6 +25,7 @@ public class GlobalGameManager : MonoBehaviour {
 	{
 		if (worldNum > worldsComplete) {
 			worldsComplete = worldNum;
+			ggm.Save ();
 		}
 	}
 
@@ -32,6 +33,7 @@ public class GlobalGameManager : MonoBehaviour {
 	{
 		if (levelNumber > worldLevels) {
 			worldLevels = levelNumber;
+			ggm.Save ();
 		}
 	}
 

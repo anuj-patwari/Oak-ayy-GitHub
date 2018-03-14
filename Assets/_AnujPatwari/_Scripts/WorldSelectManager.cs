@@ -13,7 +13,6 @@ public class WorldSelectManager : MonoBehaviour {
 	Image world1State, world2State, world3State, world4State;
 
 	GlobalGameManager ggm;
-
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
 

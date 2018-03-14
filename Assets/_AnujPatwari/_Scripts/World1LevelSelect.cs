@@ -11,16 +11,11 @@ public class World1LevelSelect : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
-	// Use this for initialization
 	void Start () {
-
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
-
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
+	void Update () {
 		if (ggm.worldLevels >= 1.1f)
 		{
 			level2Button.GetComponent<Button> ().interactable = true;
@@ -37,13 +32,10 @@ public class World1LevelSelect : MonoBehaviour {
 		{
 			miniGameButton.GetComponent<Button> ().interactable = true;
 		}
-		
 	}
 
 	public void GoToLevel(int sceneIndex)
 	{
-
 		SceneManager.LoadScene (sceneIndex);
-
 	}
 }

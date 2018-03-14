@@ -20,7 +20,6 @@ public class PortalScript : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col){
 		if (col.tag == "Player") {
 			ggm.LevelCompleted (levelNumber);
-			ggm.Save ();
 			SceneManager.LoadScene (levelName);
 		}
 	}
