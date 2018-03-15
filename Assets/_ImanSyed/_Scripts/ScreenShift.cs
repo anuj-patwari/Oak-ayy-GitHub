@@ -15,10 +15,13 @@ public class ScreenShift : MonoBehaviour {
 
 	bool shiftEnabled;
 
-	float counter;
-
 	[SerializeField]
 	float shiftDistance;
+
+	[SerializeField]
+	float shiftSpeed;
+
+	float curDistance = 0;
 
 	void Start(){
 		cam = Camera.main;
@@ -26,20 +29,20 @@ public class ScreenShift : MonoBehaviour {
 
 	void Update () {
 		if (shiftEnabled) {
-			if (counter <= shiftDistance) {
+			if (curDistance <= shiftDistance) {
 				if (dir == Direction.right) {
-					cam.transform.Translate (Vector2.right);
+					cam.transform.Translate (Vector2.right * shiftSpeed);
 				}
 				else if (dir == Direction.up) {
-					cam.transform.Translate (Vector2.up);
+					cam.transform.Translate (Vector2.up * shiftSpeed);
 				}
 				else if (dir == Direction.left) {
-					cam.transform.Translate (Vector2.left);
+					cam.transform.Translate (Vector2.left * shiftSpeed);
 				}
 				else if (dir == Direction.down) {
-					cam.transform.Translate (Vector2.down);
+					cam.transform.Translate (Vector2.down * shiftSpeed);
 				}
-				counter++;
+				curDistance += shiftSpeed;
 			} else {
 				shiftEnabled = false;
 			}
@@ -49,6 +52,7 @@ public class ScreenShift : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col){
 		if (col.tag == "Player") {
 			shiftEnabled = true;
+			curDistance = 0;
 		}
 	}
 }
