@@ -23,7 +23,6 @@ public class PC_UFO : MonoBehaviour {
 	void Start(){
 		sms = FindObjectOfType<SceneManagerScript> ();
 		InvokeRepeating ("ShootTrailer", 0, 0.1f);
-
 	}
 
 	void Update () {

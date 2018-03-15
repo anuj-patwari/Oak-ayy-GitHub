@@ -28,7 +28,6 @@ public class SceneManagerScript : MonoBehaviour {
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-
 			if (gameIsPaused) {
 				Resume ();
 			} else 
@@ -39,8 +38,7 @@ public class SceneManagerScript : MonoBehaviour {
 	}
 
 	public void CameraScroll(bool vertical){
-		Vector3 pos = Vector3.zero;
-		pos.z = cam.transform.position.z;
+		Vector3 pos = cam.transform.position;
 		if (vertical) {
 			pos.y = cameraSlide.value;
 			cam.transform.position = pos;
