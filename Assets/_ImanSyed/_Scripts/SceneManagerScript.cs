@@ -9,6 +9,9 @@ public class SceneManagerScript : MonoBehaviour {
 	[SerializeField]
 	Slider cameraSlide;
 
+	[SerializeField]
+	GameObject camButtons;
+
 	Camera cam;
 
 	public static bool gameIsPaused = false;
@@ -123,8 +126,7 @@ public class SceneManagerScript : MonoBehaviour {
 
 	public void DisableScroll()
 	{
-
 		cameraSlide.gameObject.SetActive (false);
-
+		camButtons.SetActive (false);
 	}
 }
