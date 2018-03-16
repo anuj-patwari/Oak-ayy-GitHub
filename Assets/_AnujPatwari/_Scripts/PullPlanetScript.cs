@@ -39,6 +39,7 @@ public class PullPlanetScript : MonoBehaviour {
 		if (!hasMoon) {
 			Destroy (transform.GetChild (0).gameObject);
 		}
+		GetComponent<Animator> ().speed = Random.Range (0.25f, 1.75f);
 	}
 	
 
