@@ -86,4 +86,10 @@ public class PullPlanetScript : MonoBehaviour {
 			pcIsIn = false;
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D col){
+		if (gameObject.tag == "Rubber") {
+			GetComponent<Animator> ().SetTrigger("Rubber Bounce");
+		}
+	}
 }
