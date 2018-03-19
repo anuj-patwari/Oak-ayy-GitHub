@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class ScrollButtons : MonoBehaviour, IPointerDownHandler {
+public class ScrollButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
 	public enum Type{up, down, right, left};
 
@@ -14,19 +14,84 @@ public class ScrollButtons : MonoBehaviour, IPointerDownHandler {
 	[SerializeField]
 	CameraScroll cam;
 
+	bool up, down, left, right;
+
+	void Update(){
+		
+		switch (myType) {
+		case Type.up:
+			if (cam.camBoundsMin.y <= cam.transform.position.y) {
+				gameObject.GetComponent<Image> ().enabled = false;
+			} else {
+				gameObject.GetComponent<Image> ().enabled = true;
+			}
+			break;
+		case Type.down:
+			if (cam.camBoundsMax.y >= cam.transform.position.y) {
+				gameObject.GetComponent<Image> ().enabled = false;
+			} else {
+				gameObject.GetComponent<Image> ().enabled = true;
+			}
+			break;
+		case Type.left:
+			if (cam.camBoundsMin.x >= cam.transform.position.x) {
+				gameObject.GetComponent<Image> ().enabled = false;
+			} else {
+				gameObject.GetComponent<Image> ().enabled = true;
+			}
+			break;
+		case Type.right:
+			if (cam.camBoundsMax.x <= cam.transform.position.x) {
+				gameObject.GetComponent<Image> ().enabled = false;
+			} else {
+				gameObject.GetComponent<Image> ().enabled = true;
+			}
+			break;
+		}
+			
+		if(up && gameObject.GetComponent<Image>().enabled){
+			cam.ScrollUp ();
+		}
+		if(down && gameObject.GetComponent<Image>().enabled){
+			cam.ScrollDown ();
+		}
+		if(right && gameObject.GetComponent<Image>().enabled){
+			cam.ScrollRight();
+		}
+		if(left && gameObject.GetComponent<Image>().enabled){
+			cam.ScrollLeft ();
+		}
+	}
+
 	public void OnPointerDown(PointerEventData eventData){
 		switch (myType) {
 		case Type.up:
-			cam.ScrollUp ();
+			up = true;
 			break;
 		case Type.down:
-			cam.ScrollDown ();
+			down = true;
 			break;
 		case Type.left:
-			cam.ScrollLeft ();
+			left = true;
 			break;
 		case Type.right:
-			cam.ScrollRight ();
+			right = true;
+			break;
+		}
+	}
+	public void OnPointerUp(PointerEventData eventData){
+		switch (myType) {
+		case Type.up:
+			up = false;
+			break;
+		case Type.down:
+			down = false;
+			break;
+		case Type.left:
+			left = false;
+			break;
+		case Type.right:
+			right = false;
 			break;
 		}
 	}

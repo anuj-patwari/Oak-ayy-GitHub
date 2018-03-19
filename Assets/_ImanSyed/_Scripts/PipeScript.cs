@@ -9,6 +9,8 @@ public class PipeScript : MonoBehaviour {
 
 	GameObject pc;
 
+	[SerializeField]
+	float exitSpeed = 250;
 
 
 	void OnTriggerEnter2D(Collider2D col){
@@ -24,7 +26,7 @@ public class PipeScript : MonoBehaviour {
 		yield return new WaitForSeconds (delay);
 		pc.SetActive (true);
 		pc.transform.position = exitPos.transform.position;
-		pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * 250);
+		pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * exitSpeed);
 	}
 
 }
