@@ -22,7 +22,7 @@ public class PC_UFO : MonoBehaviour {
 
 	void Start(){
 		sms = FindObjectOfType<SceneManagerScript> ();
-		InvokeRepeating ("ShootTrailer", 0, 1.5f);
+		InvokeRepeating ("ShootTrailer", 0, 0.05f);
 	}
 
 	void Update () {
@@ -59,8 +59,8 @@ public class PC_UFO : MonoBehaviour {
 
 	void ShootTrailer(){
 		GameObject trailBoi = Instantiate (trailObject, transform.position, transform.rotation);
-		trailBoi.GetComponent<Rigidbody2D> ().velocity = gameObject.GetComponent<Rigidbody2D> ().velocity * 20;
-		StartCoroutine(DestroyTrailBoi (1.5f, trailBoi));
+		trailBoi.GetComponent<Rigidbody2D> ().velocity = gameObject.GetComponent<Rigidbody2D> ().velocity * 500;
+		StartCoroutine(DestroyTrailBoi (0.05f, trailBoi));
 	}
 
 	void Rest(){
