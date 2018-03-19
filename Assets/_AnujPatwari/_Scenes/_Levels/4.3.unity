@@ -629,6 +629,11 @@ Prefab:
       propertyPath: m_Name
       value: Pipe Planet 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114631908393231050, guid: d685400895df33d43a5f4c6e741c68a6,
+        type: 2}
+      propertyPath: exitSpeed
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d685400895df33d43a5f4c6e741c68a6, type: 2}
   m_IsPrefabParent: 0
@@ -1740,11 +1745,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4912218230441326, guid: 744d4d157247e3f469a20764c99438f1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 76.28
+      value: 77.01
       objectReference: {fileID: 0}
     - target: {fileID: 4912218230441326, guid: 744d4d157247e3f469a20764c99438f1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.38
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: 4912218230441326, guid: 744d4d157247e3f469a20764c99438f1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1913,6 +1918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d1bc0bce1b6fe478fb9d4c7096ffce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camBoundsMin: {x: 0, y: 0}
+  camBoundsMax: {x: 0, y: 0}
   scrollSpeed: 0.25
 --- !u!1001 &1964385440
 Prefab:
