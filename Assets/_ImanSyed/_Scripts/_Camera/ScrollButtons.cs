@@ -17,6 +17,10 @@ public class ScrollButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 	bool up, down, left, right;
 
 	void Update(){
+
+
+
+
 		if(up){
 			cam.ScrollUp ();
 		}
