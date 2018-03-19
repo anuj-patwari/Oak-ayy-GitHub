@@ -17,7 +17,26 @@ public class ScrollButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 	bool up, down, left, right;
 
 	void Update(){
-
+		switch (myType) {
+		case Type.up:
+			if (cam.camBoundsMin.y <= cam.transform.position.y) {
+				gameObject.GetComponent<Button> ().interactable = false;
+				Debug.Log (2);
+			} else {
+				gameObject.GetComponent<Button> ().enabled = true;
+				Debug.Log (3);
+			}
+			break;
+		case Type.down:
+			
+			break;
+		case Type.left:
+			
+			break;
+		case Type.right:
+			
+			break;
+		}
 
 
 

@@ -6,6 +6,9 @@ public class CameraScroll : MonoBehaviour {
 
 	Vector3 pos;
 
+	public Vector2 camBoundsMin, camBoundsMax;
+
+
 	[SerializeField]
 	float scrollSpeed = 0.25f;
 
