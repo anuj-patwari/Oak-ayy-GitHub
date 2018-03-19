@@ -66,7 +66,7 @@ public class PullPlanetScript : MonoBehaviour {
 	}
 
 	void RotSpeed(){
-		GetComponent<Animator> ().speed = Random.Range (-2f, 2f);
+		GetComponent<Animator> ().SetFloat ("Mult", Random.Range (-2f, 2f)); 
 		if (GetComponent<Animator> ().speed > -0.25f && GetComponent<Animator> ().speed < 0.25f) {
 			RotSpeed ();
 		}

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 23855711198983118}
   - component: {fileID: 96034349926064300}
   - component: {fileID: 50965466108083122}
+  - component: {fileID: 58491938636452926}
   m_Layer: 1
   m_Name: Trail
   m_TagString: Trail
@@ -96,6 +97,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58491938636452926
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708724343896066}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b140b082c6a42094ca93d09e2f273ec6, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009103775, y: 0.2731123}
+  serializedVersion: 2
+  m_Radius: 0.6001415
 --- !u!96 &96034349926064300
 TrailRenderer:
   serializedVersion: 2
@@ -131,7 +147,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1
