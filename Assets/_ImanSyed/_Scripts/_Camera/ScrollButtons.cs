@@ -17,39 +17,48 @@ public class ScrollButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 	bool up, down, left, right;
 
 	void Update(){
+		
 		switch (myType) {
 		case Type.up:
 			if (cam.camBoundsMin.y <= cam.transform.position.y) {
-				gameObject.GetComponent<Button> ().interactable = false;
-				Debug.Log (2);
+				gameObject.GetComponent<Image> ().enabled = false;
 			} else {
-				gameObject.GetComponent<Button> ().enabled = true;
-				Debug.Log (3);
+				gameObject.GetComponent<Image> ().enabled = true;
 			}
 			break;
 		case Type.down:
-			
+			if (cam.camBoundsMax.y >= cam.transform.position.y) {
+				gameObject.GetComponent<Image> ().enabled = false;
+			} else {
+				gameObject.GetComponent<Image> ().enabled = true;
+			}
 			break;
 		case Type.left:
-			
+			if (cam.camBoundsMin.x >= cam.transform.position.x) {
+				gameObject.GetComponent<Image> ().enabled = false;
+			} else {
+				gameObject.GetComponent<Image> ().enabled = true;
+			}
 			break;
 		case Type.right:
-			
+			if (cam.camBoundsMax.x <= cam.transform.position.x) {
+				gameObject.GetComponent<Image> ().enabled = false;
+			} else {
+				gameObject.GetComponent<Image> ().enabled = true;
+			}
 			break;
 		}
-
-
-
-		if(up){
+			
+		if(up && gameObject.GetComponent<Image>().enabled){
 			cam.ScrollUp ();
 		}
-		if(down){
+		if(down && gameObject.GetComponent<Image>().enabled){
 			cam.ScrollDown ();
 		}
-		if(right){
+		if(right && gameObject.GetComponent<Image>().enabled){
 			cam.ScrollRight();
 		}
-		if(left){
+		if(left && gameObject.GetComponent<Image>().enabled){
 			cam.ScrollLeft ();
 		}
 	}
