@@ -6,30 +6,33 @@ public class CameraScroll : MonoBehaviour {
 
 	Vector3 pos;
 
+	[SerializeField]
+	float scrollSpeed = 0.25f;
+
 	void Start(){
 		pos = transform.position;
 	}
 
 	public void ScrollUp(){
-		pos.y += 0.5f;
+		pos.y += scrollSpeed;
 		transform.position = pos;
 		pos = transform.position;
 	}
 
 	public void ScrollDown(){
-		pos.y -= 0.5f;
+		pos.y -= scrollSpeed;
 		transform.position = pos;
 		pos = transform.position;
 	}
 
 	public void ScrollRight(){
-		pos.x += 0.5f;
+		pos.x += scrollSpeed;
 		transform.position = pos;
 		pos = transform.position;
 	}
 
 	public void ScrollLeft(){
-		pos.x -= 0.5f;
+		pos.x -= scrollSpeed;
 		transform.position = pos;
 		pos = transform.position;
 	}

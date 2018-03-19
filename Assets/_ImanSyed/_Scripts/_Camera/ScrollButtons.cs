@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class ScrollButtons : MonoBehaviour, IPointerDownHandler {
+public class ScrollButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
 	public enum Type{up, down, right, left};
 
@@ -14,19 +14,52 @@ public class ScrollButtons : MonoBehaviour, IPointerDownHandler {
 	[SerializeField]
 	CameraScroll cam;
 
+	bool up, down, left, right;
+
+	void Update(){
+		if(up){
+			cam.ScrollUp ();
+		}
+		if(down){
+			cam.ScrollDown ();
+		}
+		if(right){
+			cam.ScrollRight();
+		}
+		if(left){
+			cam.ScrollLeft ();
+		}
+	}
+
 	public void OnPointerDown(PointerEventData eventData){
 		switch (myType) {
 		case Type.up:
-			cam.ScrollUp ();
+			up = true;
 			break;
 		case Type.down:
-			cam.ScrollDown ();
+			down = true;
 			break;
 		case Type.left:
-			cam.ScrollLeft ();
+			left = true;
 			break;
 		case Type.right:
-			cam.ScrollRight ();
+			right = true;
+			break;
+		}
+	}
+	public void OnPointerUp(PointerEventData eventData){
+		switch (myType) {
+		case Type.up:
+			up = false;
+			break;
+		case Type.down:
+			down = false;
+			break;
+		case Type.left:
+			left = false;
+			break;
+		case Type.right:
+			right = false;
 			break;
 		}
 	}
