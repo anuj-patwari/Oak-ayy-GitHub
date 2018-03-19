@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraScroll : MonoBehaviour {
 
-	Vector3 pos;
+	Vector3 pos, startPos;
 
 	public Vector2 camBoundsMin, camBoundsMax;
 
@@ -13,7 +13,11 @@ public class CameraScroll : MonoBehaviour {
 	float scrollSpeed = 0.25f;
 
 	void Start(){
-		pos = transform.position;
+		startPos = pos = transform.position;
+	}
+
+	public void ReturnCamera(){
+		transform.position = startPos;
 	}
 
 	public void ScrollUp(){
@@ -39,5 +43,7 @@ public class CameraScroll : MonoBehaviour {
 		transform.position = pos;
 		pos = transform.position;
 	}
+
+
 
 }

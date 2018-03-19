@@ -9,17 +9,15 @@ public class VolcanoScript : MonoBehaviour {
 	GameObject pc;
 
 	[SerializeField]
-	float speed;
+	float speed = 250, rotSpeed = 1;
 
-	// Use this for initialization
 	void Start () {
 		rot = Vector3.zero;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (activated) {
-			rot.z = speed; 
+			rot.z = rotSpeed; 
 			transform.Rotate (rot);
 		}
 	}
@@ -27,7 +25,8 @@ public class VolcanoScript : MonoBehaviour {
 	void OnMouseDown(){
 		if (activated) {;
 			transform.DetachChildren ();
-			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * 250);
+			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * speed);
+			pc.GetComponent<Animator> ().enabled = true;
 			activated = false;
 		}
 	}
@@ -37,6 +36,7 @@ public class VolcanoScript : MonoBehaviour {
 			col.gameObject.transform.SetParent (transform);
 			pc = col.gameObject;
 			pc.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
+			pc.GetComponent<Animator> ().enabled = false;
 			activated = true;
 		}
 	}
