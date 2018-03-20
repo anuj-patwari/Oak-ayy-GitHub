@@ -12,6 +12,17 @@ public class GlobalGameManager : MonoBehaviour {
 	public short worldsComplete = 0;
 	public float worldLevels = 0;
 
+
+
+	//Stars Collections from each level
+	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars3_1, stars3_2, stars3_3, stars3_4, stars4_1, stars4_2, stars4_3, stars4_4;
+	//Total stars collected
+	public int starCount;
+	//Stars collected in current level
+	public int currStars;
+
+
+
 	void Awake() {
 		if (ggm == null) {
 			DontDestroyOnLoad (gameObject);
@@ -44,6 +55,11 @@ public class GlobalGameManager : MonoBehaviour {
 			worldLevels = levelNumber;
 			ggm.Save ();
 		}
+	}
+
+	public void StarsUpdate(int stars)
+	{
+		starCount += stars;
 	}
 
 	public void Save(){

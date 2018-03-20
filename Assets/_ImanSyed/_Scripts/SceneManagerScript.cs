@@ -10,6 +10,9 @@ public class SceneManagerScript : MonoBehaviour {
 	Slider cameraSlide;
 
 	[SerializeField]
+	int myLevelNumber;
+
+	[SerializeField]
 	GameObject camButtons;
 
 	Camera cam;
@@ -21,11 +24,15 @@ public class SceneManagerScript : MonoBehaviour {
 	public Slider slider;
 	public Text progressText;
 
+	GlobalGameManager ggm;
+
 	[SerializeField]
 	GameObject restartUI;
 
 	void Start(){
 		cam = Camera.main;
+		ggm = FindObjectOfType<GlobalGameManager> ();
+		ggm.currStars = 0;
 	}
 
 	void Update ()
@@ -128,5 +135,106 @@ public class SceneManagerScript : MonoBehaviour {
 	{
 		cameraSlide.gameObject.SetActive (false);
 		camButtons.SetActive (false);
+	}
+
+	public void StarsCollected()
+	{
+		switch (myLevelNumber) {
+		case 1:
+			if (ggm.currStars > ggm.stars1_1) {
+				ggm.stars1_1 = ggm.currStars;
+			}
+			break;
+
+		case 2:
+			if (ggm.currStars > ggm.stars1_2) {
+				ggm.stars1_2 = ggm.currStars;
+			}
+			break;
+
+		case 3:
+			if (ggm.currStars > ggm.stars1_3) {
+				ggm.stars1_3 = ggm.currStars;
+			}
+			break;
+
+		case 4:
+			if (ggm.currStars > ggm.stars1_4) {
+				ggm.stars1_4 = ggm.currStars;
+			}
+			break;
+
+		case 5:
+			if (ggm.currStars > ggm.stars2_1) {
+				ggm.stars2_1 = ggm.currStars;
+			}
+			break;
+
+		case 6:
+			if (ggm.currStars > ggm.stars2_2) {
+				ggm.stars2_2 = ggm.currStars;
+			}
+			break;
+
+		case 7:
+			if (ggm.currStars > ggm.stars2_3) {
+				ggm.stars2_3 = ggm.currStars;
+			}
+			break;
+
+		case 8:
+			if (ggm.currStars > ggm.stars2_4) {
+				ggm.stars2_4 = ggm.currStars;
+			}
+			break;
+
+		case 9:
+			if (ggm.currStars > ggm.stars3_1) {
+				ggm.stars3_1 = ggm.currStars;
+			}
+			break;
+
+		case 10:
+			if (ggm.currStars > ggm.stars3_2) {
+				ggm.stars3_2 = ggm.currStars;
+			}
+			break;
+
+		case 11:
+			if (ggm.currStars > ggm.stars3_3) {
+				ggm.stars3_3 = ggm.currStars;
+			}
+			break;
+
+		case 12:
+			if (ggm.currStars > ggm.stars3_4) {
+				ggm.stars3_4 = ggm.currStars;
+			}
+			break;
+
+		case 13:
+			if (ggm.currStars > ggm.stars4_1) {
+				ggm.stars4_1 = ggm.currStars;
+			}
+			break;
+
+		case 14:
+			if (ggm.currStars > ggm.stars4_2) {
+				ggm.stars4_2 = ggm.currStars;
+			}
+			break;
+
+		case 15:
+			if (ggm.currStars > ggm.stars4_3) {
+				ggm.stars4_3 = ggm.currStars;
+			}
+			break;
+
+		case 16:
+			if (ggm.currStars > ggm.stars4_4) {
+				ggm.stars4_4 = ggm.currStars;
+			}
+			break;
+		}
 	}
 }
