@@ -34,8 +34,8 @@ public class World1LevelSelect : MonoBehaviour {
 		}
 	}
 
-	public void GoToLevel(int sceneIndex)
+	public void GoToLevel(string sceneName)
 	{
-		SceneManager.LoadScene (sceneIndex);
+		SceneManager.LoadScene (sceneName);
 	}
 }

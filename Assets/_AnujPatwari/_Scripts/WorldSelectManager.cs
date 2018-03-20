@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class WorldSelectManager : MonoBehaviour {
 
 	[SerializeField]
-	Sprite w1Complete, w1Incomplete, w2Complete, w2Incomplete, w3Complete, w3Incomplete, w4Complete, w4Incomplete;
+	Sprite w1Complete, w1Incomplete, w2Complete, w2Incomplete,  w3Complete, w3Incomplete, w4Complete, w4Incomplete;
+
+	[SerializeField]
+	GameObject w2Locked, w3Locked, w4Locked;
 
 	[SerializeField]
 	Image world1State, world2State, world3State, world4State;
@@ -19,6 +22,7 @@ public class WorldSelectManager : MonoBehaviour {
 	
 	void Update () {
 
+		//Changing the states of the Selection Panels to Sick or Fixed
 		if (ggm.worldsComplete > 0) {
 			world1State.sprite = w1Complete;
 		} else {
@@ -39,6 +43,30 @@ public class WorldSelectManager : MonoBehaviour {
 		} else {
 			world4State.sprite = w4Incomplete;
 		}
+
+		//Changing the states of the Selection Planets to Locked or Unlocked
+
+		if (ggm.worldsComplete == 0) {
+			w2Locked.SetActive (true);
+			w3Locked.SetActive (true);
+			w4Locked.SetActive (true);
+		} else if (ggm.worldsComplete == 1) 
+		{
+			w2Locked.SetActive (false);
+			w3Locked.SetActive (true);
+			w4Locked.SetActive (true);
+		} else if (ggm.worldsComplete == 2) 
+		{
+			w2Locked.SetActive (false);
+			w3Locked.SetActive (false);
+			w4Locked.SetActive (true);
+		}
+		else if (ggm.worldsComplete == 3) 
+		{
+			w2Locked.SetActive (false);
+			w3Locked.SetActive (false);
+			w4Locked.SetActive (false);
+		}
 	}
 
 	public void MainMenu()
@@ -46,9 +74,9 @@ public class WorldSelectManager : MonoBehaviour {
 		SceneManager.LoadScene ("MainMenu");
 	}
 
-	public void Level1()
+	public void World1()
 	{
-		SceneManager.LoadScene ("World1LevelSelect");
+		SceneManager.LoadScene ("W1LevelSelect");
 	}
 		
 }
