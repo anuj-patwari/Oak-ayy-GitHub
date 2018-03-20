@@ -25,7 +25,7 @@ public class PortalScript : MonoBehaviour {
 			ggm.LevelCompleted (levelNumber);
 			SceneManager.LoadScene (levelToLoad);
 			sms.StarsCollected ();
-			ggm.StarsUpdate (ggm.currStars);
+			ggm.StarsUpdate ();
 		}
 	}
 }
