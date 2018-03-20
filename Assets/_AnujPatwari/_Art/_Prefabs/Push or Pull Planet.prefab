@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 1275187816262314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4878046175540162}
   m_Father: {fileID: 4334573876531164}
@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1779319611417224}
   m_LocalRotation: {x: -0.35355338, y: 0.35355338, z: 0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -14.3, y: -8.2, z: -0.08426285}
+  m_LocalPosition: {x: -12.87, y: 5.84, z: -0.4627}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4238640573149134}
@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312871660592204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.229, y: 0.441, z: 0.117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4596567880559782}
@@ -214,7 +214,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 78f8d1f25b399bf43bcc34ce8f87257e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -247,7 +247,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1275187816262314}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 4297c513d053fb8448bfffbe5ac4ef95, type: 3}
 --- !u!58 &58317723278892758
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -277,7 +277,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 2.6166816
 --- !u!58 &58997344093222700
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -317,7 +317,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312871660592204}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d2cb815e4059b5b468b320789d2eb4f1, type: 2}
   m_CullingMode: 0
@@ -339,10 +339,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacter: {fileID: 0}
-  force: 100
+  force: 150
   areaOfEffect: {fileID: 1621534262583508}
   hasMoon: 0
-  planetType: 0
+  planetType: 1
 --- !u!212 &212233659363986188
 SpriteRenderer:
   m_ObjectHideFlags: 1
