@@ -38,8 +38,8 @@ public class PullPlanetScript : MonoBehaviour {
 		}
 		if (!hasMoon) {
 			Destroy (transform.GetChild (0).gameObject);
+			RotSpeed ();
 		}
-		RotSpeed ();
 	}
 	
 
