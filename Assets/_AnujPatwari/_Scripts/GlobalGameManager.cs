@@ -10,7 +10,7 @@ public class GlobalGameManager : MonoBehaviour {
 	public static GlobalGameManager ggm;
 
 	public short worldsComplete = 0;
-	public float worldLevels = 1;
+	public float worldLevels = 0;
 
 	void Awake() {
 		if (ggm == null) {
@@ -18,6 +18,15 @@ public class GlobalGameManager : MonoBehaviour {
 			ggm = this;
 		} else if (ggm != this) {
 			Destroy (gameObject);
+		}
+	}
+
+
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Delete)) {
+			if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
+				File.Delete (Application.persistentDataPath + "/playerInfo.dat");
+			}
 		}
 	}
 
