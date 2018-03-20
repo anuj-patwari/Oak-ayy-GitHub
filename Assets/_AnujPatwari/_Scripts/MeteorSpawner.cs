@@ -7,9 +7,12 @@ public class MeteorSpawner : MonoBehaviour {
 	[SerializeField]
 	GameObject meteor;
 
+    [SerializeField]
+    float repeatValue = 4;
+
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("spawnMeteor", 0, 4);
+		InvokeRepeating ("spawnMeteor", 0, repeatValue);
 	}
 	
 	// Update is called once per frame
