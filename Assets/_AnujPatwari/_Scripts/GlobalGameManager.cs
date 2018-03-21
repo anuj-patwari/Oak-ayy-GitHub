@@ -60,6 +60,7 @@ public class GlobalGameManager : MonoBehaviour {
 	public void StarsUpdate()
 	{
 		starCount = stars1_1 + stars1_2 + stars1_3 + stars1_4 + stars2_1 + stars2_2 + stars2_3 + stars2_4 + stars3_1 + stars3_2 + stars3_3 + stars3_4 + stars4_1 + stars4_2 + stars4_3 + stars4_4;
+		ggm.Save ();
 	}
 
 	public void Save(){
@@ -69,6 +70,23 @@ public class GlobalGameManager : MonoBehaviour {
 		PlayerData data = new PlayerData ();
 		data.worldsComplete = worldsComplete;
 		data.levelsComplete = worldLevels;
+		data.stars1_1 = stars1_1;
+		data.stars1_2 = stars1_2;
+		data.stars1_3 = stars1_3;
+		data.stars1_4 = stars1_4;
+		data.stars2_1 = stars2_1;
+		data.stars2_2 = stars2_2;
+		data.stars2_3 = stars2_3;
+		data.stars2_4 = stars2_4;
+		data.stars3_1 = stars3_1;
+		data.stars3_2 = stars3_2;
+		data.stars3_3 = stars3_3;
+		data.stars3_4 = stars3_4;
+		data.stars4_1 = stars4_1;
+		data.stars4_2 = stars4_2;
+		data.stars4_3 = stars4_3;
+		data.stars4_4 = stars4_4;
+		data.starCount = starCount;
 
 		bf.Serialize (file, data);
 		file.Close ();
@@ -83,6 +101,23 @@ public class GlobalGameManager : MonoBehaviour {
 
 			worldsComplete = data.worldsComplete;
 			worldLevels = data.levelsComplete;
+			stars1_1 = data.stars1_1;
+			stars1_2 = data.stars1_2;
+			stars1_3 = data.stars1_3;
+			stars1_4 = data.stars1_4;
+			stars2_1 = data.stars2_1;
+			stars2_2 = data.stars2_2;
+			stars2_3 = data.stars2_3;
+			stars2_4 = data.stars2_4;
+			stars3_1 = data.stars3_1;
+			stars3_2 = data.stars3_2;
+			stars3_3 = data.stars3_3;
+			stars3_4 = data.stars3_4;
+			stars4_1 = data.stars4_1;
+			stars4_2 = data.stars4_2;
+			stars4_3 = data.stars4_3;
+			stars4_4 = data.stars4_4;
+			starCount = data.starCount;
 		}
 	}
 }
@@ -91,4 +126,5 @@ public class GlobalGameManager : MonoBehaviour {
 class PlayerData{
 	public short worldsComplete;
 	public float levelsComplete;
+	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars3_1, stars3_2, stars3_3, stars3_4, stars4_1, stars4_2, stars4_3, stars4_4, starCount;
 }
