@@ -48,11 +48,36 @@ public class PuzzleManager : MonoBehaviour {
 					rs.enabled = true;
 					if (hit.collider.tag == "Planet") {
 						if (puzzlePiece.GetComponent<PuzzlePieceScript> ().pieceNum == hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().holeNum) {
-							puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
+							if (worldNum == 1) {
+								puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
+							}
+							if (worldNum == 2) {
+								puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
+								Vector3 pos = puzzlePiece.transform.position;
+								switch(puzzlePiece.GetComponent<PuzzlePieceScript>().pieceNum){
+								case 0:
+									pos.x -= 3;
+									break;
+								case 1:
+									pos.y += 3;
+									break;
+								case 2:
+									pos.y -= 3;
+									break;
+								case 3:
+									pos.x += 3;
+									break;
+								default:
+									Debug.Log ("Error");
+									break;
+								}
+								puzzlePiece.transform.position = pos;
+							}
+
 							puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
 							puzzlePiece.transform.rotation = Quaternion.Euler (hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
 							piecesPut++;
-						}
+						} 
 					}
 				} else {
 					if (hit.collider.tag == "Puzzle Piece") {
