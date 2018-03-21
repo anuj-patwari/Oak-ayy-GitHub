@@ -15,9 +15,24 @@ public class WorldSelectManager : MonoBehaviour {
 	[SerializeField]
 	Image world1State, world2State, world3State, world4State;
 
+	[SerializeField]
+	Text t1, t2, t3, t4;
+
+	int w1Stars, w2Stars, w3Stars, w4Stars;
+
 	GlobalGameManager ggm;
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
+
+		w1Stars = ggm.stars1_1 + ggm.stars1_2 + ggm.stars1_3 + ggm.stars1_4;
+		w2Stars = ggm.stars2_1 + ggm.stars2_2 + ggm.stars2_3 + ggm.stars2_4;
+		w3Stars = ggm.stars3_1 + ggm.stars3_2 + ggm.stars3_3 + ggm.stars3_4;
+		w4Stars = ggm.stars4_1 + ggm.stars4_2 + ggm.stars4_3 + ggm.stars4_4;
+
+		t1.text = w1Stars.ToString() + "/12";
+		t2.text = w2Stars.ToString() + "/12";
+		t3.text = w3Stars.ToString() + "/12";
+		t4.text = w4Stars.ToString() + "/12";
 	}
 	
 	void Update () {
