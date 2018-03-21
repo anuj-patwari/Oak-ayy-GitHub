@@ -12,6 +12,9 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField]
 	Image soundToggleButton;
 
+	[SerializeField]
+	GameObject newGameUI;
+
 
 	void Awake(){
 		GlobalGameManager.ggm.Load ();
@@ -42,5 +45,15 @@ public class MainMenuManager : MonoBehaviour {
 	public void AppQuit()
 	{
 		Application.Quit();
+	}
+
+	public void ShowNewGameButtonUI()
+	{
+		newGameUI.SetActive (true);
+	}
+
+	public void HideNewGameButtonUI()
+	{
+		newGameUI.SetActive (false);
 	}
 }

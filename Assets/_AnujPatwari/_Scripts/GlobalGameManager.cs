@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GlobalGameManager : MonoBehaviour {
 
@@ -120,7 +121,63 @@ public class GlobalGameManager : MonoBehaviour {
 			starCount = data.starCount;
 		}
 	}
+
+	public void NewGame ()
+	{
+		if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) 
+		{
+			BinaryFormatter bf = new BinaryFormatter ();
+			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+			PlayerData data = (PlayerData)bf.Deserialize (file);
+			file.Close ();
+
+			data.worldsComplete = 0;
+			data.levelsComplete = 1;
+			data.stars1_1 = 0;
+			data.stars1_2 = 0;
+			data.stars1_3 = 0;
+			data.stars1_4 = 0;
+			data.stars2_1 = 0;
+			data.stars2_2 = 0;
+			data.stars2_3 = 0;
+			data.stars2_4 = 0;
+			data.stars3_1 = 0;
+			data.stars3_2 = 0;
+			data.stars3_3 = 0;
+			data.stars3_4 = 0;
+			data.stars4_1 = 0;
+			data.stars4_2 = 0;
+			data.stars4_3 = 0;
+			data.stars4_4 = 0;
+			data.starCount = 0;
+
+			worldsComplete = 0;
+			worldLevels = 1;
+			stars1_1 = 0;
+			stars1_2 = 0;
+			stars1_3 = 0;
+			stars1_4 = 0;
+			stars2_1 = 0;
+			stars2_2 = 0;
+			stars2_3 = 0;
+			stars2_4 = 0;
+			stars3_1 = 0;
+			stars3_2 = 0;
+			stars3_3 = 0;
+			stars3_4 = 0;
+			stars4_1 = 0;
+			stars4_2 = 0;
+			stars4_3 = 0;
+			stars4_4 = 0;
+			starCount = 0;
+
+			SceneManager.LoadScene ("WorldSelect");
+
+		}
+	}
 }
+
+
 
 [Serializable]
 class PlayerData{
