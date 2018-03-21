@@ -15,12 +15,15 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField]
 	GameObject newGameUI;
 
+	GlobalGameManager ggm;
+
 
 	void Awake(){
 		GlobalGameManager.ggm.Load ();
 	}
 
 	void Start () {
+		ggm = FindObjectOfType<GlobalGameManager> ();
 		toggleOrigSoundSprite = soundToggleButton.sprite;
 	}
 
@@ -55,5 +58,10 @@ public class MainMenuManager : MonoBehaviour {
 	public void HideNewGameButtonUI()
 	{
 		newGameUI.SetActive (false);
+	}
+
+	public void NewGame()
+	{
+		ggm.NewGame ();
 	}
 }
