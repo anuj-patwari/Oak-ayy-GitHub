@@ -11,8 +11,15 @@ public class World1LevelSelect : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
+	[SerializeField]
+	Text t1, t2, t3, t4;
+
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
+		t1.text = ggm.stars1_1.ToString() + "/3";
+		t2.text = ggm.stars1_2.ToString() + "/3";
+		t3.text = ggm.stars1_3.ToString() + "/3";
+		t4.text = ggm.stars1_4.ToString() + "/3";
 	}
 
 	void Update () {
