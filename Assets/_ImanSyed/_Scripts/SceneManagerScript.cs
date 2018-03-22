@@ -256,15 +256,15 @@ public class SceneManagerScript : MonoBehaviour {
 
 		if (ggm.currStars > 0) 
 		{
-			star2.SetActive (true);
+			star1.SetActive (true);
 		}
 		if (ggm.currStars > 1) 
 		{
-			star1.SetActive (true);
+			star3.SetActive (true);
 		}
 		if (ggm.currStars > 2) 
 		{
-			star3.SetActive (true);
+			star2.SetActive (true);
 		}
 	}
 
