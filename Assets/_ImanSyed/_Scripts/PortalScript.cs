@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour {
 
-	[SerializeField]
-	string levelToLoad;
+
+	public string levelToLoad;
 
 	[SerializeField]
 	float levelNumber;
@@ -22,8 +22,9 @@ public class PortalScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col){
 		if (col.tag == "Player") {
+			Time.timeScale = 0f;
 			ggm.LevelCompleted (levelNumber);
-			SceneManager.LoadScene (levelToLoad);
+			sms.LevelCompletePopup ();
 			sms.StarsCollected ();
 			ggm.StarsUpdate ();
 		}

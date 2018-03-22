@@ -29,10 +29,22 @@ public class SceneManagerScript : MonoBehaviour {
 	[SerializeField]
 	GameObject restartUI;
 
+
+	//Level Complete Popup
+	[SerializeField]
+	GameObject star1, star2, star3, levelCompPopup;
+	PortalScript portScr;
+
 	void Start(){
 		cam = Camera.main;
 		ggm = FindObjectOfType<GlobalGameManager> ();
+		portScr = FindObjectOfType<PortalScript> ();
 		ggm.currStars = 0;
+		star1.SetActive (false);
+		star2.SetActive (false);
+		star3.SetActive (false);
+		levelCompPopup.SetActive (false);
+
 	}
 
 	void Update ()
@@ -236,5 +248,35 @@ public class SceneManagerScript : MonoBehaviour {
 			}
 			break;
 		}
+	}
+
+	public void LevelCompletePopup()
+	{
+		levelCompPopup.SetActive (true);
+
+		if (ggm.currStars > 0) 
+		{
+			star2.SetActive (true);
+		}
+		if (ggm.currStars > 1) 
+		{
+			star1.SetActive (true);
+		}
+		if (ggm.currStars > 2) 
+		{
+			star3.SetActive (true);
+		}
+	}
+
+	public void NextLvl()
+	{
+		Time.timeScale = 1f;
+		SceneManager.LoadScene (portScr.levelToLoad);
+	}
+
+	public void GoToWorldSelect()
+	{
+		Time.timeScale = 1f;
+		SceneManager.LoadScene ("WorldSelect");
 	}
 }
