@@ -56,7 +56,6 @@ public class PC_UFO : MonoBehaviour {
 			}
 
 			if (increaseVelocity && GetComponent<Rigidbody2D> ().velocity.magnitude < 2f) {
-				Debug.Log (GetComponent<Rigidbody2D> ().velocity.magnitude);
 				GetComponent<Rigidbody2D> ().velocity *= 2;
 			}
 		}
@@ -86,6 +85,13 @@ public class PC_UFO : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "Rubber") {
 			
+		}
+		if (col.gameObject.tag == "Bubble") {
+			if (GetComponent<Rigidbody2D> ().velocity.magnitude > 2.5f) {
+				Destroy (col.gameObject);
+			} else {
+				Rest ();
+			}
 		}
 	}
 
