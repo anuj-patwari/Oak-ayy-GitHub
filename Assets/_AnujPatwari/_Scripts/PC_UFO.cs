@@ -14,6 +14,7 @@ public class PC_UFO : MonoBehaviour {
 
 	public startDirection sD;
 
+	public bool increaseVelocity;
 
 	[SerializeField]
 	GameObject trailObject;
@@ -45,7 +46,6 @@ public class PC_UFO : MonoBehaviour {
 					} else if (sD == startDirection.right) {
 						GetComponent<Rigidbody2D> ().AddForce (Vector2.right * thrust);
 					}
-
 				}
 			}
 		}else {
@@ -53,6 +53,11 @@ public class PC_UFO : MonoBehaviour {
 			bool visible = GeometryUtility.TestPlanesAABB (frustumPlanes, GetComponent<Renderer> ().bounds);
 			if (!visible) {
 				Invoke ("Rest", 1);
+			}
+
+			if (increaseVelocity && GetComponent<Rigidbody2D> ().velocity.magnitude < 2f) {
+				Debug.Log (GetComponent<Rigidbody2D> ().velocity.magnitude);
+				GetComponent<Rigidbody2D> ().velocity *= 2;
 			}
 		}
 	}

@@ -82,13 +82,15 @@ public class PullPlanetScript : MonoBehaviour {
 	{
 		if (col.tag == "Player") {
 			pcIsIn = true;
+			col.GetComponent<PC_UFO> ().increaseVelocity = false;
 		}
 	}
 
 	void OnTriggerExit2D (Collider2D col)
 	{
 		if (col.tag == "Player") {
-			pcIsIn = false;
+			pcIsIn =  false;
+			col.GetComponent<PC_UFO> ().increaseVelocity = true;
 		}
 	}
 

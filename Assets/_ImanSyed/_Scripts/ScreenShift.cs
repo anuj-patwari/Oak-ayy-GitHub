@@ -56,7 +56,6 @@ public class ScreenShift : MonoBehaviour {
 		if (col.tag == "Player" && !shiftEnabled) {
 			shiftEnabled = true;
 			counter = 0;
-			Debug.Log (2);
 		}
 	}
 }
