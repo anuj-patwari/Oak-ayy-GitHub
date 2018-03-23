@@ -35,7 +35,7 @@ public class W3LevelSelect : MonoBehaviour {
 		{
 			level4Button.GetComponent<Button> ().interactable = true;
 		}
-		if (ggm.worldLevels == 3.4f)
+		if (ggm.worldLevels >= 3.4f)
 		{
 			miniGameButton.GetComponent<Button> ().interactable = true;
 		}
