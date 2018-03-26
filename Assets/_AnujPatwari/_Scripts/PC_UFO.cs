@@ -63,7 +63,7 @@ public class PC_UFO : MonoBehaviour {
 
 	void ShootTrailer(){
 		GameObject trailBoi = Instantiate (trailObject, transform.position, transform.rotation);
-		trailBoi.GetComponent<Rigidbody2D> ().velocity = gameObject.GetComponent<Rigidbody2D> ().velocity * 25;
+		trailBoi.GetComponent<Rigidbody2D> ().velocity = gameObject.GetComponent<Rigidbody2D> ().velocity * 20;
 		if(gameObject.activeSelf){
 			StartCoroutine(DestroyTrailBoi (0.5f, trailBoi));
 		}
