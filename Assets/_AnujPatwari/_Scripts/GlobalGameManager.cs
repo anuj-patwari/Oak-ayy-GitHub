@@ -15,6 +15,14 @@ public class GlobalGameManager : MonoBehaviour {
 
 
 
+	[SerializeField]
+	AudioSource as1, as2;
+
+	[SerializeField]
+	AudioClip clip1, clip2, clip3, clip4, clip5, clip6;
+
+	bool changeMusic1, changeMusic2;
+
 	//Stars Collections from each level
 	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars3_1, stars3_2, stars3_3, stars3_4, stars4_1, stars4_2, stars4_3, stars4_4;
 	//Total stars collected
@@ -38,6 +46,48 @@ public class GlobalGameManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Delete)) {
 			if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
 				File.Delete (Application.persistentDataPath + "/playerInfo.dat");
+			}
+		}
+		if (changeMusic1) {
+			if (as2.volume < 1) {
+				as1.volume -= 0.0035f;
+				as2.volume += 0.0035f;
+			} else {
+				changeMusic1 = false;
+			}
+		}
+		if (changeMusic2) {
+			if (as1.volume < 1) {
+				as2.volume -= 0.0035f;
+				as1.volume += 0.0035f;
+			} else {
+				changeMusic2 = false;
+			}
+		}
+	}
+
+
+	public void MusicChange(short sceneNumber){
+		if (as1.volume == 1) {
+			changeMusic1 = true;
+			switch (sceneNumber) {
+			case 4:
+				as2.clip = clip4;
+				break;
+			case 6:
+				as2.clip = clip6;
+				break;
+			}
+		}
+		else{
+			changeMusic2 = true;
+			switch (sceneNumber) {
+			case 3:
+				as1.clip = clip3;
+				break;
+			case 5:
+				as1.clip = clip5;
+				break;
 			}
 		}
 	}
@@ -124,8 +174,6 @@ public class GlobalGameManager : MonoBehaviour {
 
 	public void NewGame ()
 	{
-		
-
 			worldsComplete = 0;
 			worldLevels = 1;
 			stars1_1 = 0;

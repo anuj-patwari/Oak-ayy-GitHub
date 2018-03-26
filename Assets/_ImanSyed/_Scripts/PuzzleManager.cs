@@ -20,6 +20,9 @@ public class PuzzleManager : MonoBehaviour {
 	[SerializeField]
 	short worldNum = 1;
 
+	[SerializeField]
+	GameObject rainEffect;
+
 	private bool rayHit;
 
 	void Start()
@@ -73,10 +76,15 @@ public class PuzzleManager : MonoBehaviour {
 								}
 								puzzlePiece.transform.position = pos;
 							}
-
 							puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
 							puzzlePiece.transform.rotation = Quaternion.Euler (hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
 							piecesPut++;
+							if (worldNum == 2) {
+								GameObject re = Instantiate (rainEffect, puzzlePiece.transform);
+								re.transform.localPosition = Vector3.zero;
+								puzzlePiece.transform.localScale = Vector3.one * 0.1f;
+							}
+
 						} 
 					}
 				} else {
