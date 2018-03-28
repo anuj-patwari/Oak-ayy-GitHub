@@ -13,13 +13,15 @@ public class GlobalGameManager : MonoBehaviour {
 	public short worldsComplete = 0;
 	public float worldLevels = 0;
 
-
+	public short animationIsPlaying;
 
 	[SerializeField]
 	AudioSource as1, as2;
 
 	[SerializeField]
 	AudioClip clip1, clip2, clip3, clip4, clip5, clip6;
+
+	GameObject tutorialParent;
 
 	bool changeMusic1 = true, changeMusic2;
 
@@ -41,17 +43,33 @@ public class GlobalGameManager : MonoBehaviour {
 		}
 	}
 
-
 	void Update(){
+		
+		if ((SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1" || SceneManager.GetActiveScene ().name == "3.1" || SceneManager.GetActiveScene ().name == "4.1") && tutorialParent == null) {
+			tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
+			if (animationIsPlaying == 0) {
+				animationIsPlaying = 1;
+				tutorialParent.GetComponent<Animator> ().enabled = true;
+			} 
+		}
+		if (tutorialParent != null) {
+			if (animationIsPlaying == 2) {
+				tutorialParent.SetActive (false);
+			} else {
+				if(Input.GetMouseButtonDown(0) && animationIsPlaying == 1){
+					animationIsPlaying = 2;
+					Save ();		
+				}
+			}
+		}
+
 		if (Input.GetKeyDown (KeyCode.Delete)) {
 			if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
 				File.Delete (Application.persistentDataPath + "/playerInfo.dat");
 			}
 		}
-		if (Input.GetKeyDown (KeyCode.Tab)) {
-			changeMusic2 = true;
-			changeMusic1 = false;
-		}
+			
+
 		if (changeMusic1) {
 			if (as2.volume < 1) {
 				as1.volume -= 0.0035f;
@@ -69,8 +87,6 @@ public class GlobalGameManager : MonoBehaviour {
 			}
 		}
 	}
-
-
 	public void MusicChange(short sceneNumber){
 		if (as1.volume == 1) {
 			changeMusic1 = true;
@@ -123,6 +139,8 @@ public class GlobalGameManager : MonoBehaviour {
 		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
 
 		PlayerData data = new PlayerData ();
+
+		data.animationIsPlaying = animationIsPlaying;
 		data.worldsComplete = worldsComplete;
 		data.levelsComplete = worldLevels;
 		data.stars1_1 = stars1_1;
@@ -154,6 +172,7 @@ public class GlobalGameManager : MonoBehaviour {
 			PlayerData data = (PlayerData)bf.Deserialize (file);
 			file.Close ();
 
+			animationIsPlaying = data.animationIsPlaying;
 			worldsComplete = data.worldsComplete;
 			worldLevels = data.levelsComplete;
 			stars1_1 = data.stars1_1;
@@ -178,6 +197,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 	public void NewGame ()
 	{
+		animationIsPlaying = 0;
 			worldsComplete = 0;
 			worldLevels = 1;
 			stars1_1 = 0;
@@ -208,6 +228,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 [Serializable]
 class PlayerData{
+	public short animationIsPlaying;
 	public short worldsComplete;
 	public float levelsComplete;
 	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars3_1, stars3_2, stars3_3, stars3_4, stars4_1, stars4_2, stars4_3, stars4_4, starCount;
