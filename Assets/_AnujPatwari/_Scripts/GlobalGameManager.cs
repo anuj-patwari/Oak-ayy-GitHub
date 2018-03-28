@@ -21,7 +21,7 @@ public class GlobalGameManager : MonoBehaviour {
 	[SerializeField]
 	AudioClip clip1, clip2, clip3, clip4, clip5, clip6;
 
-	bool changeMusic1, changeMusic2;
+	bool changeMusic1 = true, changeMusic2;
 
 	//Stars Collections from each level
 	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars3_1, stars3_2, stars3_3, stars3_4, stars4_1, stars4_2, stars4_3, stars4_4;
@@ -47,6 +47,10 @@ public class GlobalGameManager : MonoBehaviour {
 			if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
 				File.Delete (Application.persistentDataPath + "/playerInfo.dat");
 			}
+		}
+		if (Input.GetKeyDown (KeyCode.Tab)) {
+			changeMusic2 = true;
+			changeMusic1 = false;
 		}
 		if (changeMusic1) {
 			if (as2.volume < 1) {
