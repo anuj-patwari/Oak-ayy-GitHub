@@ -90,7 +90,7 @@ public class GlobalGameManager : MonoBehaviour {
 			}
 		}
 	}
-	public void MusicChange(short sceneNumber){
+	public void MusicChange(int sceneNumber){
 		if (as1.volume == 1) {
 			changeMusic1 = true;
 			switch (sceneNumber) {
@@ -121,6 +121,7 @@ public class GlobalGameManager : MonoBehaviour {
 			worldsComplete = worldNum;
 			ggm.Save ();
 		}
+		MusicChange (SceneManager.GetActiveScene().buildIndex);
 	}
 
 	public void LevelCompleted(float levelNumber)
