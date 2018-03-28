@@ -30,7 +30,7 @@ public class PC_UFO : MonoBehaviour {
 	}
 
 	void Update () {
-		if (ggm.animationIsPlaying == 2) {
+		if (ggm.canStart) {
 			if (!isStarted) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);

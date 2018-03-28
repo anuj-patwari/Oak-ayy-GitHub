@@ -14,6 +14,7 @@ public class GlobalGameManager : MonoBehaviour {
 	public float worldLevels = 0;
 
 	public short animationIsPlaying;
+	public bool canStart = true;
 
 	[SerializeField]
 	AudioSource as1, as2;
@@ -50,6 +51,7 @@ public class GlobalGameManager : MonoBehaviour {
 			if (animationIsPlaying == 0) {
 				animationIsPlaying = 1;
 				tutorialParent.GetComponent<Animator> ().enabled = true;
+				canStart = false;
 			} 
 		}
 		if (tutorialParent != null) {
@@ -58,6 +60,7 @@ public class GlobalGameManager : MonoBehaviour {
 			} else {
 				if(Input.GetMouseButtonDown(0) && animationIsPlaying == 1){
 					animationIsPlaying = 2;
+					canStart = true;
 					Save ();		
 				}
 			}
