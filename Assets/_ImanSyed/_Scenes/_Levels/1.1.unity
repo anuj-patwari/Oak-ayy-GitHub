@@ -1148,11 +1148,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4249996379685420, guid: 49107727da5219d47aa863b3084fece0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.375861
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 4249996379685420, guid: 49107727da5219d47aa863b3084fece0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.8972993
+      value: -6.83
       objectReference: {fileID: 0}
     - target: {fileID: 4249996379685420, guid: 49107727da5219d47aa863b3084fece0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1181,6 +1181,41 @@ Prefab:
     - target: {fileID: 1872484463490978, guid: 49107727da5219d47aa863b3084fece0, type: 2}
       propertyPath: m_Name
       value: Constellation Generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048794617487590, guid: 49107727da5219d47aa863b3084fece0,
+        type: 2}
+      propertyPath: randomSeed
+      value: -514493616
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048794617487590, guid: 49107727da5219d47aa863b3084fece0,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048794617487590, guid: 49107727da5219d47aa863b3084fece0,
+        type: 2}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048794617487590, guid: 49107727da5219d47aa863b3084fece0,
+        type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048794617487590, guid: 49107727da5219d47aa863b3084fece0,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048794617487590, guid: 49107727da5219d47aa863b3084fece0,
+        type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048794617487590, guid: 49107727da5219d47aa863b3084fece0,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49107727da5219d47aa863b3084fece0, type: 2}
