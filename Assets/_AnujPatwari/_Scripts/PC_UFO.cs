@@ -81,14 +81,12 @@ public class PC_UFO : MonoBehaviour {
 		if (col.gameObject.tag == "Meteor") {
 			GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
 			de.SetActive (true);
-			de.transform.localScale =  new Vector3 (0.1f, 0.1f, 0.1f);
 			Destroy (col.gameObject);
 			StartCoroutine(sms.RestartAfter (2));
 		}
 		if (col.gameObject.tag == "Planet") {
 			GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
 			de.SetActive (true);
-			de.transform.localScale =  new Vector3 (0.1f, 0.1f, 0.1f);
 			Destroy (gameObject);
 			sms.StartCoroutine(sms.RestartAfter (2));
 		}
