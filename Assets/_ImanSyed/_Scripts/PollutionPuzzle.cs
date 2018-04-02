@@ -4,22 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TorchPuzzle : MonoBehaviour {
-	public short currentIndex = 0;
+
+public class PollutionPuzzle : MonoBehaviour {
+
+	public short closeCount = 0;
 
 	[SerializeField]
 	Text t;
 
-	short worldNum = 3;
+	short worldNum = 4;
 
 	GlobalGameManager ggm;
 
 	void Start(){
 		ggm = FindObjectOfType<GlobalGameManager> ();
 	}
-
-	void Update(){
-		if (currentIndex == 4 && t.enabled == false) {
+	
+	void Update () {
+		if (closeCount == 4 && t.enabled == false) {
 			t.enabled = true;
 			ggm.WorldCompleted (worldNum);
 			StartCoroutine (LevelCompleted ());

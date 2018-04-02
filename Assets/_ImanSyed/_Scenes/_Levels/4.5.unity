@@ -160,13 +160,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 225025490}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 255594985}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252543711
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 255594987}
   - component: {fileID: 255594986}
   m_Layer: 0
-  m_Name: Torch (3)
+  m_Name: Factory 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,13 +304,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 255594984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 3
-  flameEffect: {fileID: 1479730093056280, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
-    type: 2}
-  effectPos: {fileID: 225025491}
 --- !u!23 &255594987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -484,13 +480,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 391153175}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1991742986}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &445935019
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +563,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445579477}
+      - m_Target: {fileID: 0}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -688,7 +684,7 @@ GameObject:
   - component: {fileID: 511873574}
   - component: {fileID: 511873573}
   m_Layer: 0
-  m_Name: Torch (1)
+  m_Name: Factory 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,13 +712,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 511873571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 0
-  flameEffect: {fileID: 1479730093056280, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
-    type: 2}
-  effectPos: {fileID: 1697443666}
 --- !u!23 &511873574
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1069,11 +1061,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1445579476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f699596501a502349a7dcd66606a01b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b0398ad216fde4db070107ec125ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentIndex: 0
-  t: {fileID: 998048165}
+  closeCount: 0
+  t: {fileID: 0}
 --- !u!4 &1445579478
 Transform:
   m_ObjectHideFlags: 0
@@ -1081,7 +1073,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1445579476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2773601, y: 10.738008, z: 1.5019531}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1163,7 +1155,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445579477}
+      - m_Target: {fileID: 0}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -1412,7 +1404,7 @@ GameObject:
   - component: {fileID: 1991742988}
   - component: {fileID: 1991742987}
   m_Layer: 0
-  m_Name: Torch (2)
+  m_Name: Factory 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1440,13 +1432,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1991742985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 1
-  flameEffect: {fileID: 1479730093056280, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
-    type: 2}
-  effectPos: {fileID: 391153176}
 --- !u!23 &1991742988
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1719,7 +1707,7 @@ GameObject:
   - component: {fileID: 2124578744}
   - component: {fileID: 2124578743}
   m_Layer: 0
-  m_Name: Torch
+  m_Name: Factory 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1747,13 +1735,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2124578741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 2
-  flameEffect: {fileID: 1479730093056280, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
-    type: 2}
-  effectPos: {fileID: 2146336819}
 --- !u!23 &2124578744
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1828,10 +1812,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2146336818}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2124578742}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

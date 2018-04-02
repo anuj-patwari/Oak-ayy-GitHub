@@ -20,10 +20,10 @@ public class TorchScript : MonoBehaviour {
 
 	void OnMouseDown(){
 		if (tp.currentIndex == myValue) {
-			GameObject effect = Instantiate (flameEffect, effectPos.position, Quaternion.identity, transform);
+			GameObject effect = Instantiate (flameEffect, effectPos.position, Quaternion.identity, effectPos);
 			tp.currentIndex++;
 		} else {
-			tp.Mistake ();
+			tp.Restart ();
 		}
 	}
 }
