@@ -30,7 +30,7 @@ public class PullPlanetScript : MonoBehaviour {
 	void Start () {
 		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
 		if (areaOfEffect1 != null) {
-			if (planetType == Type.pull) {
+			if (planetType == Type.push) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.cyan;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.cyan;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.cyan;
