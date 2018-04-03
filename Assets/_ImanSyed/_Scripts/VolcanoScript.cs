@@ -24,6 +24,7 @@ public class VolcanoScript : MonoBehaviour {
 
 	void OnMouseDown(){
 		if (activated) {;
+			pc.SetActive (true);
 			transform.DetachChildren ();
 			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * speed);
 			pc.GetComponent<Animator> ().enabled = true;
@@ -34,6 +35,7 @@ public class VolcanoScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.tag == "Player" && !activated) {
 			col.gameObject.transform.SetParent (transform);
+			col.gameObject.SetActive (false);
 			pc = col.gameObject;
 			pc.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 			pc.GetComponent<Animator> ().enabled = false;
