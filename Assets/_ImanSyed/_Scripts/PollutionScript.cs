@@ -13,6 +13,9 @@ public class PollutionScript : MonoBehaviour {
 	[SerializeField]
 	Transform smokePos;
 
+	[SerializeField]
+	Quaternion rot;
+
 	GameObject effect;
 
 	void Start () {
@@ -23,7 +26,7 @@ public class PollutionScript : MonoBehaviour {
 	void Update () {
 		if (!closed) {
 			if (smokeOn && effect == null) {
-				effect = Instantiate (smokeEffect, smokePos.position, Quaternion.identity, smokePos);
+				effect = Instantiate (smokeEffect, smokePos.position, rot, smokePos);
 			}
 			if (!smokeOn) {
 				Destroy (effect);
