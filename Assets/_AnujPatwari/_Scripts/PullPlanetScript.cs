@@ -105,9 +105,11 @@ public class PullPlanetScript : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D col){
-		if (gameObject.tag == "Rubber") {
-			GetComponent<Animator> ().SetTrigger("Rubber Bounce");
+	void OnColliderEnter2D(Collider2D col){
+		if (col.tag == "Player") {
+			if (gameObject.tag == "Rubber") {
+				GetComponent<Animator> ().SetTrigger ("Rubber Bounce");
+			}
 		}
 	}
 }
