@@ -4,21 +4,35 @@ using UnityEngine;
 
 public class VolcanoScript : MonoBehaviour {
 
-	bool activated;
+	bool activated, entered;
 	Vector3 rot;
 	GameObject pc;
 
 	[SerializeField]
 	float speed = 250, rotSpeed = 1;
 
+	bool lerpScale;
+
 	void Start () {
 		rot = Vector3.zero;
 	}
-	
+
 	void Update () {
 		if (activated) {
 			rot.z = rotSpeed; 
 			transform.Rotate (rot);
+		}
+		if (lerpScale) {
+			if (pc.transform.localScale.x > 0.1f) {
+				pc.transform.localScale = Vector3.Lerp (pc.transform.localScale, Vector3.zero, 0.075f);
+			} else {
+				activated = true;
+				lerpScale = false;
+				pc.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
+				pc.GetComponent<Animator> ().enabled = false;
+				pc.transform.SetParent (transform);
+				pc.SetActive (false);
+			}
 		}
 	}
 
@@ -26,22 +40,24 @@ public class VolcanoScript : MonoBehaviour {
 		if (activated) {;
 			pc.SetActive (true);
 			transform.DetachChildren ();
+			pc.transform.localScale = Vector3.one;
 			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * speed);
 			pc.GetComponent<Animator> ().enabled = true;
 			activated = false;
+			StartCoroutine (ExitVacuum ());
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		if (col.tag == "Player" && !activated) {
-			col.gameObject.transform.SetParent (transform);
-			col.gameObject.SetActive (false);
+		if (col.tag == "Player" && !activated && !entered) {
 			pc = col.gameObject;
-			pc.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
-			pc.GetComponent<Animator> ().enabled = false;
-			activated = true;
+			lerpScale = true;
+			entered = true;
 		}
 	}
 
-
+	IEnumerator ExitVacuum(){
+		yield return new WaitForSeconds (1);
+		entered = false;
+	}
 }
