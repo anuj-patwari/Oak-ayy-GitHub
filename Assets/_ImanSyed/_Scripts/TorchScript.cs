@@ -12,6 +12,9 @@ public class TorchScript : MonoBehaviour {
 	[SerializeField]
 	Transform effectPos;
 
+	[SerializeField]
+	Quaternion rot;
+
 	TorchPuzzle tp;
 
 	void Start(){
@@ -20,7 +23,7 @@ public class TorchScript : MonoBehaviour {
 
 	void OnMouseDown(){
 		if (tp.currentIndex == myValue) {
-			GameObject effect = Instantiate (flameEffect, effectPos.position, Quaternion.identity, effectPos);
+			GameObject effect = Instantiate (flameEffect, effectPos.position, rot, effectPos);
 			tp.currentIndex++;
 		} else {
 			tp.Restart ();

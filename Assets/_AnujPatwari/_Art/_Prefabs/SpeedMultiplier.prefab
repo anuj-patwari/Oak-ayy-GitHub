@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58633474366101672}
   - component: {fileID: 114016547933793444}
   m_Layer: 0
-  m_Name: SlowDownEffectCircle
+  m_Name: SpeedMultiplier
   m_TagString: Slow Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1058972617758492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: -4.74, z: 0}
+  m_LocalPosition: {x: -11.594095, y: -3.8885324, z: 0}
   m_LocalScale: {x: 5.762288, y: 5.762289, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b380672f76ce6b4793cdf0ea41cb360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedMultiplier: 1
 --- !u!212 &212133660617443902
 SpriteRenderer:
   m_ObjectHideFlags: 1
