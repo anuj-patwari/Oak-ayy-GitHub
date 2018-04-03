@@ -95,17 +95,11 @@ public class PC_UFO : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "Bubble") {
 			if (GetComponent<Rigidbody2D> ().velocity.magnitude > 2.5f) {
-				col.gameObject.GetComponent<Animator> ().Play ("Bubble Animation");
-				StartCoroutine (DestroyBubble (col.gameObject));
+				Destroy (col.gameObject);
 			} else {
 				Rest ();
 			}
 		}
-	}
-
-	IEnumerator DestroyBubble(GameObject bub){
-		yield return new WaitForSeconds (0.5f);
-		Destroy (bub);
 	}
 
 	IEnumerator DestroyTrailBoi(float delay, GameObject ob){

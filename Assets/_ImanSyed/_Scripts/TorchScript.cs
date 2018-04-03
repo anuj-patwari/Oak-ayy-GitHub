@@ -21,8 +21,6 @@ public class TorchScript : MonoBehaviour {
 		tp = FindObjectOfType<TorchPuzzle> ();
 	}
 
-
-
 	void OnMouseDown(){
 		if (tp.currentIndex == myValue) {
 			GameObject effect = Instantiate (flameEffect, effectPos.position, rot, effectPos);
