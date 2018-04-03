@@ -97,7 +97,6 @@ public class PC_UFO : MonoBehaviour {
 			if (GetComponent<Rigidbody2D> ().velocity.magnitude > 2.5f) {
 				col.gameObject.GetComponent<Animator> ().Play ("Bubble Animation");
 				StartCoroutine (DestroyBubble (col.gameObject));
-				Debug.Log (12);
 			} else {
 				Rest ();
 			}
