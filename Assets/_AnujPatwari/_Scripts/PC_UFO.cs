@@ -72,7 +72,7 @@ public class PC_UFO : MonoBehaviour {
 		}
 	}
 
-	void Rest(){
+	public void Rest(){
 		sms.RestartInstant ();
 	}
 
@@ -90,23 +90,9 @@ public class PC_UFO : MonoBehaviour {
 			Destroy (gameObject);
 			sms.StartCoroutine(sms.RestartAfter (2));
 		}
-		if (col.gameObject.tag == "Rubber") {
-			
-		}
-		if (col.gameObject.tag == "Bubble") {
-			if (GetComponent<Rigidbody2D> ().velocity.magnitude > 2.5f) {
-				col.gameObject.GetComponent<Animator> ().Play ("Bubble Animation");
-				StartCoroutine (DestroyBubble (col.gameObject));
-			} else {
-				Rest ();
-			}
-		}
 	}
 
-	IEnumerator DestroyBubble(GameObject bub){
-		yield return new WaitForSeconds (0.5f);
-		Destroy (bub);
-	}
+
 
 	IEnumerator DestroyTrailBoi(float delay, GameObject ob){
 		yield return new WaitForSeconds (delay);
