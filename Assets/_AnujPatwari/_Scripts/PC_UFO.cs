@@ -22,6 +22,11 @@ public class PC_UFO : MonoBehaviour {
 	SceneManagerScript sms;
 	GlobalGameManager ggm;
 
+	[SerializeField]
+	GameObject startEffect;
+
+	GameObject effect;
+
 	void Start(){
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		sms = FindObjectOfType<SceneManagerScript> ();
@@ -50,10 +55,15 @@ public class PC_UFO : MonoBehaviour {
 						}
 					}
 				}
-				GetComponent<MeshRenderer> ().material.color = Random.ColorHSV ();
-				
+				if (effect == null) {
+					effect = Instantiate (startEffect, transform.position, Quaternion.identity);
+				}
 			} else {
-				GetComponent<MeshRenderer> ().material.color = Color.white;
+
+				if (effect != null) {
+					Destroy (effect);
+				}
+
 				Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes (Camera.main);
 				bool visible = GeometryUtility.TestPlanesAABB (frustumPlanes, GetComponent<Renderer> ().bounds);
 				if (!visible) {
