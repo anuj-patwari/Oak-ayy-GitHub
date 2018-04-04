@@ -81,6 +81,7 @@ public class PullPlanetScript : MonoBehaviour {
 		if (hasMoon) {
 			GetComponent<Animator> ().SetFloat ("Mult", 1);
 		} else {
+			//GetComponentInParent<Transform>().localRotation = new Quaternion(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
 			GetComponent<Animator> ().SetFloat ("Mult", Random.Range (-2f, 2f)); 
 			if (GetComponent<Animator> ().speed > -0.25f && GetComponent<Animator> ().speed < 0.25f) {
 				RotSpeed ();

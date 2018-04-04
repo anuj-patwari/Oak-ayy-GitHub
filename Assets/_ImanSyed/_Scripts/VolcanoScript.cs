@@ -42,6 +42,7 @@ public class VolcanoScript : MonoBehaviour {
 			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * speed);
 			pc.GetComponent<Animator> ().enabled = true;
 			activated = false;
+			GetComponent<CircleCollider2D> ().enabled = false;
 			StartCoroutine (ExitVacuum ());
 		}
 	}
@@ -55,6 +56,7 @@ public class VolcanoScript : MonoBehaviour {
 
 	IEnumerator ExitVacuum(){
 		yield return new WaitForSeconds (1);
+		GetComponent<CircleCollider2D> ().enabled = true;
 		entered = false;
 	}
 

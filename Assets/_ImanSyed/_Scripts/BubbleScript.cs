@@ -11,7 +11,7 @@ public class BubbleScript : MonoBehaviour {
 				gameObject.GetComponent<Animator> ().Play ("Bubble Animation");
 				StartCoroutine (DestroyBubble (gameObject));
 			} else {
-				col.gameObject.GetComponent<PC_UFO>().Rest ();
+				Destroy (col.gameObject);
 			}
 		}
 	}

@@ -22,7 +22,6 @@ public class PC_UFO : MonoBehaviour {
 	SceneManagerScript sms;
 	GlobalGameManager ggm;
 
-
 	void Start(){
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		sms = FindObjectOfType<SceneManagerScript> ();
@@ -51,7 +50,10 @@ public class PC_UFO : MonoBehaviour {
 						}
 					}
 				}
+				GetComponent<MeshRenderer> ().material.color = Random.ColorHSV ();
+				
 			} else {
+				GetComponent<MeshRenderer> ().material.color = Color.white;
 				Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes (Camera.main);
 				bool visible = GeometryUtility.TestPlanesAABB (frustumPlanes, GetComponent<Renderer> ().bounds);
 				if (!visible) {
@@ -79,19 +81,21 @@ public class PC_UFO : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		if (col.gameObject.tag == "Meteor") {
-			GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
-			de.SetActive (true);
 			Destroy (col.gameObject);
-			StartCoroutine(sms.RestartAfter (2));
+			Destroy (gameObject);
 		}
 		if (col.gameObject.tag == "Planet") {
-			GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
-			de.SetActive (true);
+			
 			Destroy (gameObject);
-			sms.StartCoroutine(sms.RestartAfter (2));
+
 		}
 	}
 
+	void OnDestroy(){
+		GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
+		de.SetActive (true);
+		sms.StartCoroutine(sms.RestartAfter (2));
+	}
 
 
 	IEnumerator DestroyTrailBoi(float delay, GameObject ob){
