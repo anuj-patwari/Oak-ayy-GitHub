@@ -36,16 +36,14 @@ public class PullPlanetScript : MonoBehaviour {
 				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.cyan;
 				areaOfEffect4.GetComponent<SpriteRenderer> ().color = Color.cyan;
 				areaOfEffect5.GetComponent<SpriteRenderer> ().color = Color.cyan;
+				aoe.GetComponent<Animator> ().SetFloat("Mult", -1);
 			} else if (planetType == Type.none) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect4.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect5.GetComponent<SpriteRenderer> ().enabled = false;
-			} else {
-				aoe.GetComponent<Animator> ().SetFloat("Mult", -1);
-
-			}
+			} 
 		}
 		if (!hasMoon) {
 			Destroy (transform.GetChild (0).gameObject);
