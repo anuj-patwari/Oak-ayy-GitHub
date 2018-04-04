@@ -35,7 +35,7 @@ public class VolcanoScript : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if (activated) {;
+		if (activated) {
 			pc.SetActive (true);
 			transform.DetachChildren ();
 			pc.transform.localScale = Vector3.one;
