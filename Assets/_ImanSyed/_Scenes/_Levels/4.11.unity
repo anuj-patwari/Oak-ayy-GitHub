@@ -133,7 +133,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a66543d9919643b19a91ba6fb74a5fec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 255594987}
   - component: {fileID: 255594986}
   m_Layer: 0
-  m_Name: Torch (3)
+  m_Name: Chimney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 255594984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.65, y: 0, z: 0}
+  m_LocalPosition: {x: -0.649, y: 0, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.10000003, z: 0.10000003}
   m_Children:
   - {fileID: 225025491}
@@ -304,14 +304,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 255594984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 3
-  flameEffect: {fileID: 1615358819776734, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
+  smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
-  effectPos: {fileID: 225025491}
-  rot: {x: 90, y: 90, z: 90, w: 0}
+  smokePos: {fileID: 225025491}
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &255594987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -568,7 +567,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445579477}
+      - m_Target: {fileID: 0}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -689,7 +688,7 @@ GameObject:
   - component: {fileID: 511873574}
   - component: {fileID: 511873573}
   m_Layer: 0
-  m_Name: Torch (1)
+  m_Name: Chimney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,7 +701,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 511873571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.65}
+  m_LocalPosition: {x: 0, y: 0, z: 0.636}
   m_LocalScale: {x: 0.099999994, y: 0.10000003, z: 0.3000001}
   m_Children:
   - {fileID: 1697443666}
@@ -717,14 +716,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 511873571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 0
-  flameEffect: {fileID: 1615358819776734, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
+  smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
-  effectPos: {fileID: 1697443666}
-  rot: {x: 0, y: -90, z: 0, w: 0}
+  smokePos: {fileID: 1697443666}
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &511873574
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1136,10 +1134,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1445579476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f699596501a502349a7dcd66606a01b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b0398ad216fde4db070107ec125ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentIndex: 0
+  closeCount: 0
   t: {fileID: 998048165}
 --- !u!4 &1445579478
 Transform:
@@ -1230,7 +1228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445579477}
+      - m_Target: {fileID: 0}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -1479,7 +1477,7 @@ GameObject:
   - component: {fileID: 1991742988}
   - component: {fileID: 1991742987}
   m_Layer: 0
-  m_Name: Torch (2)
+  m_Name: Chimney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,7 +1490,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1991742985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.65, y: 0, z: 0}
+  m_LocalPosition: {x: 0.655, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.10000003, z: 0.1}
   m_Children:
   - {fileID: 391153176}
@@ -1507,14 +1505,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1991742985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 1
-  flameEffect: {fileID: 1615358819776734, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
+  smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
-  effectPos: {fileID: 391153176}
-  rot: {x: 0, y: 0, z: 90, w: 90}
+  smokePos: {fileID: 391153176}
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &1991742988
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1787,7 +1784,7 @@ GameObject:
   - component: {fileID: 2124578744}
   - component: {fileID: 2124578743}
   m_Layer: 0
-  m_Name: Torch
+  m_Name: Chimney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1800,7 +1797,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2124578741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.65}
+  m_LocalPosition: {x: 0, y: 0, z: -0.652}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.3}
   m_Children:
   - {fileID: 2146336819}
@@ -1815,14 +1812,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2124578741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbb37b9941450f4da98a5912ae35aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e9cc5948187f6641a090362b72bcb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myValue: 2
-  flameEffect: {fileID: 1615358819776734, guid: 72464c6b7f29e8c4f8a3a9cded3ab5b3,
+  smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
-  effectPos: {fileID: 2146336819}
-  rot: {x: 90, y: 0, z: 0, w: 0}
+  smokePos: {fileID: 2146336819}
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &2124578744
 MeshRenderer:
   m_ObjectHideFlags: 0
