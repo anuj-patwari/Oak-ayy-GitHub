@@ -9,7 +9,7 @@ public class VolcanoScript : MonoBehaviour {
 	GameObject pc;
 
 	[SerializeField]
-	float speed = 250, rotSpeed = 1;
+	float exitSpeed = 300, rotSpeed = 1;
 
 	void Start () {
 		rot = Vector3.zero;
@@ -39,7 +39,7 @@ public class VolcanoScript : MonoBehaviour {
 			pc.SetActive (true);
 			transform.DetachChildren ();
 			pc.transform.localScale = Vector3.one;
-			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * speed);
+			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * exitSpeed);
 			pc.GetComponent<Animator> ().enabled = true;
 			activated = false;
 			GetComponent<CircleCollider2D> ().enabled = false;
