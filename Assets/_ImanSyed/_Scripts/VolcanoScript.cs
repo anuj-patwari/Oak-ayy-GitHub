@@ -9,6 +9,9 @@ public class VolcanoScript : MonoBehaviour {
 	GameObject pc;
 
 	[SerializeField]
+	Transform exitPos;
+
+	[SerializeField]
 	float exitSpeed = 300, rotSpeed = 1;
 
 	void Start () {
@@ -38,6 +41,7 @@ public class VolcanoScript : MonoBehaviour {
 		if (activated) {
 			pc.SetActive (true);
 			transform.DetachChildren ();
+			pc.transform.position = exitPos.position;
 			pc.transform.localScale = Vector3.one;
 			pc.GetComponent<Rigidbody2D> ().AddForce ((pc.transform.position - transform.position).normalized * exitSpeed);
 			pc.GetComponent<Animator> ().enabled = true;
