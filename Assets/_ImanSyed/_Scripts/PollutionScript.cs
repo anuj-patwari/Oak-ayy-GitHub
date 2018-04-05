@@ -50,6 +50,7 @@ public class PollutionScript : MonoBehaviour {
 		if (!smokeOn) {
 			closed = true;
 			StopCoroutine ("ToggleSmoke");
+			pp.closeCount++;
 		}
 	}
 		
