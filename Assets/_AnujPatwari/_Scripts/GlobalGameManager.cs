@@ -45,7 +45,6 @@ public class GlobalGameManager : MonoBehaviour {
 		} else if (ggm != this) {
 			Destroy (gameObject);
 		}
-		PlaySoundEffect (1);
 	}
 
 	void Update(){
