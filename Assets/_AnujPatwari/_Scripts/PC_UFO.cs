@@ -94,10 +94,11 @@ public class PC_UFO : MonoBehaviour {
 			Destroy (col.gameObject);
 			Destroy (gameObject);
 		}
-		if (col.gameObject.tag == "Planet") {
-			
+		else if (col.gameObject.tag == "Planet") {
 			Destroy (gameObject);
-
+		}
+		else if (col.gameObject.tag == "Rubber") {
+			
 		}
 	}
 

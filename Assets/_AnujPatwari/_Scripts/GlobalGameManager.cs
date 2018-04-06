@@ -20,14 +20,17 @@ public class GlobalGameManager : MonoBehaviour {
 	AudioSource as1, as2;
 
 	[SerializeField]
-	AudioClip clip1, clip2, clip3, clip4, clip5, clip6;
+	AudioClip musicMenu, music1, music2, music3, music4, music5;
+
+	[SerializeField]
+	AudioClip rubberSoundEffect, pipeSoundEffect, starSoundEffect;
 
 	GameObject tutorialParent;
 
 	bool changeMusic1 = true, changeMusic2;
 
 	//Stars Collections from each level
-	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars3_1, stars3_2, stars3_3, stars3_4, stars4_1, stars4_2, stars4_3, stars4_4;
+	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars2_5, stars2_6, stars3_1, stars3_2, stars3_3, stars3_4, stars3_5, stars3_6, stars3_7, stars3_8, stars4_1, stars4_2, stars4_3, stars4_4, stars4_5, stars4_6, stars4_7, stars4_8, stars4_9, stars4_10;
 	//Total stars collected
 	public int starCount;
 	//Stars collected in current level
@@ -42,11 +45,12 @@ public class GlobalGameManager : MonoBehaviour {
 		} else if (ggm != this) {
 			Destroy (gameObject);
 		}
+		PlaySoundEffect (1);
 	}
 
 	void Update(){
 		
-		if ((SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1" || SceneManager.GetActiveScene ().name == "3.1" || SceneManager.GetActiveScene ().name == "4.1") && tutorialParent == null) {
+		if ((SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1") && tutorialParent == null) {
 			tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
 			if (animationIsPlaying == 0) {
 				animationIsPlaying = 1;
@@ -71,7 +75,6 @@ public class GlobalGameManager : MonoBehaviour {
 				File.Delete (Application.persistentDataPath + "/playerInfo.dat");
 			}
 		}
-			
 
 		if (changeMusic1) {
 			if (as2.volume < 1) {
@@ -90,15 +93,16 @@ public class GlobalGameManager : MonoBehaviour {
 			}
 		}
 	}
+
 	public void MusicChange(int sceneNumber){
 		if (as1.volume == 1) {
 			changeMusic1 = true;
 			switch (sceneNumber) {
 			case 4:
-				as2.clip = clip4;
+				as2.clip = music3;
 				break;
 			case 6:
-				as2.clip = clip6;
+				as2.clip = music5;
 				break;
 			}
 		}
@@ -106,12 +110,26 @@ public class GlobalGameManager : MonoBehaviour {
 			changeMusic2 = true;
 			switch (sceneNumber) {
 			case 3:
-				as1.clip = clip3;
+				as1.clip = music2;
 				break;
 			case 5:
-				as1.clip = clip5;
+				as1.clip = music4;
 				break;
 			}
+		}
+	}
+
+	public void PlaySoundEffect(int whichEffect){
+		switch (whichEffect) {
+		case 1:
+			as1.PlayOneShot (rubberSoundEffect);
+			break;
+		case 2: 
+			as1.PlayOneShot (pipeSoundEffect);
+			break;
+		case 3:
+			as1.PlayOneShot (starSoundEffect);
+			break;
 		}
 	}
 
@@ -155,14 +173,26 @@ public class GlobalGameManager : MonoBehaviour {
 		data.stars2_2 = stars2_2;
 		data.stars2_3 = stars2_3;
 		data.stars2_4 = stars2_4;
+		data.stars2_5 = stars2_5;
+		data.stars2_6 = stars2_6;
 		data.stars3_1 = stars3_1;
 		data.stars3_2 = stars3_2;
 		data.stars3_3 = stars3_3;
 		data.stars3_4 = stars3_4;
+		data.stars3_5 = stars3_5;
+		data.stars3_6 = stars3_6;
+		data.stars3_7 = stars3_7;
+		data.stars3_8 = stars3_8;
 		data.stars4_1 = stars4_1;
 		data.stars4_2 = stars4_2;
 		data.stars4_3 = stars4_3;
 		data.stars4_4 = stars4_4;
+		data.stars4_5 = stars4_5;
+		data.stars4_6 = stars4_6;
+		data.stars4_7 = stars4_7;
+		data.stars4_8 = stars4_8;
+		data.stars4_9 = stars4_9;
+		data.stars4_10 = stars4_10;
 		data.starCount = starCount;
 
 		bf.Serialize (file, data);
@@ -187,14 +217,26 @@ public class GlobalGameManager : MonoBehaviour {
 			stars2_2 = data.stars2_2;
 			stars2_3 = data.stars2_3;
 			stars2_4 = data.stars2_4;
+			stars2_5 = data.stars2_5;
+			stars2_6 = data.stars2_6;
 			stars3_1 = data.stars3_1;
 			stars3_2 = data.stars3_2;
 			stars3_3 = data.stars3_3;
 			stars3_4 = data.stars3_4;
+			stars3_5 = data.stars3_5;
+			stars3_6 = data.stars3_6;
+			stars3_7 = data.stars3_7;
+			stars3_8 = data.stars3_8;
 			stars4_1 = data.stars4_1;
 			stars4_2 = data.stars4_2;
 			stars4_3 = data.stars4_3;
 			stars4_4 = data.stars4_4;
+			stars4_5 = data.stars4_5;
+			stars4_6 = data.stars4_6;
+			stars4_7 = data.stars4_7;
+			stars4_8 = data.stars4_8;
+			stars4_9 = data.stars4_9;
+			stars4_10 = data.stars4_10;
 			starCount = data.starCount;
 		}
 	}
@@ -202,26 +244,9 @@ public class GlobalGameManager : MonoBehaviour {
 	public void NewGame ()
 	{
 		animationIsPlaying = 0;
-			worldsComplete = 0;
-			worldLevels = 1;
-			stars1_1 = 0;
-			stars1_2 = 0;
-			stars1_3 = 0;
-			stars1_4 = 0;
-			stars2_1 = 0;
-			stars2_2 = 0;
-			stars2_3 = 0;
-			stars2_4 = 0;
-			stars3_1 = 0;
-			stars3_2 = 0;
-			stars3_3 = 0;
-			stars3_4 = 0;
-			stars4_1 = 0;
-			stars4_2 = 0;
-			stars4_3 = 0;
-			stars4_4 = 0;
-			starCount = 0;
-
+		worldsComplete = 0;
+		worldLevels = 1;
+		stars1_1 = stars1_2 = stars1_3 = stars1_4 = stars2_1 = stars2_2 = stars2_3 = stars2_4 = stars2_5 = stars2_6 = stars3_1 = stars3_2 = stars3_3 = stars3_4 = stars3_5 = stars3_6 = stars3_7 = stars3_8 = stars4_1 = stars4_2 = stars4_3 = stars4_4 = stars4_5 = stars4_6 = stars4_7 = stars4_8 = stars4_9 = stars4_10 = starCount = 0;
 		Save ();
 		SceneManager.LoadScene ("WorldSelect");
 
@@ -229,11 +254,10 @@ public class GlobalGameManager : MonoBehaviour {
 }
 
 
-
 [Serializable]
 class PlayerData{
 	public short animationIsPlaying;
 	public short worldsComplete;
 	public float levelsComplete;
-	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars3_1, stars3_2, stars3_3, stars3_4, stars4_1, stars4_2, stars4_3, stars4_4, starCount;
+	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars2_5, stars2_6, stars3_1, stars3_2, stars3_3, stars3_4, stars3_5, stars3_6, stars3_7, stars3_8, stars4_1, stars4_2, stars4_3, stars4_4, stars4_5, stars4_6, stars4_7, stars4_8, stars4_9, stars4_10, starCount;
 }
