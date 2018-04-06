@@ -29,7 +29,9 @@ public class PollutionScript : MonoBehaviour {
 				effect = Instantiate (smokeEffect, smokePos.position, rot, smokePos);
 			}
 			if (!smokeOn) {
-				Destroy (effect);
+				var main = effect.GetComponent<ParticleSystem> ().main;
+				main.loop = false;
+				StartCoroutine (DestroyEffect ());
 			}
 		}
 	}
@@ -46,10 +48,16 @@ public class PollutionScript : MonoBehaviour {
 		}
 	}
 
+	IEnumerator DestroyEffect(){
+		yield return new WaitForSeconds (2f);
+		Destroy (effect);
+	}
+
 	void OnMouseDown(){
 		if (!smokeOn) {
 			closed = true;
 			StopCoroutine ("ToggleSmoke");
+			pp.closeCount++;
 		}
 	}
 		
