@@ -2117,12 +2117,12 @@ Prefab:
     - target: {fileID: 224626578320569450, guid: 72aece829f228744dbd89205da1701cc,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 1608
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 224626578320569450, guid: 72aece829f228744dbd89205da1701cc,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 1563
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 224626578320569450, guid: 72aece829f228744dbd89205da1701cc,
         type: 2}
@@ -2159,31 +2159,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1653663487}
-    - target: {fileID: 114136397121971486, guid: 72aece829f228744dbd89205da1701cc,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToWorldSelect
-      objectReference: {fileID: 0}
-    - target: {fileID: 114384211738416358, guid: 72aece829f228744dbd89205da1701cc,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1653663487}
-    - target: {fileID: 114384211738416358, guid: 72aece829f228744dbd89205da1701cc,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartInstant
-      objectReference: {fileID: 0}
     - target: {fileID: 114809551026474938, guid: 72aece829f228744dbd89205da1701cc,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1653663487}
-    - target: {fileID: 114809551026474938, guid: 72aece829f228744dbd89205da1701cc,
+    - target: {fileID: 114384211738416358, guid: 72aece829f228744dbd89205da1701cc,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLvl
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653663487}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72aece829f228744dbd89205da1701cc, type: 2}
   m_IsPrefabParent: 0
@@ -2836,12 +2821,15 @@ MonoBehaviour:
   canStart: 1
   as1: {fileID: 0}
   as2: {fileID: 0}
-  clip1: {fileID: 0}
-  clip2: {fileID: 0}
-  clip3: {fileID: 0}
-  clip4: {fileID: 0}
-  clip5: {fileID: 0}
-  clip6: {fileID: 0}
+  musicMenu: {fileID: 0}
+  music1: {fileID: 0}
+  music2: {fileID: 0}
+  music3: {fileID: 0}
+  music4: {fileID: 0}
+  music5: {fileID: 0}
+  rubberSoundEffect: {fileID: 0}
+  pipeSoundEffect: {fileID: 0}
+  starSoundEffect: {fileID: 0}
   stars1_1: 0
   stars1_2: 0
   stars1_3: 0
@@ -2850,14 +2838,26 @@ MonoBehaviour:
   stars2_2: 0
   stars2_3: 0
   stars2_4: 0
+  stars2_5: 0
+  stars2_6: 0
   stars3_1: 0
   stars3_2: 0
   stars3_3: 0
   stars3_4: 0
+  stars3_5: 0
+  stars3_6: 0
+  stars3_7: 0
+  stars3_8: 0
   stars4_1: 0
   stars4_2: 0
   stars4_3: 0
   stars4_4: 0
+  stars4_5: 0
+  stars4_6: 0
+  stars4_7: 0
+  stars4_8: 0
+  stars4_9: 0
+  stars4_10: 0
   starCount: 0
   currStars: 0
 --- !u!4 &1711537717
@@ -3636,6 +3636,20 @@ Prefab:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1653663487}
+    - target: {fileID: 224573948037835944, guid: 520286e87678dd844a89807c4a1a8cc2,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693709615882214, guid: 520286e87678dd844a89807c4a1a8cc2,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257899539645746, guid: 520286e87678dd844a89807c4a1a8cc2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 520286e87678dd844a89807c4a1a8cc2, type: 2}
   m_IsPrefabParent: 0
