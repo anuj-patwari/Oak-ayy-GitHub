@@ -8,12 +8,24 @@ public class CameraScroll : MonoBehaviour {
 
 	public Vector2 camBoundsMin, camBoundsMax;
 
+	Vector3 dragPos;
 
 	[SerializeField]
-	float scrollSpeed = 0.25f;
+	float scrollSpeed = 50f;
 
 	void Start(){
-		startPos = pos = transform.position;
+		startPos = pos = dragPos =  transform.position;
+	}
+
+	void Update(){
+		if (Input.GetMouseButton (0)) {
+			if (transform.position.x >= camBoundsMin.x && transform.position.x <= camBoundsMax.x && transform.position.y <= camBoundsMin.y && transform.position.y >= camBoundsMax.y) {
+				dragPos.x -= Input.GetAxis ("Mouse X") * scrollSpeed * Time.deltaTime;
+				dragPos.y -= Input.GetAxis ("Mouse Y") * scrollSpeed * Time.deltaTime;
+				transform.position = dragPos;
+			}
+		}
+
 	}
 
 	public void ReturnCamera(){
