@@ -20,6 +20,9 @@ public class SceneManagerScript : MonoBehaviour {
 	public static bool gameIsPaused = false;
 	public GameObject pauseMenuUI;
 
+	[SerializeField]
+	GameObject pauseButton, retryButton;
+
 	public GameObject loadingScreen;
 	public Slider slider;
 	public Text progressText;
@@ -76,6 +79,8 @@ public class SceneManagerScript : MonoBehaviour {
 		pauseMenuUI.SetActive (false);
 		Time.timeScale = 1f;
 		gameIsPaused = false;
+		pauseButton.SetActive (true);
+		retryButton.SetActive (true);
 	}
 
 	public void Pause()
@@ -83,6 +88,8 @@ public class SceneManagerScript : MonoBehaviour {
 		pauseMenuUI.SetActive (true);
 		Time.timeScale = 0f;
 		gameIsPaused = true;
+		pauseButton.SetActive (false);
+		retryButton.SetActive (false);
 	}
 
 	public void MainMenu()
