@@ -16,8 +16,7 @@ public class GlobalGameManager : MonoBehaviour {
 	public short animationIsPlaying;
 	public bool canStart = true;
 
-	[SerializeField]
-	AudioSource as1, as2;
+	public AudioSource as1, as2;
 
 	[SerializeField]
 	AudioClip musicMenu, music1, music2, music3, music4, music5;

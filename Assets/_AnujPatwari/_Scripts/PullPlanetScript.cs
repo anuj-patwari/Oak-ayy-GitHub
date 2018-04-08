@@ -31,19 +31,25 @@ public class PullPlanetScript : MonoBehaviour {
 		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
 		if (areaOfEffect1 != null) {
 			if (planetType == Type.push) {
-				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.cyan;
-				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.cyan;
-				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.cyan;
-				areaOfEffect4.GetComponent<SpriteRenderer> ().color = Color.cyan;
-				areaOfEffect5.GetComponent<SpriteRenderer> ().color = Color.cyan;
-				aoe.GetComponent<Animator> ().SetFloat("Mult", -1);
+				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.blue;
+				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.blue;
+				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.blue;
+				areaOfEffect4.GetComponent<SpriteRenderer> ().color = Color.blue;
+				areaOfEffect5.GetComponent<SpriteRenderer> ().color = Color.blue;
+				aoe.GetComponent<Animator> ().SetFloat ("Mult", -1);
 			} else if (planetType == Type.none) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect4.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect5.GetComponent<SpriteRenderer> ().enabled = false;
-			} 
+			} else if (planetType == Type.pull) {
+				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.red;
+				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.red;
+				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.red;
+				areaOfEffect4.GetComponent<SpriteRenderer> ().color = Color.red;
+				areaOfEffect5.GetComponent<SpriteRenderer> ().color = Color.red;
+			}
 		}
 		if (!hasMoon) {
 			Destroy (transform.GetChild (0).gameObject);

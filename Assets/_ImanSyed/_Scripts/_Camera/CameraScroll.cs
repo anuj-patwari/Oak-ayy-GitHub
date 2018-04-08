@@ -10,22 +10,33 @@ public class CameraScroll : MonoBehaviour {
 
 	Vector3 dragPos;
 
+	PC_UFO pc;
+
 	[SerializeField]
 	float scrollSpeed = 50f;
 
 	void Start(){
 		startPos = pos = dragPos =  transform.position;
+		pc = FindObjectOfType<PC_UFO> ();
 	}
 
 	void Update(){
-		if (Input.GetMouseButton (0)) {
+		if (Input.GetMouseButton (0) && !pc.isStarted) {
 			if (transform.position.x >= camBoundsMin.x && transform.position.x <= camBoundsMax.x && transform.position.y <= camBoundsMin.y && transform.position.y >= camBoundsMax.y) {
 				dragPos.x -= Input.GetAxis ("Mouse X") * scrollSpeed * Time.deltaTime;
 				dragPos.y -= Input.GetAxis ("Mouse Y") * scrollSpeed * Time.deltaTime;
-				transform.position = dragPos;
-			}
-		}
 
+			} else if (transform.position.x < camBoundsMin.x) {
+				dragPos.x = camBoundsMin.x;
+			} else if (transform.position.y > camBoundsMin.y) {
+				dragPos.y = camBoundsMin.y;
+			} else if (transform.position.x > camBoundsMax.x) {
+				dragPos.x = camBoundsMax.x;
+			} else if (transform.position.y < camBoundsMax.y) {
+				dragPos.y = camBoundsMax.y;
+			}
+			transform.position = dragPos;
+		}
 	}
 
 	public void ReturnCamera(){

@@ -10,11 +10,11 @@ public enum startDirection{
 public class PC_UFO : MonoBehaviour {
 
 	public float thrust;
-	bool isStarted, shiftCamera;
+	bool shiftCamera;
 
 	public startDirection sD;
 
-	public bool increaseVelocity;
+	public bool isStarted, increaseVelocity;
 
 	[SerializeField]
 	GameObject trailObject, deathEffect;

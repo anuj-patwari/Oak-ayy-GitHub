@@ -32,11 +32,14 @@ public class MainMenuManager : MonoBehaviour {
 		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
 			//when sound is on
 			soundToggleButton.sprite = toggleSoundSprite;
-			GetComponent<AudioSource> ().mute = true;
+			ggm.as1.mute = true;
+			ggm.as2.mute = true;
+
 		} else {
 			//when sound is off
 			soundToggleButton.sprite = toggleOrigSoundSprite;
-			GetComponent<AudioSource> ().mute = false;
+			ggm.as1.mute = false;
+			ggm.as2.mute = false;
 		}
 	}
 
