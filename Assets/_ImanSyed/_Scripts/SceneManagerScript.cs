@@ -201,50 +201,122 @@ public class SceneManagerScript : MonoBehaviour {
 			break;
 
 		case 9:
+			if (ggm.currStars > ggm.stars2_5) {
+				ggm.stars2_5 = ggm.currStars;
+			}
+			break;
+
+		case 10:
+			if (ggm.currStars > ggm.stars2_6) {
+				ggm.stars2_6 = ggm.currStars;
+			}
+			break;
+
+		case 11:
 			if (ggm.currStars > ggm.stars3_1) {
 				ggm.stars3_1 = ggm.currStars;
 			}
 			break;
 
-		case 10:
+		case 12:
 			if (ggm.currStars > ggm.stars3_2) {
 				ggm.stars3_2 = ggm.currStars;
 			}
 			break;
 
-		case 11:
+		case 13:
 			if (ggm.currStars > ggm.stars3_3) {
 				ggm.stars3_3 = ggm.currStars;
 			}
 			break;
 
-		case 12:
+		case 14:
 			if (ggm.currStars > ggm.stars3_4) {
 				ggm.stars3_4 = ggm.currStars;
 			}
 			break;
 
-		case 13:
+		case 15:
+			if (ggm.currStars > ggm.stars3_5) {
+				ggm.stars3_5 = ggm.currStars;
+			}
+			break;
+
+		case 16:
+			if (ggm.currStars > ggm.stars3_6) {
+				ggm.stars3_6 = ggm.currStars;
+			}
+			break;
+
+		case 17:
+			if (ggm.currStars > ggm.stars3_7) {
+				ggm.stars3_7 = ggm.currStars;
+			}
+			break;
+
+		case 18:
+			if (ggm.currStars > ggm.stars3_8) {
+				ggm.stars3_8 = ggm.currStars;
+			}
+			break;
+
+		case 19:
 			if (ggm.currStars > ggm.stars4_1) {
 				ggm.stars4_1 = ggm.currStars;
 			}
 			break;
 
-		case 14:
+		case 20:
 			if (ggm.currStars > ggm.stars4_2) {
 				ggm.stars4_2 = ggm.currStars;
 			}
 			break;
 
-		case 15:
+		case 21:
 			if (ggm.currStars > ggm.stars4_3) {
 				ggm.stars4_3 = ggm.currStars;
 			}
 			break;
 
-		case 16:
+		case 22:
 			if (ggm.currStars > ggm.stars4_4) {
 				ggm.stars4_4 = ggm.currStars;
+			}
+			break;
+
+		case 23:
+			if (ggm.currStars > ggm.stars4_5) {
+				ggm.stars4_5 = ggm.currStars;
+			}
+			break;
+
+		case 24:
+			if (ggm.currStars > ggm.stars4_6) {
+				ggm.stars4_6 = ggm.currStars;
+			}
+			break;
+
+		case 25:
+			if (ggm.currStars > ggm.stars4_7) {
+				ggm.stars4_7 = ggm.currStars;
+			}
+			break;
+
+		case 26:
+			if (ggm.currStars > ggm.stars4_8) {
+				ggm.stars4_8 = ggm.currStars;
+			}
+			break;
+
+		case 27:
+			if (ggm.currStars > ggm.stars4_9) {
+				ggm.stars4_9 = ggm.currStars;
+			}
+			break;
+
+		case 28:
+			if (ggm.currStars > ggm.stars4_10) {
+				ggm.stars4_10 = ggm.currStars;
 			}
 			break;
 		}
