@@ -22,6 +22,8 @@ public class PC_UFO : MonoBehaviour {
 	SceneManagerScript sms;
 	GlobalGameManager ggm;
 
+	float colRadius;
+
 	[SerializeField]
 	GameObject startEffect;
 
@@ -31,11 +33,13 @@ public class PC_UFO : MonoBehaviour {
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		sms = FindObjectOfType<SceneManagerScript> ();
 		InvokeRepeating ("ShootTrailer", 0, 0.5f);
+		colRadius = GetComponent<CircleCollider2D> ().radius;
 	}
 
 	void Update () {
 		if (ggm.canStart) {
 			if (!isStarted) {
+				
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
 				Debug.DrawRay (ray.origin, ray.direction * 10000, Color.green);
@@ -56,11 +60,13 @@ public class PC_UFO : MonoBehaviour {
 					}
 				}
 				if (effect == null) {
+					GetComponent<CircleCollider2D>().radius = 2f;
 					effect = Instantiate (startEffect, transform.position, Quaternion.identity);
 				}
 			} else {
 
 				if (effect != null) {
+					GetComponent<CircleCollider2D>().radius = colRadius;
 					Destroy (effect);
 				}
 

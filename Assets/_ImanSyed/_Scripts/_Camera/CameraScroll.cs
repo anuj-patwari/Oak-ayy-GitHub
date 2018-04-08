@@ -12,12 +12,12 @@ public class CameraScroll : MonoBehaviour {
 
 	PC_UFO pc;
 
-	[SerializeField]
-	float scrollSpeed = 50f;
+	float scrollSpeed;
 
 	void Start(){
 		startPos = pos = dragPos =  transform.position;
 		pc = FindObjectOfType<PC_UFO> ();
+		scrollSpeed = 25;
 	}
 
 	void Update(){
@@ -43,7 +43,7 @@ public class CameraScroll : MonoBehaviour {
 		transform.position = startPos;
 	}
 
-	public void ScrollUp(){
+	/*public void ScrollUp(){
 		pos.y += scrollSpeed;
 		transform.position = pos;
 		pos = transform.position;
@@ -65,7 +65,7 @@ public class CameraScroll : MonoBehaviour {
 		pos.x -= scrollSpeed;
 		transform.position = pos;
 		pos = transform.position;
-	}
+	}*/
 
 
 

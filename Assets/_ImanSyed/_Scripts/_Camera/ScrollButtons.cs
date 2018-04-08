@@ -49,7 +49,7 @@ public class ScrollButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 			break;
 		}
 			
-		if(up && gameObject.GetComponent<Image>().enabled){
+		/*if(up && gameObject.GetComponent<Image>().enabled){
 			cam.ScrollUp ();
 		}
 		if(down && gameObject.GetComponent<Image>().enabled){
@@ -60,7 +60,7 @@ public class ScrollButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 		}
 		if(left && gameObject.GetComponent<Image>().enabled){
 			cam.ScrollLeft ();
-		}
+		}*/
 	}
 
 	public void OnPointerDown(PointerEventData eventData){
