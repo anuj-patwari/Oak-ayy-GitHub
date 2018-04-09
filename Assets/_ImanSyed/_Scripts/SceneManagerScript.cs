@@ -332,7 +332,8 @@ public class SceneManagerScript : MonoBehaviour {
 	public void LevelCompletePopup()
 	{
 		levelCompPopup.SetActive (true);
-
+		pauseButton.SetActive (false);
+		retryButton.SetActive (false);
 		if (ggm.currStars > 0) 
 		{
 			star1.SetActive (true);
@@ -345,6 +346,7 @@ public class SceneManagerScript : MonoBehaviour {
 		{
 			star2.SetActive (true);
 		}
+
 	}
 
 	public void NextLvl()

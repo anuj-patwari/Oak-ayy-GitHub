@@ -60,12 +60,19 @@ public class GlobalGameManager : MonoBehaviour {
 				canStart = false;
 		//	} 
 		}
+<<<<<<< HEAD
 		/*if (tutorialParent != null) {
 			if (animationIsPlaying == 2) {
+=======
+		if (tutorialParent != null) {
+			if (animationIsPlaying == 3) {
+>>>>>>> d294d8da7d55a8045ad8fd1326b01466bc207004
 				tutorialParent.SetActive (false);
 			} else {
 				if(Input.GetMouseButtonDown(0) && animationIsPlaying == 1){
 					animationIsPlaying = 2;
+				}else if(Input.GetMouseButtonDown(0) && animationIsPlaying == 2){
+					animationIsPlaying = 3;
 					canStart = true;
 					Save ();		
 				}
