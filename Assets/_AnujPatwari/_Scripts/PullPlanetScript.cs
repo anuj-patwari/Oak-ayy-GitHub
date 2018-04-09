@@ -43,7 +43,6 @@ public class PullPlanetScript : MonoBehaviour {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.red;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.red;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.red;
-				Debug.Log (1);
 			}
 		}
 		if (!hasMoon) {
@@ -66,6 +65,7 @@ public class PullPlanetScript : MonoBehaviour {
 						Vector2 forceDirection = transform.position - playerCharacter.gameObject.transform.position;
 						playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
 						aoe.GetComponent<Animator> ().SetFloat ("Mult", 2);
+						playerCharacter.gameObject.GetComponent<MeshRenderer> ().material.SetColor ("_EmissionColor", Color.red);
 					} else if (planetType == Type.push) {
 						Vector2 forceDirection = playerCharacter.gameObject.transform.position - transform.position;
 						playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);

@@ -15,7 +15,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 	//public short animationIsPlaying;
 
-	public bool canStart = true;
+	public bool canStart = true, tutorialSkipped;
 
 	public AudioSource as1, as2;
 
@@ -36,12 +36,6 @@ public class GlobalGameManager : MonoBehaviour {
 	//Stars collected in current level
 	public int currStars;
 
-	SceneManagerScript sms;
-
-	void Start()
-	{
-		sms = GameObject.FindObjectOfType<SceneManagerScript> ();
-	}
 
 	void Awake() {
 		if (ggm == null) {
@@ -53,32 +47,20 @@ public class GlobalGameManager : MonoBehaviour {
 	}
 
 	void Update(){
-		
-		if ((SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1") && tutorialParent == null) {
-			tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
-			sms.skipButton.SetActive (true);
-			//if (animationIsPlaying == 0) {
-			//	animationIsPlaying = 1;
+
+		if(SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1"){
+
+			if (tutorialParent == null) {
+				tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
+			}
+			if (!tutorialSkipped) {
+				FindObjectOfType<SceneManagerScript> ().skipButton.SetActive (true);
 				tutorialParent.GetComponent<Animator> ().enabled = true;
 				canStart = false;
-		//	} 
-		}
-		/*if (tutorialParent != null) {
-			if (animationIsPlaying == 2) {
-		if (tutorialParent != null) {
-			if (animationIsPlaying == 3) {
-
+			}else{
 				tutorialParent.SetActive (false);
-			} else {
-				if(Input.GetMouseButtonDown(0) && animationIsPlaying == 1){
-					animationIsPlaying = 2;
-				}else if(Input.GetMouseButtonDown(0) && animationIsPlaying == 2){
-					animationIsPlaying = 3;
-					canStart = true;
-					Save ();		
-				}
 			}
-		}*/
+		}
 
 		if (Input.GetKeyDown (KeyCode.Delete)) {
 			if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
@@ -173,7 +155,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 		PlayerData data = new PlayerData ();
 
-		//data.animationIsPlaying = animationIsPlaying;
+		data.tutorialSkipped = tutorialSkipped;
 		data.worldsComplete = worldsComplete;
 		data.levelsComplete = worldLevels;
 		data.stars1_1 = stars1_1;
@@ -217,7 +199,7 @@ public class GlobalGameManager : MonoBehaviour {
 			PlayerData data = (PlayerData)bf.Deserialize (file);
 			file.Close ();
 
-			//animationIsPlaying = data.animationIsPlaying;
+			tutorialSkipped = data.tutorialSkipped;
 			worldsComplete = data.worldsComplete;
 			worldLevels = data.levelsComplete;
 			stars1_1 = data.stars1_1;
@@ -254,7 +236,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 	public void NewGame ()
 	{
-		//animationIsPlaying = 0;
+		tutorialSkipped = false;
 		worldsComplete = 0;
 		worldLevels = 1;
 		stars1_1 = stars1_2 = stars1_3 = stars1_4 = stars2_1 = stars2_2 = stars2_3 = stars2_4 = stars2_5 = stars2_6 = stars3_1 = stars3_2 = stars3_3 = stars3_4 = stars3_5 = stars3_6 = stars3_7 = stars3_8 = stars4_1 = stars4_2 = stars4_3 = stars4_4 = stars4_5 = stars4_6 = stars4_7 = stars4_8 = stars4_9 = stars4_10 = starCount = 0;
@@ -267,7 +249,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 [Serializable]
 class PlayerData{
-	public short animationIsPlaying;
+	public bool tutorialSkipped;
 	public short worldsComplete;
 	public float levelsComplete;
 	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars2_5, stars2_6, stars3_1, stars3_2, stars3_3, stars3_4, stars3_5, stars3_6, stars3_7, stars3_8, stars4_1, stars4_2, stars4_3, stars4_4, stars4_5, stars4_6, stars4_7, stars4_8, stars4_9, stars4_10, starCount;

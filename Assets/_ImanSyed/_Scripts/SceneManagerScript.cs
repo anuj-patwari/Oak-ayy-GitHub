@@ -165,6 +165,7 @@ public class SceneManagerScript : MonoBehaviour {
 		ggm.canStart = true;
 		skipButton.SetActive (false);
 		ggm.tutorialParent.SetActive (false);
+		ggm.tutorialSkipped = true;
 		ggm.Save ();
 
 	}
