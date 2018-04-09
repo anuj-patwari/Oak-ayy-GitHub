@@ -15,7 +15,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 	//public short animationIsPlaying;
 
-	public bool canStart = true, tutorialSkipped;
+	public bool canStart = true, tutorial1Skipped, tutorial2Skipped;
 
 	public AudioSource as1, as2;
 
@@ -48,16 +48,27 @@ public class GlobalGameManager : MonoBehaviour {
 
 	void Update(){
 
-		if(SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1"){
+		if (SceneManager.GetActiveScene ().name == "1.1") {
 
 			if (tutorialParent == null) {
 				tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
 			}
-			if (!tutorialSkipped) {
+			if (!tutorial1Skipped) {
 				FindObjectOfType<SceneManagerScript> ().skipButton.SetActive (true);
 				tutorialParent.GetComponent<Animator> ().enabled = true;
 				canStart = false;
-			}else{
+			} else {
+				tutorialParent.SetActive (false);
+			}
+		} else if (SceneManager.GetActiveScene ().name == "2.1") {
+			if (tutorialParent == null) {
+				tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
+			}
+			if (!tutorial2Skipped) {
+				FindObjectOfType<SceneManagerScript> ().skipButton.SetActive (true);
+				tutorialParent.GetComponent<Animator> ().enabled = true;
+				canStart = false;
+			} else {
 				tutorialParent.SetActive (false);
 			}
 		}
@@ -155,7 +166,8 @@ public class GlobalGameManager : MonoBehaviour {
 
 		PlayerData data = new PlayerData ();
 
-		data.tutorialSkipped = tutorialSkipped;
+		data.tutorial1Skipped = tutorial1Skipped;
+		data.tutorial2Skipped = tutorial2Skipped;
 		data.worldsComplete = worldsComplete;
 		data.levelsComplete = worldLevels;
 		data.stars1_1 = stars1_1;
@@ -199,7 +211,9 @@ public class GlobalGameManager : MonoBehaviour {
 			PlayerData data = (PlayerData)bf.Deserialize (file);
 			file.Close ();
 
-			tutorialSkipped = data.tutorialSkipped;
+
+			tutorial1Skipped = data.tutorial1Skipped;
+			tutorial2Skipped = data.tutorial2Skipped;
 			worldsComplete = data.worldsComplete;
 			worldLevels = data.levelsComplete;
 			stars1_1 = data.stars1_1;
@@ -236,7 +250,8 @@ public class GlobalGameManager : MonoBehaviour {
 
 	public void NewGame ()
 	{
-		tutorialSkipped = false;
+		tutorial1Skipped = false;
+		tutorial2Skipped = false;
 		worldsComplete = 0;
 		worldLevels = 1;
 		stars1_1 = stars1_2 = stars1_3 = stars1_4 = stars2_1 = stars2_2 = stars2_3 = stars2_4 = stars2_5 = stars2_6 = stars3_1 = stars3_2 = stars3_3 = stars3_4 = stars3_5 = stars3_6 = stars3_7 = stars3_8 = stars4_1 = stars4_2 = stars4_3 = stars4_4 = stars4_5 = stars4_6 = stars4_7 = stars4_8 = stars4_9 = stars4_10 = starCount = 0;
@@ -249,7 +264,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 [Serializable]
 class PlayerData{
-	public bool tutorialSkipped;
+	public bool tutorial1Skipped, tutorial2Skipped;
 	public short worldsComplete;
 	public float levelsComplete;
 	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars2_5, stars2_6, stars3_1, stars3_2, stars3_3, stars3_4, stars3_5, stars3_6, stars3_7, stars3_8, stars4_1, stars4_2, stars4_3, stars4_4, stars4_5, stars4_6, stars4_7, stars4_8, stars4_9, stars4_10, starCount;

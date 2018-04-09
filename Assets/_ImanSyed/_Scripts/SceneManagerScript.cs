@@ -162,11 +162,17 @@ public class SceneManagerScript : MonoBehaviour {
 	public void SkipTutorial()
 	{
 
+		if (myLevelNumber == 1) {
+			ggm.tutorial1Skipped = true;
+		} else if (myLevelNumber == 5) {
+			ggm.tutorial2Skipped = true;
+		}
 		ggm.canStart = true;
 		skipButton.SetActive (false);
 		ggm.tutorialParent.SetActive (false);
-		ggm.tutorialSkipped = true;
+
 		ggm.Save ();
+
 
 	}
 
