@@ -36,6 +36,9 @@ public class CameraScroll : MonoBehaviour {
 			if (Input.GetMouseButtonUp (0)) {
 				isPanning = false;
 			}
+
+			transform.position = dragPos;
+
 			if (transform.position.x >= camBoundsMin.x && transform.position.x <= camBoundsMax.x && transform.position.y <= camBoundsMin.y && transform.position.y >= camBoundsMax.y && isPanning) {
 				dragPos.x -= Input.GetAxis ("Mouse X") * scrollSpeed * Time.deltaTime;
 				dragPos.y -= Input.GetAxis ("Mouse Y") * scrollSpeed * Time.deltaTime;
@@ -48,7 +51,6 @@ public class CameraScroll : MonoBehaviour {
 			} else if (transform.position.y < camBoundsMax.y) {
 				dragPos.y = camBoundsMax.y;
 			}
-			transform.position = dragPos;
 		}
 	}
 
