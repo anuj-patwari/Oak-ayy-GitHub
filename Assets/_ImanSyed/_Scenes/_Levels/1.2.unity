@@ -241,6 +241,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64804708}
+--- !u!1 &71143385 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
+    type: 2}
+  m_PrefabInternal: {fileID: 218791877}
 --- !u!1001 &93929891
 Prefab:
   m_ObjectHideFlags: 0
@@ -596,17 +601,17 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 71143385}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1649691239}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect5
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1971113898}
     - target: {fileID: 4238640573149134, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -635,6 +640,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 37.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 1649691239}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 1971113898}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
@@ -2122,6 +2137,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &679094451 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
+    type: 2}
+  m_PrefabInternal: {fileID: 1336949804}
 --- !u!1 &907479763
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3281,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1246964470}
+--- !u!1 &1277168607 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1707573930756388, guid: d10cd17225ed49944aaff95f66a3ae81,
+    type: 2}
+  m_PrefabInternal: {fileID: 1336949804}
 --- !u!1 &1277432463
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,7 +3707,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 679094451}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -3693,6 +3718,16 @@ Prefab:
       propertyPath: areaOfEffect5
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 1277168607}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 1845234587}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
@@ -4625,6 +4660,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 744d4d157247e3f469a20764c99438f1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1649691239 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1707573930756388, guid: d10cd17225ed49944aaff95f66a3ae81,
+    type: 2}
+  m_PrefabInternal: {fileID: 218791877}
 --- !u!1001 &1653663486
 Prefab:
   m_ObjectHideFlags: 0
@@ -4881,8 +4921,6 @@ MonoBehaviour:
   areaOfEffect1: {fileID: 0}
   areaOfEffect2: {fileID: 0}
   areaOfEffect3: {fileID: 0}
-  areaOfEffect4: {fileID: 0}
-  areaOfEffect5: {fileID: 0}
   aoe: {fileID: 0}
   hasMoon: 0
   planetType: 2
@@ -5101,8 +5139,6 @@ MonoBehaviour:
   areaOfEffect1: {fileID: 0}
   areaOfEffect2: {fileID: 0}
   areaOfEffect3: {fileID: 0}
-  areaOfEffect4: {fileID: 0}
-  areaOfEffect5: {fileID: 0}
   aoe: {fileID: 0}
   hasMoon: 0
   planetType: 2
@@ -5221,6 +5257,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1794551277}
+--- !u!1 &1845234587 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1183308515194496, guid: d10cd17225ed49944aaff95f66a3ae81,
+    type: 2}
+  m_PrefabInternal: {fileID: 1336949804}
 --- !u!1 &1862858092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,8 +5607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d1bc0bce1b6fe478fb9d4c7096ffce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camBoundsMin: {x: 0, y: 1}
-  camBoundsMax: {x: 25, y: -1}
+  camBoundsMin: {x: 0, y: 0}
+  camBoundsMax: {x: 25, y: 0}
 --- !u!1 &1932775575
 GameObject:
   m_ObjectHideFlags: 0
@@ -5903,6 +5944,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1971113898 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1183308515194496, guid: d10cd17225ed49944aaff95f66a3ae81,
+    type: 2}
+  m_PrefabInternal: {fileID: 218791877}
 --- !u!1 &2009068224
 GameObject:
   m_ObjectHideFlags: 0

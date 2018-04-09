@@ -18,7 +18,7 @@ public class PullPlanetScript : MonoBehaviour {
 	float force;
 
 	[SerializeField]
-	GameObject areaOfEffect1, areaOfEffect2, areaOfEffect3, areaOfEffect4, areaOfEffect5, aoe;
+	GameObject areaOfEffect1, areaOfEffect2, areaOfEffect3, aoe;
 
 	[SerializeField]
 	bool hasMoon;
@@ -29,26 +29,21 @@ public class PullPlanetScript : MonoBehaviour {
 
 	void Start () {
 		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
-		if (areaOfEffect1 != null) {
+		if (areaOfEffect3 != null) {
 			if (planetType == Type.push) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.blue;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.blue;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.blue;
-				areaOfEffect4.GetComponent<SpriteRenderer> ().color = Color.blue;
-				areaOfEffect5.GetComponent<SpriteRenderer> ().color = Color.blue;
 				aoe.GetComponent<Animator> ().SetFloat ("Mult", -1);
 			} else if (planetType == Type.none) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().enabled = false;
-				areaOfEffect4.GetComponent<SpriteRenderer> ().enabled = false;
-				areaOfEffect5.GetComponent<SpriteRenderer> ().enabled = false;
 			} else if (planetType == Type.pull) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.red;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.red;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.red;
-				areaOfEffect4.GetComponent<SpriteRenderer> ().color = Color.red;
-				areaOfEffect5.GetComponent<SpriteRenderer> ().color = Color.red;
+				Debug.Log (1);
 			}
 		}
 		if (!hasMoon) {

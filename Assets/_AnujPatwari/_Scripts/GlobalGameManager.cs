@@ -57,11 +57,13 @@ public class GlobalGameManager : MonoBehaviour {
 			} 
 		}
 		if (tutorialParent != null) {
-			if (animationIsPlaying == 2) {
+			if (animationIsPlaying == 3) {
 				tutorialParent.SetActive (false);
 			} else {
 				if(Input.GetMouseButtonDown(0) && animationIsPlaying == 1){
 					animationIsPlaying = 2;
+				}else if(Input.GetMouseButtonDown(0) && animationIsPlaying == 2){
+					animationIsPlaying = 3;
 					canStart = true;
 					Save ();		
 				}
