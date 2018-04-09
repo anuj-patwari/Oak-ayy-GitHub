@@ -15,6 +15,9 @@ public class SceneManagerScript : MonoBehaviour {
 	[SerializeField]
 	GameObject camButtons;
 
+
+	public GameObject skipButton;
+
 	Camera cam;
 
 	public static bool gameIsPaused = false;

@@ -14,8 +14,6 @@ public class GlobalGameManager : MonoBehaviour {
 	public float worldLevels = 0;
 
 	//public short animationIsPlaying;
-	[SerializeField]
-	GameObject skipButton;
 
 	public bool canStart = true;
 
@@ -38,7 +36,12 @@ public class GlobalGameManager : MonoBehaviour {
 	//Stars collected in current level
 	public int currStars;
 
+	SceneManagerScript sms;
 
+	void Start()
+	{
+		sms = GameObject.FindObjectOfType<SceneManagerScript> ();
+	}
 
 	void Awake() {
 		if (ggm == null) {
@@ -53,7 +56,7 @@ public class GlobalGameManager : MonoBehaviour {
 		
 		if ((SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1") && tutorialParent == null) {
 			tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
-			skipButton.SetActive (true);
+			sms.skipButton.SetActive (true);
 			//if (animationIsPlaying == 0) {
 			//	animationIsPlaying = 1;
 				tutorialParent.GetComponent<Animator> ().enabled = true;
@@ -106,7 +109,7 @@ public class GlobalGameManager : MonoBehaviour {
 	{
 
 		canStart = true;
-		skipButton.SetActive (false);
+		sms.skipButton.SetActive (false);
 		tutorialParent.SetActive (false);
 		Save ();
 
