@@ -25,7 +25,7 @@ public class GlobalGameManager : MonoBehaviour {
 	[SerializeField]
 	AudioClip rubberSoundEffect, pipeSoundEffect, starSoundEffect;
 
-	GameObject tutorialParent;
+	public GameObject tutorialParent;
 
 	bool changeMusic1 = true, changeMusic2;
 
@@ -103,16 +103,6 @@ public class GlobalGameManager : MonoBehaviour {
 				changeMusic2 = false;
 			}
 		}
-	}
-
-	public void SkipTutorial()
-	{
-
-		canStart = true;
-		sms.skipButton.SetActive (false);
-		tutorialParent.SetActive (false);
-		Save ();
-
 	}
 
 	public void MusicChange(int sceneNumber){

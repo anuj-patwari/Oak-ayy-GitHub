@@ -159,6 +159,16 @@ public class SceneManagerScript : MonoBehaviour {
 		camButtons.SetActive (false);
 	}
 
+	public void SkipTutorial()
+	{
+
+		ggm.canStart = true;
+		skipButton.SetActive (false);
+		ggm.tutorialParent.SetActive (false);
+		ggm.Save ();
+
+	}
+
 	public void StarsCollected()
 	{
 		switch (myLevelNumber) {
