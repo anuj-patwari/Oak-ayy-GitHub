@@ -294,7 +294,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 1965170131}
+      objectReference: {fileID: 98385096}
     - target: {fileID: 4272426672929278, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
       propertyPath: m_LocalScale.y
       value: 2.07
@@ -311,9 +311,24 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0.487
       objectReference: {fileID: 0}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 870046130}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 1450350239}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &98385096 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
+    type: 2}
+  m_PrefabInternal: {fileID: 98385095}
 --- !u!1001 &114790520
 Prefab:
   m_ObjectHideFlags: 0
@@ -628,12 +643,22 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 218791880}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 218791879}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &218791878 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 218791877}
 --- !u!1 &218791879 stripped
@@ -1019,6 +1044,16 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0.487
       objectReference: {fileID: 0}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 462114708}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 462114709}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
@@ -1029,7 +1064,7 @@ Transform:
   m_PrefabInternal: {fileID: 462114705}
 --- !u!1 &462114707 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 462114705}
 --- !u!1 &462114708 stripped
@@ -1776,6 +1811,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 5.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 1146239083}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 1146239084}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
@@ -1786,7 +1831,7 @@ Transform:
   m_PrefabInternal: {fileID: 1146239080}
 --- !u!1 &1146239082 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 1146239080}
 --- !u!1 &1146239083 stripped
@@ -2238,7 +2283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545414748}
   m_Layer: 0
-  m_Name: Push Planet (2)
+  m_Name: Decoy Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2621,8 +2666,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldsComplete: 0
   worldLevels: 0
-  animationIsPlaying: 0
   canStart: 1
+  tutorial1Skipped: 0
+  tutorial2Skipped: 0
   as1: {fileID: 0}
   as2: {fileID: 0}
   musicMenu: {fileID: 0}
@@ -2634,6 +2680,7 @@ MonoBehaviour:
   rubberSoundEffect: {fileID: 0}
   pipeSoundEffect: {fileID: 0}
   starSoundEffect: {fileID: 0}
+  tutorialParent: {fileID: 0}
   stars1_1: 0
   stars1_2: 0
   stars1_3: 0
@@ -2852,8 +2899,6 @@ MonoBehaviour:
   areaOfEffect1: {fileID: 0}
   areaOfEffect2: {fileID: 0}
   areaOfEffect3: {fileID: 0}
-  areaOfEffect4: {fileID: 0}
-  areaOfEffect5: {fileID: 0}
   aoe: {fileID: 0}
   hasMoon: 0
   planetType: 2
@@ -3088,11 +3133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camBoundsMin: {x: 75.91, y: 30}
   camBoundsMax: {x: 85, y: 0}
---- !u!1 &1965170131 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 98385095}
 --- !u!1001 &1978461758
 Prefab:
   m_ObjectHideFlags: 0

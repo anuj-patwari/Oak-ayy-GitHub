@@ -114,11 +114,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &11155338 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 117766367}
 --- !u!1001 &13552097
 Prefab:
   m_ObjectHideFlags: 0
@@ -247,7 +242,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 2000274044}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -472,12 +467,22 @@ Prefab:
       propertyPath: areaOfEffect5
       value: 
       objectReference: {fileID: 29195429}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 29195428}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 29195429}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &29195427 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 29195426}
 --- !u!1 &29195428 stripped
@@ -520,16 +525,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1983838, y: 1.2100105}
   m_EdgeRadius: 0
---- !u!1 &74905559 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 1150974151}
---- !u!1 &89635655 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 1789803758}
 --- !u!4 &93349017 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4912218230441326, guid: 744d4d157247e3f469a20764c99438f1,
@@ -724,7 +719,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 273555525}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -915,7 +910,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 11155338}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -1425,12 +1420,22 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0.442
       objectReference: {fileID: 0}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 218791879}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 218791880}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &218791878 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 218791877}
 --- !u!1 &218791879 stripped
@@ -1533,21 +1538,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1707573930756388, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 117766367}
---- !u!1 &273555525 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 105215038}
 --- !u!1 &298254120 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1183308515194496, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 1443500262}
---- !u!1 &315186988 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 1825884479}
 --- !u!4 &328612221 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4334573876531164, guid: d10cd17225ed49944aaff95f66a3ae81,
@@ -1821,11 +1816,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1524254251416462, guid: 520286e87678dd844a89807c4a1a8cc2,
     type: 2}
   m_PrefabInternal: {fileID: 1057748934}
---- !u!1 &530859667 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 1443500262}
 --- !u!4 &548966506 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4334573876531164, guid: d10cd17225ed49944aaff95f66a3ae81,
@@ -2104,12 +2094,22 @@ Prefab:
       propertyPath: areaOfEffect5
       value: 
       objectReference: {fileID: 766304662}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 766304661}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 766304662}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &766304660 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 766304659}
 --- !u!1 &766304661 stripped
@@ -2122,11 +2122,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1183308515194496, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 766304659}
---- !u!1 &803155518 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 1597247306}
 --- !u!1001 &854405236
 Prefab:
   m_ObjectHideFlags: 0
@@ -2255,7 +2250,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 1269941020}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -2328,11 +2323,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4334573876531164, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 198893175}
---- !u!1 &938687143 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 1568201122}
 --- !u!1001 &938971122
 Prefab:
   m_ObjectHideFlags: 0
@@ -2930,7 +2920,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 1745667997}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -3151,7 +3141,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 74905559}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -3353,12 +3343,22 @@ Prefab:
       propertyPath: areaOfEffect5
       value: 
       objectReference: {fileID: 1221413062}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect2
+      value: 
+      objectReference: {fileID: 1221413061}
+    - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
+        type: 2}
+      propertyPath: areaOfEffect3
+      value: 
+      objectReference: {fileID: 1221413062}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d10cd17225ed49944aaff95f66a3ae81, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1221413060 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
+  m_PrefabParentObject: {fileID: 1481239004149852, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 1221413059}
 --- !u!1 &1221413061 stripped
@@ -3376,11 +3376,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1183308515194496, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 1825884479}
---- !u!1 &1269941020 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 854405236}
 --- !u!4 &1270496036 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4334573876531164, guid: d10cd17225ed49944aaff95f66a3ae81,
@@ -3602,7 +3597,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 530859667}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -3848,7 +3843,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 938687143}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -4107,7 +4102,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 803155518}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -4441,8 +4436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldsComplete: 0
   worldLevels: 0
-  animationIsPlaying: 0
   canStart: 1
+  tutorial1Skipped: 0
+  tutorial2Skipped: 0
   as1: {fileID: 0}
   as2: {fileID: 0}
   musicMenu: {fileID: 0}
@@ -4454,6 +4450,7 @@ MonoBehaviour:
   rubberSoundEffect: {fileID: 0}
   pipeSoundEffect: {fileID: 0}
   starSoundEffect: {fileID: 0}
+  tutorialParent: {fileID: 0}
   stars1_1: 0
   stars1_2: 0
   stars1_3: 0
@@ -4533,11 +4530,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1707573930756388, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 105215038}
---- !u!1 &1745667997 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 1081293695}
 --- !u!4 &1758187714 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4334573876531164, guid: d10cd17225ed49944aaff95f66a3ae81,
@@ -4676,7 +4668,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 89635655}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -4876,7 +4868,7 @@ Prefab:
         type: 2}
       propertyPath: areaOfEffect1
       value: 
-      objectReference: {fileID: 315186988}
+      objectReference: {fileID: 0}
     - target: {fileID: 114163749918560980, guid: d10cd17225ed49944aaff95f66a3ae81,
         type: 2}
       propertyPath: areaOfEffect4
@@ -5519,11 +5511,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1707573930756388, guid: d10cd17225ed49944aaff95f66a3ae81,
     type: 2}
   m_PrefabInternal: {fileID: 1568201122}
---- !u!1 &2000274044 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1417605900299068, guid: d10cd17225ed49944aaff95f66a3ae81,
-    type: 2}
-  m_PrefabInternal: {fileID: 13552097}
 --- !u!114 &2041511502 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114081604683607088, guid: 520286e87678dd844a89807c4a1a8cc2,

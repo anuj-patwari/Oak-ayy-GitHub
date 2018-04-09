@@ -31,9 +31,9 @@ public class PullPlanetScript : MonoBehaviour {
 		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
 		if (areaOfEffect3 != null) {
 			if (planetType == Type.push) {
-				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.blue;
-				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.blue;
-				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.blue;
+				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.cyan;
+				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.cyan;
+				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.cyan;
 				aoe.GetComponent<Animator> ().SetFloat ("Mult", -1);
 			} else if (planetType == Type.none) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().enabled = false;
