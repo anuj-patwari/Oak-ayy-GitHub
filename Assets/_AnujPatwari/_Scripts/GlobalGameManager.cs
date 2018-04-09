@@ -13,7 +13,10 @@ public class GlobalGameManager : MonoBehaviour {
 	public short worldsComplete = 0;
 	public float worldLevels = 0;
 
-	public short animationIsPlaying;
+	//public short animationIsPlaying;
+	[SerializeField]
+	GameObject skipButton;
+
 	public bool canStart = true;
 
 	public AudioSource as1, as2;
@@ -50,13 +53,14 @@ public class GlobalGameManager : MonoBehaviour {
 		
 		if ((SceneManager.GetActiveScene ().name == "1.1" || SceneManager.GetActiveScene ().name == "2.1") && tutorialParent == null) {
 			tutorialParent = GameObject.FindGameObjectWithTag ("Tutorial");
-			if (animationIsPlaying == 0) {
-				animationIsPlaying = 1;
+			skipButton.SetActive (true);
+			//if (animationIsPlaying == 0) {
+			//	animationIsPlaying = 1;
 				tutorialParent.GetComponent<Animator> ().enabled = true;
 				canStart = false;
-			} 
+		//	} 
 		}
-		if (tutorialParent != null) {
+		/*if (tutorialParent != null) {
 			if (animationIsPlaying == 2) {
 				tutorialParent.SetActive (false);
 			} else {
@@ -66,7 +70,7 @@ public class GlobalGameManager : MonoBehaviour {
 					Save ();		
 				}
 			}
-		}
+		}*/
 
 		if (Input.GetKeyDown (KeyCode.Delete)) {
 			if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
@@ -90,6 +94,16 @@ public class GlobalGameManager : MonoBehaviour {
 				changeMusic2 = false;
 			}
 		}
+	}
+
+	public void SkipTutorial()
+	{
+
+		canStart = true;
+		skipButton.SetActive (false);
+		tutorialParent.SetActive (false);
+		Save ();
+
 	}
 
 	public void MusicChange(int sceneNumber){
@@ -160,7 +174,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 		PlayerData data = new PlayerData ();
 
-		data.animationIsPlaying = animationIsPlaying;
+		//data.animationIsPlaying = animationIsPlaying;
 		data.worldsComplete = worldsComplete;
 		data.levelsComplete = worldLevels;
 		data.stars1_1 = stars1_1;
@@ -204,7 +218,7 @@ public class GlobalGameManager : MonoBehaviour {
 			PlayerData data = (PlayerData)bf.Deserialize (file);
 			file.Close ();
 
-			animationIsPlaying = data.animationIsPlaying;
+			//animationIsPlaying = data.animationIsPlaying;
 			worldsComplete = data.worldsComplete;
 			worldLevels = data.levelsComplete;
 			stars1_1 = data.stars1_1;
@@ -241,7 +255,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 	public void NewGame ()
 	{
-		animationIsPlaying = 0;
+		//animationIsPlaying = 0;
 		worldsComplete = 0;
 		worldLevels = 1;
 		stars1_1 = stars1_2 = stars1_3 = stars1_4 = stars2_1 = stars2_2 = stars2_3 = stars2_4 = stars2_5 = stars2_6 = stars3_1 = stars3_2 = stars3_3 = stars3_4 = stars3_5 = stars3_6 = stars3_7 = stars3_8 = stars4_1 = stars4_2 = stars4_3 = stars4_4 = stars4_5 = stars4_6 = stars4_7 = stars4_8 = stars4_9 = stars4_10 = starCount = 0;
