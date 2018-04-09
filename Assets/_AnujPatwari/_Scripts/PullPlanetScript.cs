@@ -56,22 +56,30 @@ public class PullPlanetScript : MonoBehaviour {
 
 	void Update () {
 
-		if (Input.GetMouseButton (0) && pcIsIn) 
-		{
+		if (Input.GetMouseButton (0) && pcIsIn) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction );
-			Debug.DrawRay(ray.origin, ray.direction * 10000, Color.green);
+			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
+			Debug.DrawRay (ray.origin, ray.direction * 10000, Color.green);
 			if (hit.collider != null) {
 				if (hit.collider.gameObject == gameObject) {
 					if (planetType == Type.pull) {
 						Vector2 forceDirection = transform.position - playerCharacter.gameObject.transform.position;
 						playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
+						aoe.GetComponent<Animator> ().SetFloat ("Mult", 2);
 					} else if (planetType == Type.push) {
 						Vector2 forceDirection = playerCharacter.gameObject.transform.position - transform.position;
 						playerCharacter.AddForce (forceDirection.normalized * force * Time.deltaTime);
+						aoe.GetComponent<Animator> ().SetFloat ("Mult", -2);
 
 					}
 				}
+			}
+		} else {
+			if (planetType == Type.pull) {
+				aoe.GetComponent<Animator> ().SetFloat ("Mult", 1);
+			} else if (planetType == Type.push) {
+				aoe.GetComponent<Animator> ().SetFloat ("Mult", -1);
+
 			}
 		}
 	}
