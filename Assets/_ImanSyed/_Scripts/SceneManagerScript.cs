@@ -126,12 +126,14 @@ public class SceneManagerScript : MonoBehaviour {
 
 	public void ShowRestartUI()
 	{
+		levelCompPopupBackground.SetActive (true);
 		Time.timeScale = 0f;
 		restartUI.SetActive (true);
 	}
 
 	public void HideRestartUI()
 	{
+		levelCompPopupBackground.SetActive (false);
 		restartUI.SetActive (false);
 		Time.timeScale = 1f;
 	}
