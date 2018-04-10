@@ -88,6 +88,7 @@ public class SceneManagerScript : MonoBehaviour {
 	public void Resume()
 	{
 		pauseMenuUI.SetActive (false);
+		levelCompPopupBackground.SetActive (false);
 		Time.timeScale = 1f;
 		gameIsPaused = false;
 		pauseButton.SetActive (true);
@@ -97,6 +98,7 @@ public class SceneManagerScript : MonoBehaviour {
 	public void Pause()
 	{
 		pauseMenuUI.SetActive (true);
+		levelCompPopupBackground.SetActive (true);
 		Time.timeScale = 0f;
 		gameIsPaused = true;
 		pauseButton.SetActive (false);
@@ -360,6 +362,7 @@ public class SceneManagerScript : MonoBehaviour {
 	public void LevelCompletePopup()
 	{
 		levelCompPopup.SetActive (true);
+		levelCompPopupBackground.SetActive (true);
 		pauseButton.SetActive (false);
 		retryButton.SetActive (false);
 		if (ggm.currStars > 0) 
