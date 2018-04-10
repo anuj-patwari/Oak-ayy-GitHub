@@ -44,6 +44,9 @@ public class GlobalGameManager : MonoBehaviour {
 		} else if (ggm != this) {
 			Destroy (gameObject);
 		}
+		if (SceneManager.GetActiveScene ().name == "MainMenu" || SceneManager.GetActiveScene ().name == "WorldSelect") {
+			as2.Play ();
+		}
 	}
 
 	void Update(){

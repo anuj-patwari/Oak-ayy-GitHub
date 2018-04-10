@@ -23,7 +23,7 @@ public class CameraScroll : MonoBehaviour {
 	}
 
 	void Update(){
-		if (!pc.isStarted) {
+		if (!pc.isStarted && Time.timeScale == 1) {
 			if (Input.GetMouseButtonDown (0)) {
 				mouseOrigin = Input.mousePosition;
 				isPanning = false;
