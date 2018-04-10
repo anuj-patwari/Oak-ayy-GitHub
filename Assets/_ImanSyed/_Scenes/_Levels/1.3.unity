@@ -468,6 +468,26 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114971357565898666, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653663487}
+    - target: {fileID: 114971357565898666, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677479730145138, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653663487}
+    - target: {fileID: 114677479730145138, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63e3bdcceb8e45340a027046310eb875, type: 2}
   m_IsPrefabParent: 0
@@ -4234,6 +4254,36 @@ Prefab:
       propertyPath: m_Name
       value: LevelCompletePopup
       objectReference: {fileID: 0}
+    - target: {fileID: 114053654579127102, guid: 525cfa9382ec3864ba7ba178bf2bba0b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653663487}
+    - target: {fileID: 114053654579127102, guid: 525cfa9382ec3864ba7ba178bf2bba0b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToWorldSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508794661798152, guid: 525cfa9382ec3864ba7ba178bf2bba0b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653663487}
+    - target: {fileID: 114508794661798152, guid: 525cfa9382ec3864ba7ba178bf2bba0b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartInstant
+      objectReference: {fileID: 0}
+    - target: {fileID: 114716296979221890, guid: 525cfa9382ec3864ba7ba178bf2bba0b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653663487}
+    - target: {fileID: 114716296979221890, guid: 525cfa9382ec3864ba7ba178bf2bba0b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLvl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 525cfa9382ec3864ba7ba178bf2bba0b, type: 2}
   m_IsPrefabParent: 0
@@ -5838,8 +5888,8 @@ RectTransform:
   - {fileID: 650127514}
   - {fileID: 2041511507}
   - {fileID: 1209536227}
-  - {fileID: 109977393}
   - {fileID: 1397284155}
+  - {fileID: 109977393}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

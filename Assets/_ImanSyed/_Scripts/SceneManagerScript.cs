@@ -108,8 +108,8 @@ public class SceneManagerScript : MonoBehaviour {
 	public void MainMenu()
 	{
 		Time.timeScale = 1f;
-		ggm.MusicChange (0);
 		SceneManager.LoadScene ("MainMenu");
+		ggm.MusicChange (0);
 
 	}
 
