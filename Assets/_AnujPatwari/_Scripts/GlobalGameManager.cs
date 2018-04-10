@@ -44,6 +44,9 @@ public class GlobalGameManager : MonoBehaviour {
 		} else if (ggm != this) {
 			Destroy (gameObject);
 		}
+		if (SceneManager.GetActiveScene ().name == "MainMenu") {
+			as2.Play ();
+		}
 	}
 
 	void Update(){
@@ -82,16 +85,16 @@ public class GlobalGameManager : MonoBehaviour {
 
 		if (changeMusic1) {
 			if (as2.volume < 1) {
-				as1.volume -= 0.0035f;
-				as2.volume += 0.0035f;
+				as1.volume -= 0.005f;
+				as2.volume += 0.005f;
 			} else {
 				changeMusic1 = false;
 			}
 		}
-		if (changeMusic2) {
+		else if (changeMusic2) {
 			if (as1.volume < 1) {
-				as2.volume -= 0.0035f;
-				as1.volume += 0.0035f;
+				as2.volume -= 0.005f;
+				as1.volume += 0.005f;
 			} else {
 				changeMusic2 = false;
 			}
@@ -101,6 +104,11 @@ public class GlobalGameManager : MonoBehaviour {
 	public void MusicChange(int sceneNumber){
 		if (as1.volume == 1) {
 			changeMusic1 = true;
+
+
+		}
+		else{
+			changeMusic2 = true;
 			switch (sceneNumber) {
 			case 1:
 				as1.clip = music1;
@@ -115,10 +123,7 @@ public class GlobalGameManager : MonoBehaviour {
 				as1.clip = music4;
 				break;
 			}
-		}
-		else{
-			changeMusic2 = true;
-
+			as1.Play ();
 		}
 	}
 

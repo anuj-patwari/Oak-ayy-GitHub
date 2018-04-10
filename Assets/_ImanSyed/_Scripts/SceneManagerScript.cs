@@ -52,7 +52,6 @@ public class SceneManagerScript : MonoBehaviour {
 		levelCompPopup.SetActive (false);
 		if (myLevelNumber == 1) {
 			ggm.MusicChange (1);
-			Debug.Log (1);
 		}else if (myLevelNumber == 5) {
 			ggm.MusicChange (5);
 		}else if (myLevelNumber == 11) {
@@ -94,6 +93,7 @@ public class SceneManagerScript : MonoBehaviour {
 		gameIsPaused = false;
 		pauseButton.SetActive (true);
 		retryButton.SetActive (true);
+		Debug.Log (1234);
 	}
 
 	public void Pause()
