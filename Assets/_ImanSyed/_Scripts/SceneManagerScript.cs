@@ -50,7 +50,15 @@ public class SceneManagerScript : MonoBehaviour {
 		star2.SetActive (false);
 		star3.SetActive (false);
 		levelCompPopup.SetActive (false);
-
+		if (myLevelNumber == 1) {
+			ggm.MusicChange (1);
+		}else if (myLevelNumber == 5) {
+			ggm.MusicChange (5);
+		}else if (myLevelNumber == 11) {
+			ggm.MusicChange (11);
+		}else if (myLevelNumber == 19) {
+			ggm.MusicChange (19);
+		}
 	}
 
 	void Update ()

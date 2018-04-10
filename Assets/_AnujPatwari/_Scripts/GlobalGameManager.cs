@@ -102,24 +102,23 @@ public class GlobalGameManager : MonoBehaviour {
 		if (as1.volume == 1) {
 			changeMusic1 = true;
 			switch (sceneNumber) {
-			case 4:
-				as2.clip = music3;
+			case 1:
+				as1.clip = music3;
 				break;
-			case 6:
-				as2.clip = music5;
+			case 11:
+				as1.clip = music5;
+				break;
+			case 5:
+				as1.clip = music2;
+				break;
+			case 19:
+				as1.clip = music4;
 				break;
 			}
 		}
 		else{
 			changeMusic2 = true;
-			switch (sceneNumber) {
-			case 3:
-				as1.clip = music2;
-				break;
-			case 5:
-				as1.clip = music4;
-				break;
-			}
+
 		}
 	}
 

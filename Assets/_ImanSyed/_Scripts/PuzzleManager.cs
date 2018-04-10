@@ -28,6 +28,7 @@ public class PuzzleManager : MonoBehaviour {
 	void Start()
 	{
 		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
+		ggm.MusicChange (5);
 	}
 
 	void Update () {
