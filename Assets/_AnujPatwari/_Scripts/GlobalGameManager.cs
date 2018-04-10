@@ -101,6 +101,10 @@ public class GlobalGameManager : MonoBehaviour {
 	public void MusicChange(int sceneNumber){
 		if (as1.volume == 1) {
 			changeMusic1 = true;
+
+		}
+		else{
+			changeMusic2 = true;
 			switch (sceneNumber) {
 			case 1:
 				as1.clip = music1;
@@ -115,10 +119,7 @@ public class GlobalGameManager : MonoBehaviour {
 				as1.clip = music4;
 				break;
 			}
-		}
-		else{
-			changeMusic2 = true;
-
+			as1.Play ();
 		}
 	}
 

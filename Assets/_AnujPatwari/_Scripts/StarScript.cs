@@ -16,6 +16,7 @@ public class StarScript : MonoBehaviour {
 		if (col.gameObject.tag == "Player") 
 		{
 			ggm.currStars++;
+			ggm.PlaySoundEffect (3);
 			Destroy (gameObject);
 		}
 	}
