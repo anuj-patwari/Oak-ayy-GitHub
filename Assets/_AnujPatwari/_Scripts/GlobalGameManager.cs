@@ -103,10 +103,10 @@ public class GlobalGameManager : MonoBehaviour {
 			changeMusic1 = true;
 			switch (sceneNumber) {
 			case 1:
-				as1.clip = music3;
+				as1.clip = music1;
 				break;
 			case 11:
-				as1.clip = music5;
+				as1.clip = music3;
 				break;
 			case 5:
 				as1.clip = music2;

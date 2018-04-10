@@ -52,6 +52,7 @@ public class SceneManagerScript : MonoBehaviour {
 		levelCompPopup.SetActive (false);
 		if (myLevelNumber == 1) {
 			ggm.MusicChange (1);
+			Debug.Log (1);
 		}else if (myLevelNumber == 5) {
 			ggm.MusicChange (5);
 		}else if (myLevelNumber == 11) {
