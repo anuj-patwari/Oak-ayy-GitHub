@@ -38,7 +38,7 @@ public class SceneManagerScript : MonoBehaviour {
 
 	//Level Complete Popup
 	[SerializeField]
-	GameObject star1, star2, star3, levelCompPopup;
+	GameObject star1, star2, star3, levelCompPopup, levelCompPopupBackground;
 	PortalScript portScr;
 
 	void Start(){
