@@ -2540,6 +2540,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2041511508}
     m_Modifications:
+    - target: {fileID: 114454217792789654, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224122966026689100, guid: 63e3bdcceb8e45340a027046310eb875,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2654,6 +2659,31 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 114454217792789654, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454217792789654, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454217792789654, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653663487}
+    - target: {fileID: 114454217792789654, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: toggleSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 114454217792789654, guid: 63e3bdcceb8e45340a027046310eb875,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63e3bdcceb8e45340a027046310eb875, type: 2}
   m_IsPrefabParent: 0
@@ -2667,6 +2697,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1473832803338402, guid: 63e3bdcceb8e45340a027046310eb875,
     type: 2}
   m_PrefabInternal: {fileID: 671193226}
+--- !u!114 &671193229 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114164788306199362, guid: 63e3bdcceb8e45340a027046310eb875,
+    type: 2}
+  m_PrefabInternal: {fileID: 671193226}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &671607371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,6 +5577,23 @@ Prefab:
       propertyPath: levelCompPopupBackground
       value: 
       objectReference: {fileID: 1010997006}
+    - target: {fileID: 114850910659881582, guid: 5d28bf5eaa2018d4db6ed27d07d9091f,
+        type: 2}
+      propertyPath: soundOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 3469b583339be044681fb999b8f3b210,
+        type: 3}
+    - target: {fileID: 114850910659881582, guid: 5d28bf5eaa2018d4db6ed27d07d9091f,
+        type: 2}
+      propertyPath: soundOff
+      value: 
+      objectReference: {fileID: 21300000, guid: d32153096e6cfdf489624f5d5c9bffe4,
+        type: 3}
+    - target: {fileID: 114850910659881582, guid: 5d28bf5eaa2018d4db6ed27d07d9091f,
+        type: 2}
+      propertyPath: soundToggle
+      value: 
+      objectReference: {fileID: 671193229}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d28bf5eaa2018d4db6ed27d07d9091f, type: 2}
   m_IsPrefabParent: 0
