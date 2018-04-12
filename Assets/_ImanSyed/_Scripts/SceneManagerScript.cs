@@ -7,6 +7,12 @@ using UnityEngine.UI;
 public class SceneManagerScript : MonoBehaviour {
 
 	[SerializeField]
+	Sprite soundOff, soundOn;
+
+	[SerializeField]
+	Image soundToggle;
+
+	[SerializeField]
 	Slider cameraSlide;
 
 	[SerializeField]
@@ -59,6 +65,16 @@ public class SceneManagerScript : MonoBehaviour {
 		}else if (myLevelNumber == 19) {
 			ggm.MusicChange (19);
 		}
+
+
+		if (!ggm.as1.mute && !ggm.as2.mute) {
+			//when sound is on
+			soundToggle.sprite = soundOff;
+
+		} else if (ggm.as1.mute && ggm.as2.mute){
+			//when sound is off
+			soundToggle.sprite = soundOn;
+		}
 	}
 
 	void Update ()
@@ -70,6 +86,22 @@ public class SceneManagerScript : MonoBehaviour {
 			{
 				Pause ();
 			}
+		}
+	}
+
+	public void toggleSound()
+	{
+		if (!ggm.as1.mute && !ggm.as2.mute) {
+			//when sound is on
+			soundToggle.sprite = soundOn;
+			ggm.as1.mute = true;
+			ggm.as2.mute = true;
+
+		} else if (ggm.as1.mute && ggm.as2.mute){
+			//when sound is off
+			soundToggle.sprite = soundOff;
+			ggm.as1.mute = false;
+			ggm.as2.mute = false;
 		}
 	}
 
