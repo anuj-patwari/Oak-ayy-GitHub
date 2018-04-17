@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public enum Direction{
-	right, left, up, down
+	right, left, up, down, bottomRight, bottomLeft, topRight, topLeft
 }
 
 public class ScreenShift : MonoBehaviour {
@@ -43,6 +43,18 @@ public class ScreenShift : MonoBehaviour {
 				}
 				else if (dir == Direction.down) {
 					cam.transform.Translate (Vector2.down * shiftSpeed * multiplier);
+				}
+				else if (dir == Direction.bottomRight) {
+					cam.transform.Translate (new Vector2 (1,-1) * shiftSpeed * multiplier);
+				}
+				else if (dir == Direction.bottomLeft) {
+					cam.transform.Translate (new Vector2 (-1,-1) * shiftSpeed * multiplier);
+				}
+				else if (dir == Direction.topLeft) {
+					cam.transform.Translate (new Vector2 (-1,1) * shiftSpeed * multiplier);
+				}
+				else if (dir == Direction.topRight) {
+					cam.transform.Translate (new Vector2 (1,1) * shiftSpeed * multiplier);
 				}
 				counter++;
 			} else if(shiftEnabled != false) {
