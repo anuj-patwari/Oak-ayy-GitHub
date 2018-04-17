@@ -99,13 +99,11 @@ public class PC_UFO : MonoBehaviour {
 		if (col.gameObject.tag == "Meteor") {
 			Destroy (col.gameObject);
 			Destroy (gameObject);
-		}
-		else if (col.gameObject.tag == "Planet") {
+		} else if (col.gameObject.tag == "Planet") {
 			Destroy (gameObject);
-		}
-		else if (col.gameObject.tag == "Rubber") {
+		} else if (col.gameObject.tag == "Rubber") {
 			ggm.PlaySoundEffect (1);
-		}
+		} 
 	}
 
 	void OnDestroy(){
