@@ -30,7 +30,7 @@ public class GlobalGameManager : MonoBehaviour {
 	bool changeMusic1, changeMusic2;
 
 	//Stars Collections from each level
-	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars2_5, stars2_6, stars3_1, stars3_2, stars3_3, stars3_4, stars3_5, stars3_6, stars3_7, stars3_8, stars4_1, stars4_2, stars4_3, stars4_4, stars4_5, stars4_6, stars4_7, stars4_8, stars4_9, stars4_10;
+	public int stars1_1, stars1_2, stars1_3,  stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars2_5, stars2_6, stars3_1, stars3_2, stars3_3, stars3_4, stars3_5, stars3_6, stars3_7, stars3_8, stars4_1, stars4_2, stars4_3, stars4_4, stars4_5, stars4_6, stars4_7, stars4_8, stars4_9, stars4_10;
 	//Total stars collected
 	public int starCount;
 	//Stars collected in current level
@@ -46,6 +46,8 @@ public class GlobalGameManager : MonoBehaviour {
 		}
 		if (SceneManager.GetActiveScene ().name == "MainMenu" || SceneManager.GetActiveScene ().name == "WorldSelect") {
 			as2.Play ();
+		} else {
+			as1.Play ();
 		}
 	}
 

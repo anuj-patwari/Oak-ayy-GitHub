@@ -6,6 +6,8 @@ public class StarScript : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
+	public GameObject collectedEffect;
+
 	void Start()
 	{
 		ggm = FindObjectOfType<GlobalGameManager> ();
@@ -17,6 +19,8 @@ public class StarScript : MonoBehaviour {
 		{
 			ggm.currStars++;
 			ggm.PlaySoundEffect (3);
+			GameObject effect = Instantiate (collectedEffect, transform.position, transform.rotation);
+			effect.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
 			Destroy (gameObject);
 		}
 	}
