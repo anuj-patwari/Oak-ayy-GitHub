@@ -96,12 +96,16 @@ public class SceneManagerScript : MonoBehaviour {
 			soundToggle.sprite = soundOn;
 			ggm.as1.mute = true;
 			ggm.as2.mute = true;
+			ggm.muted = true;
+			ggm.Save ();
 
 		} else if (ggm.as1.mute && ggm.as2.mute){
 			//when sound is off
 			soundToggle.sprite = soundOff;
 			ggm.as1.mute = false;
 			ggm.as2.mute = false;
+			ggm.muted = false;
+			ggm.Save ();
 		}
 	}
 

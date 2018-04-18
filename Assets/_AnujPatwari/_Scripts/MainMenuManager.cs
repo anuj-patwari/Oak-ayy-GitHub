@@ -25,6 +25,12 @@ public class MainMenuManager : MonoBehaviour {
 	void Start () {
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		toggleOrigSoundSprite = soundToggleButton.sprite;
+		if (ggm.as1.mute) {
+			soundToggleButton.sprite = toggleSoundSprite;
+		}
+		else if (ggm.muted) {
+			toggleSoundSpriteFn ();
+		}
 	}
 
 	public void toggleSoundSpriteFn()
@@ -34,27 +40,34 @@ public class MainMenuManager : MonoBehaviour {
 			soundToggleButton.sprite = toggleSoundSprite;
 			ggm.as1.mute = true;
 			ggm.as2.mute = true;
+			ggm.muted = true;
+			ggm.Save ();
 
 		} else {
 			//when sound is off
 			soundToggleButton.sprite = toggleOrigSoundSprite;
 			ggm.as1.mute = false;
 			ggm.as2.mute = false;
+			ggm.muted = false;
+			ggm.Save ();
 		}
 	}
 
 	public void MainMenuPlayButton()
 	{
+		ggm.PlaySoundEffect (2);
 		SceneManager.LoadScene ("WorldSelect");
 	}
 
 	public void AppQuit()
 	{
+		ggm.PlaySoundEffect (2);
 		Application.Quit();
 	}
 
 	public void ShowNewGameButtonUI()
 	{
+		
 		newGameUI.SetActive (true);
 	}
 
@@ -65,6 +78,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void NewGame()
 	{
+		ggm.PlaySoundEffect (2);
 		ggm.NewGame ();
 	}
 }
