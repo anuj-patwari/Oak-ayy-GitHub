@@ -109,7 +109,8 @@ public class PC_UFO : MonoBehaviour {
 	void OnDestroy(){
 		GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
 		de.SetActive (true);
-		sms.StartCoroutine(sms.RestartAfter (2));
+		ggm.PlaySoundEffect (1);
+		sms.StartCoroutine(sms.RestartAfter (2.5f));
 	}
 
 

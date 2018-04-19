@@ -15,7 +15,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 	//public short animationIsPlaying;
 
-	public bool canStart = true, tutorial1Skipped, tutorial2Skipped;
+	public bool canStart = true, tutorial1Skipped, tutorial2Skipped, muted;
 
 	public AudioSource as1, as2;
 
@@ -23,7 +23,7 @@ public class GlobalGameManager : MonoBehaviour {
 	AudioClip musicMenu, music1, music2, music3, music4, music5;
 
 	[SerializeField]
-	AudioClip rubberSoundEffect, pipeSoundEffect, starSoundEffect;
+	AudioClip gameOverSoundEffect, clickSoundEffect, starSoundEffect;
 
 	public GameObject tutorialParent;
 
@@ -131,10 +131,10 @@ public class GlobalGameManager : MonoBehaviour {
 	public void PlaySoundEffect(int whichEffect){
 		switch (whichEffect) {
 		case 1:
-			as1.PlayOneShot (rubberSoundEffect);
+			as1.PlayOneShot (gameOverSoundEffect);
 			break;
 		case 2: 
-			as1.PlayOneShot (pipeSoundEffect);
+			as1.PlayOneShot (clickSoundEffect);
 			break;
 		case 3:
 			as1.PlayOneShot (starSoundEffect);
@@ -165,12 +165,14 @@ public class GlobalGameManager : MonoBehaviour {
 		ggm.Save ();
 	}
 
+
 	public void Save(){
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
 
 		PlayerData data = new PlayerData ();
 
+		data.muted = muted;
 		data.tutorial1Skipped = tutorial1Skipped;
 		data.tutorial2Skipped = tutorial2Skipped;
 		data.worldsComplete = worldsComplete;
@@ -216,7 +218,7 @@ public class GlobalGameManager : MonoBehaviour {
 			PlayerData data = (PlayerData)bf.Deserialize (file);
 			file.Close ();
 
-
+			muted = data.muted;
 			tutorial1Skipped = data.tutorial1Skipped;
 			tutorial2Skipped = data.tutorial2Skipped;
 			worldsComplete = data.worldsComplete;
@@ -269,7 +271,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 [Serializable]
 class PlayerData{
-	public bool tutorial1Skipped, tutorial2Skipped;
+	public bool tutorial1Skipped, tutorial2Skipped, muted;
 	public short worldsComplete;
 	public float levelsComplete;
 	public int stars1_1, stars1_2, stars1_3, stars1_4, stars2_1, stars2_2, stars2_3, stars2_4, stars2_5, stars2_6, stars3_1, stars3_2, stars3_3, stars3_4, stars3_5, stars3_6, stars3_7, stars3_8, stars4_1, stars4_2, stars4_3, stars4_4, stars4_5, stars4_6, stars4_7, stars4_8, stars4_9, stars4_10, starCount;
