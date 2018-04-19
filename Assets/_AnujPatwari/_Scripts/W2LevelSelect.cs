@@ -14,6 +14,9 @@ public class W2LevelSelect : MonoBehaviour {
 	[SerializeField]
 	Text t1, t2, t3, t4, t5, t6;
 
+	[SerializeField]
+	GameObject lock2, lock3, lock4, lock5, lock6, mainLock;
+
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
 		t1.text = ggm.stars2_1.ToString() + "/3";
@@ -28,26 +31,32 @@ public class W2LevelSelect : MonoBehaviour {
 		if (ggm.worldLevels >= 2.1f)
 		{
 			level2Button.GetComponent<Button> ().interactable = true;
+			lock2.SetActive (false);
 		}
 		if (ggm.worldLevels >= 2.2f)
 		{
 			level3Button.GetComponent<Button> ().interactable = true;
+			lock3.SetActive (false);
 		}
 		if (ggm.worldLevels >= 2.3f)
 		{
 			level4Button.GetComponent<Button> ().interactable = true;
+			lock4.SetActive (false);
 		}
 		if (ggm.worldLevels >= 2.4f)
 		{
 			level5Button.GetComponent<Button> ().interactable = true;
+			lock5.SetActive (false);
 		}
 		if (ggm.worldLevels >= 2.5f)
 		{
 			level6Button.GetComponent<Button> ().interactable = true;
+			lock6.SetActive (false);
 		}
 		if (ggm.worldLevels >= 2.6f)
 		{
 			miniGameButton.GetComponent<Button> ().interactable = true;
+			mainLock.SetActive (false);
 		}
 	}
 
