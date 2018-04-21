@@ -49,6 +49,8 @@ public class GlobalGameManager : MonoBehaviour {
 		} else {
 			as1.Play ();
 		}
+
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 	}
 
 	void Update(){
