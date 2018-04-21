@@ -11,20 +11,109 @@ public class W2LevelSelect : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
+	//Stars
 	[SerializeField]
-	Text t1, t2, t3, t4, t5, t6;
+	GameObject l1s1, l1s2, l1s3, l2s1, l2s2, l2s3, l3s1, l3s2, l3s3, l4s1, l4s2, l4s3, l5s1, l5s2, l5s3, l6s1, l6s2, l6s3;
+
+	//Star Back
+	[SerializeField]
+	GameObject l2StarBack, l3StarBack, l4StarBack, l5StarBack, l6StarBack;
+
 
 	[SerializeField]
 	GameObject lock2, lock3, lock4, lock5, lock6, mainLock;
 
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
-		t1.text = ggm.stars2_1.ToString() + "/3";
-		t2.text = ggm.stars2_2.ToString() + "/3";
-		t3.text = ggm.stars2_3.ToString() + "/3";
-		t4.text = ggm.stars2_4.ToString() + "/3";
-		t5.text = ggm.stars2_5.ToString() + "/3";
-		t6.text = ggm.stars2_6.ToString() + "/3";
+
+		if (ggm.stars2_1 >= 1) {
+
+			l1s1.SetActive (true);
+		}
+
+		if (ggm.stars2_1 >= 2) {
+
+			l1s2.SetActive (true);
+		}
+
+		if (ggm.stars2_1 >= 3) {
+
+			l1s3.SetActive (true);
+		}
+		if (ggm.stars2_2 >= 1) {
+
+			l2s1.SetActive (true);
+		}
+
+		if (ggm.stars2_2 >= 2) {
+
+			l2s2.SetActive (true);
+		}
+
+		if (ggm.stars2_2 >= 3) {
+
+			l2s3.SetActive (true);
+		}
+
+		if (ggm.stars2_3 >= 1) {
+
+			l3s1.SetActive (true);
+		}
+
+		if (ggm.stars2_3 >= 2) {
+
+			l3s2.SetActive (true);
+		}
+
+		if (ggm.stars2_3 >= 3) {
+
+			l3s3.SetActive (true);
+		}
+
+		if (ggm.stars2_4 >= 1) {
+
+			l4s1.SetActive (true);
+		}
+
+		if (ggm.stars2_4 >= 2) {
+
+			l4s2.SetActive (true);
+		}
+
+		if (ggm.stars2_4 >= 3) {
+
+			l4s3.SetActive (true);
+		}
+
+		if (ggm.stars2_5 >= 1) {
+
+			l5s1.SetActive (true);
+		}
+
+		if (ggm.stars2_5 >= 2) {
+
+			l5s2.SetActive (true);
+		}
+
+		if (ggm.stars2_5 >= 3) {
+
+			l5s3.SetActive (true);
+		}
+
+		if (ggm.stars2_6 >= 1) {
+
+			l6s1.SetActive (true);
+		}
+
+		if (ggm.stars2_6 >= 2) {
+
+			l6s2.SetActive (true);
+		}
+
+		if (ggm.stars2_6 >= 3) {
+
+			l6s3.SetActive (true);
+		}
 	}
 
 	void Update () {
@@ -32,26 +121,31 @@ public class W2LevelSelect : MonoBehaviour {
 		{
 			level2Button.GetComponent<Button> ().interactable = true;
 			lock2.SetActive (false);
+			l2StarBack.SetActive (true);
 		}
 		if (ggm.worldLevels >= 2.2f)
 		{
 			level3Button.GetComponent<Button> ().interactable = true;
 			lock3.SetActive (false);
+			l3StarBack.SetActive (true);
 		}
 		if (ggm.worldLevels >= 2.3f)
 		{
 			level4Button.GetComponent<Button> ().interactable = true;
 			lock4.SetActive (false);
+			l4StarBack.SetActive (true);
 		}
 		if (ggm.worldLevels >= 2.4f)
 		{
 			level5Button.GetComponent<Button> ().interactable = true;
 			lock5.SetActive (false);
+			l5StarBack.SetActive (true);
 		}
 		if (ggm.worldLevels >= 2.5f)
 		{
 			level6Button.GetComponent<Button> ().interactable = true;
 			lock6.SetActive (false);
+			l6StarBack.SetActive (true);
 		}
 		if (ggm.worldLevels >= 2.6f)
 		{
