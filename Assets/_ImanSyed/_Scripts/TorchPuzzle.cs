@@ -25,7 +25,7 @@ public class TorchPuzzle : MonoBehaviour {
 
 	void Start(){
 		ggm = FindObjectOfType<GlobalGameManager> ();
-		completed = true;
+		//completed = true;
 	}
 
 	void Update(){
@@ -38,7 +38,7 @@ public class TorchPuzzle : MonoBehaviour {
 		if (completed) {
 			lerp = Mathf.Lerp (lerp, 1, 0.0025f);
 			planet.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
-
+			Debug.Log ("ssss");
 		}
 	}
 
