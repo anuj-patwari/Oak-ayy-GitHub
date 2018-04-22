@@ -21,21 +21,33 @@ public class PuzzleManager : MonoBehaviour {
 	short worldNum = 1;
 
 	[SerializeField]
-	GameObject rainEffect;
+	GameObject rainEffect, planet, planetCore;
 
-	private bool rayHit;
+	[SerializeField]
+	Material healedMaterial, currMaterial;
+
+	private bool rayHit, completed;
+	float lerp = 0;
+
 
 	void Start()
 	{
-		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
-		ggm.MusicChange (5);
+		//ggm = GameObject.FindObjectOfType<GlobalGameManager>();
+		//ggm.MusicChange (5);
+		currMaterial = planet.GetComponent<MeshRenderer> ().material;
 	}
 
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
 			ggm.WorldCompleted (worldNum);
-			StartCoroutine (LevelCompleted ());
+			completed = true;
+			//StartCoroutine (LevelCompleted ());
+		}
+		if (completed && worldNum == 2) {
+			lerp = Mathf.Lerp (lerp, 1, 0.005f);
+			planet.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
+			planetCore.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {
