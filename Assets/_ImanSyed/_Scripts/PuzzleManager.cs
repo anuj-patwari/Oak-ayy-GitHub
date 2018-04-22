@@ -45,7 +45,7 @@ public class PuzzleManager : MonoBehaviour {
 			//StartCoroutine (LevelCompleted ());
 		}
 		if (completed && worldNum == 2) {
-			lerp = Mathf.Lerp (lerp, 1, 0.005f);
+			lerp = Mathf.Lerp (lerp, 1, 0.0025f);
 			planet.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
 			planetCore.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
 		}

@@ -16,15 +16,29 @@ public class TorchPuzzle : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
+	bool completed;
+
+	float lerp = 0;
+
+	[SerializeField]
+	GameObject planet;
+
 	void Start(){
 		ggm = FindObjectOfType<GlobalGameManager> ();
+		completed = true;
 	}
 
 	void Update(){
 		if (currentIndex == 4 && t.enabled == false) {
 			t.enabled = true;
 			ggm.WorldCompleted (worldNum);
-			StartCoroutine (LevelCompleted ());
+			completed = true;
+			//StartCoroutine (LevelCompleted ());
+		}
+		if (completed) {
+			lerp = Mathf.Lerp (lerp, 1, 0.0025f);
+			planet.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
+
 		}
 	}
 
