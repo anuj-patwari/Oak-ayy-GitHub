@@ -95,7 +95,7 @@ public class PuzzleManager : MonoBehaviour {
 							if (worldNum == 2) {
 								GameObject re = Instantiate (rainEffect, puzzlePiece.transform);
 								re.transform.localPosition = Vector3.zero;
-								puzzlePiece.transform.localScale = Vector3.one * 0.1f;
+								puzzlePiece.transform.localScale = new Vector3(0.1f, 0.1f, 1);
 							}
 
 						} 
