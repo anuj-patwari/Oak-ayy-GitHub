@@ -29,9 +29,11 @@ public class PollutionScript : MonoBehaviour {
 				effect = Instantiate (smokeEffect, smokePos.position, rot, smokePos);
 			}
 			if (!smokeOn) {
-				var main = effect.GetComponent<ParticleSystem> ().main;
-				main.loop = false;
-				StartCoroutine (DestroyEffect ());
+				if (effect != null) {
+					var main = effect.GetComponent<ParticleSystem> ().main;
+					main.loop = false;
+					StartCoroutine (DestroyEffect ());
+				}
 			}
 		}
 	}
