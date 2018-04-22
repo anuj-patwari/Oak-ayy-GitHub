@@ -11,21 +11,171 @@ public class W4LevelSelect : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
+	//Stars
 	[SerializeField]
-	Text t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
+	GameObject l1s1, l1s2, l1s3, l2s1, l2s2, l2s3, l3s1, l3s2, l3s3, l4s1, l4s2, l4s3, l5s1, l5s2, l5s3, l6s1, l6s2, l6s3, l7s1, l7s2, l7s3, l8s1, l8s2, l8s3, l9s1, l9s2, l9s3, l10s1, l10s2, l10s3;
+
+	//Star Back
+	[SerializeField]
+	GameObject l2StarBack, l3StarBack, l4StarBack, l5StarBack, l6StarBack, l7StarBack, l8StarBack, l9StarBack, l10StarBack;
+
+
+	[SerializeField]
+	GameObject lock2, lock3, lock4, lock5, lock6, lock7, lock8, lock9, lock10, mainLock;
 
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
-		t1.text = ggm.stars4_1.ToString() + "/3";
-		t2.text = ggm.stars4_2.ToString() + "/3";
-		t3.text = ggm.stars4_3.ToString() + "/3";
-		t4.text = ggm.stars4_4.ToString() + "/3";
-		t5.text = ggm.stars4_5.ToString() + "/3";
-		t6.text = ggm.stars4_6.ToString() + "/3";
-		t7.text = ggm.stars4_7.ToString() + "/3";
-		t8.text = ggm.stars4_8.ToString() + "/3";
-		t9.text = ggm.stars4_9.ToString() + "/3";
-		t10.text = ggm.stars4_10.ToString() + "/3";
+
+
+		if (ggm.stars4_1 >= 1) {
+
+			l1s1.SetActive (true);
+		}
+
+		if (ggm.stars4_1 >= 2) {
+
+			l1s2.SetActive (true);
+		}
+
+		if (ggm.stars4_1 >= 3) {
+
+			l1s3.SetActive (true);
+		}
+
+		if (ggm.stars4_2 >= 1) {
+
+			l2s1.SetActive (true);
+		}
+
+		if (ggm.stars4_2 >= 2) {
+
+			l2s2.SetActive (true);
+		}
+
+		if (ggm.stars4_2 >= 3) {
+
+			l2s3.SetActive (true);
+		}
+
+		if (ggm.stars4_3 >= 1) {
+
+			l3s1.SetActive (true);
+		}
+
+		if (ggm.stars4_3 >= 2) {
+
+			l3s2.SetActive (true);
+		}
+
+		if (ggm.stars4_3 >= 3) {
+
+			l3s3.SetActive (true);
+		}
+
+		if (ggm.stars4_4 >= 1) {
+
+			l4s1.SetActive (true);
+		}
+
+		if (ggm.stars4_4 >= 2) {
+
+			l4s2.SetActive (true);
+		}
+
+		if (ggm.stars4_4 >= 3) {
+
+			l4s3.SetActive (true);
+		}
+
+		if (ggm.stars4_5 >= 1) {
+
+			l5s1.SetActive (true);
+		}
+
+		if (ggm.stars4_5 >= 2) {
+
+			l5s2.SetActive (true);
+		}
+
+		if (ggm.stars4_5 >= 3) {
+
+			l5s3.SetActive (true);
+		}
+
+		if (ggm.stars4_6 >= 1) {
+
+			l6s1.SetActive (true);
+		}
+
+		if (ggm.stars4_6 >= 2) {
+
+			l6s2.SetActive (true);
+		}
+
+		if (ggm.stars4_6 >= 3) {
+
+			l6s3.SetActive (true);
+		}
+
+		if (ggm.stars4_7 >= 1) {
+
+			l7s1.SetActive (true);
+		}
+
+		if (ggm.stars4_7 >= 2) {
+
+			l7s2.SetActive (true);
+		}
+
+		if (ggm.stars4_7 >= 3) {
+
+			l7s3.SetActive (true);
+		}
+
+		if (ggm.stars4_8 >= 1) {
+
+			l8s1.SetActive (true);
+		}
+
+		if (ggm.stars4_8 >= 2) {
+
+			l8s2.SetActive (true);
+		}
+
+		if (ggm.stars4_8 >= 3) {
+
+			l8s3.SetActive (true);
+		}
+
+		if (ggm.stars4_9 >= 1) {
+
+			l9s1.SetActive (true);
+		}
+
+		if (ggm.stars4_9 >= 2) {
+
+			l9s2.SetActive (true);
+		}
+
+		if (ggm.stars4_9 >= 3) {
+
+			l9s3.SetActive (true);
+		}
+
+		if (ggm.stars4_10 >= 1) {
+
+			l10s1.SetActive (true);
+		}
+
+		if (ggm.stars4_10 >= 2) {
+
+			l10s2.SetActive (true);
+		}
+
+		if (ggm.stars4_10 >= 3) {
+
+			l10s3.SetActive (true);
+		}
 	}
 
 	void Update () {
