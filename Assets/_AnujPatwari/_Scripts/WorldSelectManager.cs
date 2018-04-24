@@ -25,14 +25,14 @@ public class WorldSelectManager : MonoBehaviour {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
 
 		w1Stars = ggm.stars1_1 + ggm.stars1_2 + ggm.stars1_3 + ggm.stars1_4;
-		w2Stars = ggm.stars2_1 + ggm.stars2_2 + ggm.stars2_3 + ggm.stars2_4;
-		w3Stars = ggm.stars3_1 + ggm.stars3_2 + ggm.stars3_3 + ggm.stars3_4;
-		w4Stars = ggm.stars4_1 + ggm.stars4_2 + ggm.stars4_3 + ggm.stars4_4;
+		w2Stars = ggm.stars2_1 + ggm.stars2_2 + ggm.stars2_3 + ggm.stars2_4 + ggm.stars2_5 + ggm.stars2_6;
+		w3Stars = ggm.stars3_1 + ggm.stars3_2 + ggm.stars3_3 + ggm.stars3_4 + ggm.stars3_5 + ggm.stars3_6 + ggm.stars3_7 + ggm.stars3_8;
+		w4Stars = ggm.stars4_1 + ggm.stars4_2 + ggm.stars4_3 + ggm.stars4_4 + ggm.stars4_5 + ggm.stars4_6 + ggm.stars4_7 + ggm.stars4_8 + ggm.stars4_9 + ggm.stars4_10;
 
 		t1.text = w1Stars.ToString() + "/12";
-		t2.text = w2Stars.ToString() + "/12";
-		t3.text = w3Stars.ToString() + "/12";
-		t4.text = w4Stars.ToString() + "/12";
+		t2.text = w2Stars.ToString() + "/18";
+		t3.text = w3Stars.ToString() + "/24";
+		t4.text = w4Stars.ToString() + "/30";
 	}
 	
 	void Update () {

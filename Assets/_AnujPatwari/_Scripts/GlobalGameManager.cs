@@ -268,6 +268,12 @@ public class GlobalGameManager : MonoBehaviour {
 		SceneManager.LoadScene ("WorldSelect");
 
 	}
+
+	public void hax()
+	{
+		worldsComplete = 10;
+		worldLevels = 10;
+	}
 }
 
 
