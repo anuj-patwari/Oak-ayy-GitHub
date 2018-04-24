@@ -55,7 +55,7 @@ public class PullPlanetScript : MonoBehaviour {
 
 	void Update () {
 
-		if (Input.GetMouseButton (0) && pcIsIn) {
+		if (Input.GetMouseButton (0) && pcIsIn && playerCharacter.gameObject.GetComponent<PC_UFO>().isStarted) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
 			Debug.DrawRay (ray.origin, ray.direction * 10000, Color.green);
