@@ -108,7 +108,6 @@ public class GlobalGameManager : MonoBehaviour {
 	public void MusicChange(int sceneNumber){
 		if (as1.volume == 1) {
 			changeMusic1 = true;
-
 		}
 		else{
 			changeMusic2 = true;

@@ -21,7 +21,9 @@ public class PuzzleManager : MonoBehaviour {
 	short worldNum = 1;
 
 	[SerializeField]
-	GameObject rainEffect, planet, planetCore;
+	GameObject rainEffect, planet, planetCore, highlightEffect;
+
+	GameObject highEffect;
 
 	[SerializeField]
 	Material healedMaterial, currMaterial;
@@ -62,6 +64,7 @@ public class PuzzleManager : MonoBehaviour {
 				if (!rs.enabled) {
 					rs.enabled = true;
 					if (hit.collider.tag == "Planet") {
+						highEffect = Instantiate (highlightEffect, hit.collider.gameObject.transform.position, hit.collider.gameObject.transform.rotation);
 						if (puzzlePiece.GetComponent<PuzzlePieceScript> ().pieceNum == hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().holeNum) {
 							if (worldNum == 1) {
 								puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
@@ -96,7 +99,6 @@ public class PuzzleManager : MonoBehaviour {
 								re.transform.localPosition = Vector3.zero;
 								puzzlePiece.transform.localScale = new Vector3(0.1f, 0.1f, 1);
 							}
-
 						} 
 					}
 				} else {
@@ -107,10 +109,14 @@ public class PuzzleManager : MonoBehaviour {
 					} 
 				}
 			} else {
+				if (highEffect) {
+					highEffect = null;
+				}
 				rs.enabled = true;
 			}
 		}
 	}
+
 	public void Restart(){
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
