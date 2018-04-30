@@ -35,14 +35,13 @@ public class PuzzleManager : MonoBehaviour {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
 		//ggm.MusicChange (5);
 		currMaterial = planet.GetComponent<MeshRenderer> ().material;
+		completed = true;
 	}
 
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
-			ggm.WorldCompleted (worldNum);
-			completed = true;
-			//StartCoroutine (LevelCompleted ());
+			ggm.WorldCompleted (worldNum);			//StartCoroutine (LevelCompleted ());
 		}
 		if (completed && worldNum == 2) {
 			lerp = Mathf.Lerp (lerp, 1, 0.0025f);

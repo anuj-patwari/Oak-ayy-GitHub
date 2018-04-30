@@ -39,10 +39,9 @@ public class PC_UFO : MonoBehaviour {
 	void Update () {
 		if (ggm.canStart) {
 			if (!isStarted) {
-				
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
-				Debug.DrawRay (ray.origin, ray.direction * 10000, Color.green);
+				Debug.DrawRay (ray.origin, ray.direction * 1000, Color.green);
 				if (hit.collider != null) {
 					if (hit.collider.gameObject == gameObject) {
 						isStarted = true;	
@@ -64,6 +63,12 @@ public class PC_UFO : MonoBehaviour {
 					effect = Instantiate (startEffect, transform.position, Quaternion.identity);
 				}
 			} else {
+
+				if (GetComponent<Rigidbody2D> ().velocity.magnitude >= 300) {
+					GetComponent<Rigidbody2D> ().drag = 3;
+				} else {
+					GetComponent<Rigidbody2D> ().drag = 0;
+				}
 
 				if (effect != null) {
 					GetComponent<CircleCollider2D>().radius = colRadius;
@@ -107,10 +112,10 @@ public class PC_UFO : MonoBehaviour {
 	}
 
 	void OnDestroy(){
-		GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
-		de.SetActive (true);
-		ggm.PlaySoundEffect (1);
-		sms.StartCoroutine(sms.RestartAfter (2.5f));
+			GameObject de = Instantiate (deathEffect, transform.position, Quaternion.identity);
+			de.SetActive (true);
+			ggm.PlaySoundEffect (1);
+			sms.StartCoroutine (sms.RestartAfter (2.5f));
 	}
 
 
