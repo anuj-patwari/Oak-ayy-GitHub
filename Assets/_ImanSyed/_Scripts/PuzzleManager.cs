@@ -37,7 +37,6 @@ public class PuzzleManager : MonoBehaviour {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
 		//ggm.MusicChange (5);
 		currMaterial = planet.GetComponent<MeshRenderer> ().material;
-		completed = true;
 	}
 
 	void Update () {
