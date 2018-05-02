@@ -43,13 +43,14 @@ public class PuzzleManager : MonoBehaviour {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
 			ggm.WorldCompleted (worldNum);			//StartCoroutine (LevelCompleted ());
+			completed = true;
 		}
 		if (completed && worldNum == 2) {
 			lerp = Mathf.Lerp (lerp, 1, 0.0025f);
 			planet.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
 			planetCore.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
-			planet.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.Lerp(planet.GetComponent<MeshRenderer> ().material.GetColor("_Tint"), Color.blue, 0.002f));
-			planetCore.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.Lerp(planet.GetComponent<MeshRenderer> ().material.GetColor("_Tint"), Color.blue, 0.002f));
+			planet.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.blue);
+			planetCore.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.blue);
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {
