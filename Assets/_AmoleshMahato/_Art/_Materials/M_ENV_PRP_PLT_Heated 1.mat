@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: M_ENV_PRP_PLT_Heated
-  m_Shader: {fileID: 4800000, guid: 27d42352f9654494797c506323e342ff, type: 3}
+  m_Name: M_ENV_PRP_PLT_Heated 1
+  m_Shader: {fileID: 4800000, guid: 9c6ece3d5ef8bb84db19471daaf6c788, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -77,7 +77,7 @@ Material:
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 0
     - _MKEditorShowMainBehavior: 1
-    - _MKEditorShowOutlineBehavior: 0
+    - _MKEditorShowOutlineBehavior: 1
     - _MKEditorShowReflectionBehavior: 0
     - _MKEditorShowRenderBehavior: 0
     - _MKEditorShowRimBehavior: 0
@@ -88,13 +88,15 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 0.02
+    - _Outline: 0.0287
+    - _OutlineSize: 0
     - _Parallax: 0.02
     - _RimIntensity: 0.5
     - _RimSize: 1.5
     - _RimSmoothness: 0.5
     - _ShadowIntensity: 1
     - _Shininess: 0.275
+    - _SilhouetteSize: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularIntensity: 0.5
@@ -102,11 +104,12 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.29411763, g: 0.47423923, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.2609213, g: 0.32125062, b: 0.9338235, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.5}
+    - _SilhouetteColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
-    - _Tint: {r: 1, g: 0, b: 0, a: 1}
+    - _Tint: {r: 0, g: 1, b: 0.91724133, a: 1}

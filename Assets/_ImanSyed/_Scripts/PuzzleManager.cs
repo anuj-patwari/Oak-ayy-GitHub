@@ -21,7 +21,7 @@ public class PuzzleManager : MonoBehaviour {
 	short worldNum = 1;
 
 	[SerializeField]
-	GameObject rainEffect, planet, planetCore, highlightEffect;
+	GameObject rainEffect, planet, planetCore;
 
 	GameObject highEffect;
 
@@ -37,7 +37,6 @@ public class PuzzleManager : MonoBehaviour {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
 		//ggm.MusicChange (5);
 		currMaterial = planet.GetComponent<MeshRenderer> ().material;
-		completed = true;
 	}
 
 	void Update () {
@@ -49,6 +48,8 @@ public class PuzzleManager : MonoBehaviour {
 			lerp = Mathf.Lerp (lerp, 1, 0.0025f);
 			planet.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
 			planetCore.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
+			planet.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.blue);
+			planetCore.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.blue);
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {
@@ -64,7 +65,10 @@ public class PuzzleManager : MonoBehaviour {
 				if (!rs.enabled) {
 					rs.enabled = true;
 					if (hit.collider.tag == "Planet") {
-						highEffect = Instantiate (highlightEffect, hit.collider.gameObject.transform.position, hit.collider.gameObject.transform.rotation);
+						if (puzzlePiece != null) {
+							puzzlePiece.GetComponentInChildren<MeshRenderer> ().enabled = true;
+							CancelInvoke ();
+						}
 						if (puzzlePiece.GetComponent<PuzzlePieceScript> ().pieceNum == hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().holeNum) {
 							if (worldNum == 1) {
 								puzzlePiece.transform.position = hit.collider.gameObject.transform.position;
@@ -105,15 +109,32 @@ public class PuzzleManager : MonoBehaviour {
 					if (hit.collider.tag == "Puzzle Piece") {
 						rs.enabled = false;
 						rayHit = true;
+						if (puzzlePiece) {
+							CancelInvoke ();
+							puzzlePiece.GetComponentInChildren<MeshRenderer> ().enabled = true;
+						}
 						puzzlePiece = hit.collider.gameObject;
+						InvokeRepeating ("BlinkPiece", 0.25f, 0.25f);
 					} 
 				}
 			} else {
 				if (highEffect) {
 					highEffect = null;
 				}
+				if (puzzlePiece) {
+					CancelInvoke ();
+					puzzlePiece.GetComponentInChildren<MeshRenderer> ().enabled = true;
+				}
 				rs.enabled = true;
 			}
+		}
+	}
+
+	void BlinkPiece(){
+		if (puzzlePiece.GetComponentInChildren<MeshRenderer> ().enabled) {
+			puzzlePiece.GetComponentInChildren<MeshRenderer> ().enabled = false;
+		} else {
+			puzzlePiece.GetComponentInChildren<MeshRenderer> ().enabled = true;
 		}
 	}
 
