@@ -37,6 +37,7 @@ public class PuzzleManager : MonoBehaviour {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager>();
 		//ggm.MusicChange (5);
 		currMaterial = planet.GetComponent<MeshRenderer> ().material;
+		completed = true;
 	}
 
 	void Update () {
@@ -48,8 +49,8 @@ public class PuzzleManager : MonoBehaviour {
 			lerp = Mathf.Lerp (lerp, 1, 0.0025f);
 			planet.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
 			planetCore.GetComponent<MeshRenderer> ().material.SetFloat ("_Blend", lerp);
-			planet.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.blue);
-			planetCore.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.blue);
+			planet.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.Lerp(planet.GetComponent<MeshRenderer> ().material.GetColor("_Tint"), Color.blue, 0.002f));
+			planetCore.GetComponent<MeshRenderer> ().material.SetColor ("_Tint", Color.Lerp(planet.GetComponent<MeshRenderer> ().material.GetColor("_Tint"), Color.blue, 0.002f));
 		}
 		if (rayHit) {
 			if (Input.GetMouseButtonUp (0)) {
