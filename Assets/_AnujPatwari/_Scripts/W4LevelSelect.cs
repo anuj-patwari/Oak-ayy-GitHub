@@ -233,7 +233,7 @@ public class W4LevelSelect : MonoBehaviour {
 			lock10.SetActive (false);
 			l10StarBack.SetActive (true);
 		}
-		if (ggm.worldLevels >= 4.10f)
+		if (ggm.worldLevels >= 4.91f)
 		{
 			miniGameButton.GetComponent<Button> ().interactable = true;
 			mainLock.SetActive (false);
