@@ -23,6 +23,9 @@ public class W4LevelSelect : MonoBehaviour {
 	[SerializeField]
 	GameObject lock2, lock3, lock4, lock5, lock6, lock7, lock8, lock9, lock10, mainLock;
 
+	[SerializeField]
+	GameObject[] connectors;
+
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
 
@@ -184,55 +187,146 @@ public class W4LevelSelect : MonoBehaviour {
 			level2Button.GetComponent<Button> ().interactable = true;
 			lock2.SetActive (false);
 			l2StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.2) {
+				if (connectors [0].GetComponent<Image> ().fillAmount < 1) {
+					connectors [0].GetComponent<Image> ().fillAmount = 1f;
+				}
+
+			} else {
+				if (connectors [0].GetComponent<Image> ().fillAmount < 1) {
+					connectors [0].GetComponent<Image> ().fillAmount += 0.015f;
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.2f)
 		{
 			level3Button.GetComponent<Button> ().interactable = true;
 			lock3.SetActive (false);
 			l3StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.3) {
+				if (connectors [1].GetComponent<Image> ().fillAmount < 1) {
+					connectors [1].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [1].GetComponent<Image> ().fillAmount < 1) {
+					connectors [1].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.3f)
 		{
 			level4Button.GetComponent<Button> ().interactable = true;
 			lock4.SetActive (false);
 			l4StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.4) {
+				if (connectors [2].GetComponent<Image> ().fillAmount < 1) {
+					connectors [2].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [2].GetComponent<Image> ().fillAmount < 1) {
+					connectors [2].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.4f)
 		{
 			level5Button.GetComponent<Button> ().interactable = true;
 			lock5.SetActive (false);
 			l5StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.5) {
+				if (connectors [3].GetComponent<Image> ().fillAmount < 1) {
+					connectors [3].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [3].GetComponent<Image> ().fillAmount < 1) {
+					connectors [3].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.5f)
 		{
 			level6Button.GetComponent<Button> ().interactable = true;
 			lock6.SetActive (false);
 			l6StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.6) {
+				if (connectors [4].GetComponent<Image> ().fillAmount < 1) {
+					connectors [4].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [4].GetComponent<Image> ().fillAmount < 1) {
+					connectors [4].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.6f)
 		{
 			level7Button.GetComponent<Button> ().interactable = true;
 			lock7.SetActive (false);
 			l7StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.7) {
+				if (connectors [5].GetComponent<Image> ().fillAmount < 1) {
+					connectors [5].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [5].GetComponent<Image> ().fillAmount < 1) {
+					connectors [5].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.7f)
 		{
 			level8Button.GetComponent<Button> ().interactable = true;
 			lock8.SetActive (false);
 			l8StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.8) {
+				if (connectors [6].GetComponent<Image> ().fillAmount < 1) {
+					connectors [6].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [6].GetComponent<Image> ().fillAmount < 1) {
+					connectors [6].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.8f)
 		{
 			level9Button.GetComponent<Button> ().interactable = true;
 			lock9.SetActive (false);
 			l9StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.9) {
+				if (connectors [7].GetComponent<Image> ().fillAmount < 1) {
+					connectors [7].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [7].GetComponent<Image> ().fillAmount < 1) {
+					connectors [7].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.9f)
 		{
 			level10Button.GetComponent<Button> ().interactable = true;
 			lock10.SetActive (false);
 			l10StarBack.SetActive (true);
+			if (ggm.worldLevels > 4.91) {
+				if (connectors [8].GetComponent<Image> ().fillAmount < 1) {
+					connectors [8].GetComponent<Image> ().fillAmount = 1f;
+				}
+			} else {
+				if (connectors [8].GetComponent<Image> ().fillAmount < 1) {
+					connectors [8].GetComponent<Image> ().fillAmount += 0.015f;					
+				}
+			}
 		}
+
 		if (ggm.worldLevels >= 4.91f)
 		{
 			miniGameButton.GetComponent<Button> ().interactable = true;
