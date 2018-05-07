@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class WorldSelectManager : MonoBehaviour {
 
-	[SerializeField]
-	Sprite w1Complete, w1Incomplete, w2Complete, w2Incomplete,  w3Complete, w3Incomplete, w4Complete, w4Incomplete;
+	//[SerializeField]
+	//Sprite w1Complete, w1Incomplete, w2Complete, w2Incomplete,  w3Complete, w3Incomplete, w4Complete, w4Incomplete;
 
 	[SerializeField]
 	GameObject w2Locked, w3Locked, w4Locked;
@@ -38,6 +38,7 @@ public class WorldSelectManager : MonoBehaviour {
 	void Update () {
 
 		//Changing the states of the Selection Panels to Sick or Fixed
+		/*
 		if (ggm.worldsComplete > 0) {
 			world1State.sprite = w1Complete;
 		} else {
@@ -57,7 +58,7 @@ public class WorldSelectManager : MonoBehaviour {
 			world4State.sprite = w4Complete; 
 		} else {
 			world4State.sprite = w4Incomplete;
-		}
+		}*/
 
 		//Changing the states of the Selection Planets to Locked or Unlocked
 
