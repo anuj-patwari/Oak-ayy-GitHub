@@ -21,7 +21,7 @@ public class PuzzleManager : MonoBehaviour {
 	short worldNum = 1;
 
 	[SerializeField]
-	GameObject rainEffect, planet, planetCore;
+	GameObject rainEffect, planet, planetCore, screenTransition;
 
 	GameObject highEffect;
 
@@ -146,8 +146,17 @@ public class PuzzleManager : MonoBehaviour {
 
 	public void MainMenu()
 	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (MainMenuFn (1));
+	}
+
+	IEnumerator MainMenuFn (float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene ("MainMenu");
 	}
+
+
 
 	IEnumerator LevelCompleted ()
 	{
