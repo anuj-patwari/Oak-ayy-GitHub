@@ -16,7 +16,10 @@ public class MainMenuManager : MonoBehaviour {
 	GameObject newGameUI, screenTransition;
 
 	[SerializeField]
-	float delay;
+	float playButtonDelay = 1;
+
+	[SerializeField]
+	float soundToggleDelay = 0.2f;
 
 	GlobalGameManager ggm;
 
@@ -44,7 +47,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	IEnumerator toggleSound()
 	{
-		yield return new WaitForSeconds (delay);
+		yield return new WaitForSeconds (soundToggleDelay);
 		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
 			//when sound is on
 			soundToggleButton.sprite = toggleSoundSprite;
@@ -73,7 +76,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	IEnumerator MainMenuPlayButtonFn()
 	{
-		yield return new WaitForSeconds (delay);
+		yield return new WaitForSeconds (playButtonDelay);
 		ggm.PlaySoundEffect (2);
 		SceneManager.LoadScene ("WorldSelect");
 	}
