@@ -14,6 +14,9 @@ public class PollutionPuzzle : MonoBehaviour {
 
 	short worldNum = 4;
 
+	[SerializeField]
+	GameObject screenTransition;
+
 	GlobalGameManager ggm;
 
 	void Start(){
@@ -28,14 +31,36 @@ public class PollutionPuzzle : MonoBehaviour {
 		}
 	}
 
-	public void Restart(){
+	public void Restart()
+	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (RestartFn (1));
+	}
+
+	IEnumerator RestartFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
+
+
+
 	public void MainMenu()
 	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine(MainMenuFn(1));
+	}
+
+	IEnumerator MainMenuFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene ("MainMenu");
 	}
+
+
+
+
 
 	IEnumerator LevelCompleted ()
 	{
