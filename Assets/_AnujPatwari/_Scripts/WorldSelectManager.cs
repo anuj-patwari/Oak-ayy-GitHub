@@ -10,7 +10,7 @@ public class WorldSelectManager : MonoBehaviour {
 	//Sprite w1Complete, w1Incomplete, w2Complete, w2Incomplete,  w3Complete, w3Incomplete, w4Complete, w4Incomplete;
 
 	[SerializeField]
-	GameObject w2Locked, w3Locked, w4Locked;
+	GameObject w2Locked, w3Locked, w4Locked, screenTransition;
 
 	[SerializeField]
 	Image world1State, world2State, world3State, world4State;
@@ -23,7 +23,7 @@ public class WorldSelectManager : MonoBehaviour {
 	GlobalGameManager ggm;
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
-
+		screenTransition.SetActive (true);
 		w1Stars = ggm.stars1_1 + ggm.stars1_2 + ggm.stars1_3 + ggm.stars1_4;
 		w2Stars = ggm.stars2_1 + ggm.stars2_2 + ggm.stars2_3 + ggm.stars2_4 + ggm.stars2_5 + ggm.stars2_6;
 		w3Stars = ggm.stars3_1 + ggm.stars3_2 + ggm.stars3_3 + ggm.stars3_4 + ggm.stars3_5 + ggm.stars3_6 + ggm.stars3_7 + ggm.stars3_8;
@@ -87,12 +87,17 @@ public class WorldSelectManager : MonoBehaviour {
 
 	public void MainMenu()
 	{
-		SceneManager.LoadScene ("MainMenu");
+		StartCoroutine(GoToScene ("MainMenu"));
 	}
 
 	public void GoToWorld(string worldName)
 	{
-		SceneManager.LoadScene (worldName);
+		StartCoroutine(GoToScene (worldName));
 	}
 		
+	IEnumerator GoToScene(string world){
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		yield return new WaitForSeconds (1);
+		SceneManager.LoadScene (world);
+	}
 }

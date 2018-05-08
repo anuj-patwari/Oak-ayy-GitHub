@@ -24,11 +24,11 @@ public class ButtonPressEffect : MonoBehaviour, IPointerClickHandler {
 		if (!shrink) {
 			if (transform.localScale.x >= originalSize) {
 				shrink = true;	
+				GetComponent<Button> ().interactable = false;
 			}
 		}
 	}
 
-	// Update is called once per frame
 	void Update () {
 		if (shrink) {
 			if (transform.localScale.x > smallSize) {
@@ -43,6 +43,7 @@ public class ButtonPressEffect : MonoBehaviour, IPointerClickHandler {
 				transform.localScale = Vector3.Lerp (transform.localScale, new Vector3 (originalSize + 0.05f, originalSize + 0.05f, originalSize + 0.05f), step);
 			} else {
 				transform.localScale = new Vector3 (originalSize, originalSize, originalSize);
+				GetComponent<Button> ().interactable = true;
 			}
 		}
 	}

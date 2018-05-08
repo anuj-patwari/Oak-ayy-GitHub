@@ -22,7 +22,7 @@ public class World1LevelSelect : MonoBehaviour {
 
 
 	[SerializeField]
-	GameObject lock2, lock3, lock4, mainLock;
+	GameObject lock2, lock3, lock4, mainLock, screenTransition;
 
 	[SerializeField]
 	GameObject[] connectors;
@@ -146,6 +146,12 @@ public class World1LevelSelect : MonoBehaviour {
 
 	public void GoToLevel(string sceneName)
 	{
-		SceneManager.LoadScene (sceneName);
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (Go (sceneName));
+	}
+
+	IEnumerator Go(string scene){
+		yield return new WaitForSeconds (1);
+		SceneManager.LoadScene (scene);
 	}
 }

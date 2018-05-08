@@ -438,7 +438,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 230542496}
   - component: {fileID: 230542495}
   - component: {fileID: 230542494}
+  - component: {fileID: 230542497}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -715,6 +716,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 230542492}
+--- !u!114 &230542497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230542492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fcded60006a2d4bb3531bf29a130b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrink: 0
+  step: 0.05
 --- !u!1 &240107580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2359,16 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1494165626}
+--- !u!1 &1589820925 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1429050960106914, guid: e44a1900f3a4a9741b6278b9581153aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1833863750}
+--- !u!224 &1589820926 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1833863750}
 --- !u!1 &1696078250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2464,7 @@ RectTransform:
   - {fileID: 230542493}
   - {fileID: 761491693}
   - {fileID: 1937472495}
+  - {fileID: 1589820926}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2894,6 +2919,110 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1777195565}
+--- !u!1001 &1833863750
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1696078254}
+    m_Modifications:
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224741500618342448, guid: e44a1900f3a4a9741b6278b9581153aa,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429050960106914, guid: e44a1900f3a4a9741b6278b9581153aa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e44a1900f3a4a9741b6278b9581153aa, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1892898931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,3 +3392,5 @@ MonoBehaviour:
     type: 3}
   soundToggleButton: {fileID: 157247557}
   newGameUI: {fileID: 575751521}
+  screenTransition: {fileID: 1589820925}
+  delay: 1

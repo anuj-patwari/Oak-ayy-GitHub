@@ -13,7 +13,7 @@ public class MainMenuManager : MonoBehaviour {
 	Image soundToggleButton;
 
 	[SerializeField]
-	GameObject newGameUI;
+	GameObject newGameUI, screenTransition;
 
 	[SerializeField]
 	float delay;
@@ -26,6 +26,7 @@ public class MainMenuManager : MonoBehaviour {
 	}
 
 	void Start () {
+		screenTransition.SetActive (true);
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		toggleOrigSoundSprite = soundToggleButton.sprite;
 		if (ggm.as1.mute) {
@@ -66,6 +67,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void MainMenuPlayButton()
 	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
 		StartCoroutine(MainMenuPlayButtonFn());
 	}
 
