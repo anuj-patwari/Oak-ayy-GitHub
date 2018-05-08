@@ -19,7 +19,7 @@ public class SceneManagerScript : MonoBehaviour {
 	int myLevelNumber;
 
 	[SerializeField]
-	GameObject camButtons;
+	GameObject camButtons, screenTransition;
 
 
 	public GameObject skipButton;
@@ -144,10 +144,18 @@ public class SceneManagerScript : MonoBehaviour {
 	public void MainMenu()
 	{
 		Time.timeScale = 1f;
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (MainMenuFn (1));
+	}
+
+	IEnumerator MainMenuFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene ("MainMenu");
 		ggm.MusicChange (0);
-
 	}
+
+
 
 	public void Quit()
 	{
@@ -176,6 +184,13 @@ public class SceneManagerScript : MonoBehaviour {
 
 	public void RestartInstant(){
 		Time.timeScale = 1f;
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (RestartInstantFn (1));
+	}
+
+	IEnumerator RestartInstantFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 	}
 
@@ -424,14 +439,29 @@ public class SceneManagerScript : MonoBehaviour {
 	public void NextLvl()
 	{
 		Time.timeScale = 1f;
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (NextLvlFn (1));
+	}
+
+	IEnumerator NextLvlFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene (portScr.levelToLoad);
 	}
+
+
 
 	public void GoToWorldSelect()
 	{
 		Time.timeScale = 1f;
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (GoToWorldSelectFn (1));
+	}
+
+	IEnumerator GoToWorldSelectFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		ggm.MusicChange (0);
 		SceneManager.LoadScene ("WorldSelect");
-
 	}
 }
