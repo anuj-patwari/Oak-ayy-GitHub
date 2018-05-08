@@ -140,9 +140,19 @@ public class PuzzleManager : MonoBehaviour {
 		}
 	}
 
-	public void Restart(){
+	public void Restart()
+	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (RestartFn (1));
+	}
+
+	IEnumerator RestartFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
+
+
 
 	public void MainMenu()
 	{
