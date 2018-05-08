@@ -15,6 +15,9 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField]
 	GameObject newGameUI;
 
+	[SerializeField]
+	float delay;
+
 	GlobalGameManager ggm;
 
 
@@ -55,10 +58,10 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void MainMenuPlayButton()
 	{
-		StartCoroutine(MainMenuPlayButtonFn(2));
+		StartCoroutine(MainMenuPlayButtonFn());
 	}
 
-	IEnumerator MainMenuPlayButtonFn(float delay)
+	IEnumerator MainMenuPlayButtonFn()
 	{
 		yield return new WaitForSeconds (delay);
 		ggm.PlaySoundEffect (2);
