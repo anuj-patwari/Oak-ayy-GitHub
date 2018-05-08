@@ -38,6 +38,12 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void toggleSoundSpriteFn()
 	{
+		StartCoroutine(toggleSound());
+	}
+
+	IEnumerator toggleSound()
+	{
+		yield return new WaitForSeconds (delay);
 		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
 			//when sound is on
 			soundToggleButton.sprite = toggleSoundSprite;
@@ -55,6 +61,8 @@ public class MainMenuManager : MonoBehaviour {
 			ggm.Save ();
 		}
 	}
+
+
 
 	public void MainMenuPlayButton()
 	{
