@@ -55,6 +55,12 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void MainMenuPlayButton()
 	{
+		StartCoroutine(MainMenuPlayButtonFn(2));
+	}
+
+	IEnumerator MainMenuPlayButtonFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
 		ggm.PlaySoundEffect (2);
 		SceneManager.LoadScene ("WorldSelect");
 	}
