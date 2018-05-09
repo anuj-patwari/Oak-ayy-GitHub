@@ -12,14 +12,13 @@ public class CreditsManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
 		StartCoroutine (Effect());
 	}
 	
 	// Update is called once per frame
 	IEnumerator Effect ()
 	{
-		yield return new WaitForSeconds (34);
+		yield return new WaitForSeconds (32);
 		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
 		StartCoroutine (BackToMainMenu (1));
 	}
@@ -28,5 +27,11 @@ public class CreditsManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene ("MainMenu");
+	}
+
+	public void MainMenu()
+	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (BackToMainMenu (1));
 	}
 }
