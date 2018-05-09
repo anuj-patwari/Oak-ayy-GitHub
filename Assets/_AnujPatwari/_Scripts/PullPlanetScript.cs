@@ -40,9 +40,9 @@ public class PullPlanetScript : MonoBehaviour {
 				areaOfEffect2.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().enabled = false;
 			} else if (planetType == Type.pull) {
-				areaOfEffect1.GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.1f, 0.1f, 1);
-				areaOfEffect2.GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.1f, 0.1f, 1);
-				areaOfEffect3.GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.1f, 0.1f, 1);
+				areaOfEffect1.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.1f, 0.1f, 1);
+				areaOfEffect2.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.1f, 0.1f, 1);
+				areaOfEffect3.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.1f, 0.1f, 1);
 			}
 		}
 		if (!hasMoon) {
