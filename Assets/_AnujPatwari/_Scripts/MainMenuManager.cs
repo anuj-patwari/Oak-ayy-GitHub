@@ -47,8 +47,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetMouseButton(0) && tapToStartButton.activeSelf) {
-
+		if (Input.GetMouseButton(0) && tapToStartButton.GetComponent<Image>().color.a > 0) {
 			MainMenuPlayButton ();
 		}
 	}
@@ -128,10 +127,7 @@ public class MainMenuManager : MonoBehaviour {
 		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene ("Credits");
 	}
-
-
-
-
+		
 
 	IEnumerator tapToStart(float delay)
 	{
