@@ -139,4 +139,18 @@ public class WorldSelectManager : MonoBehaviour {
 			ggm.Save ();
 		}
 	}
+
+
+
+	public void loadCredits()
+	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (loadCreditsFn (1));
+	}
+
+	IEnumerator loadCreditsFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
+		SceneManager.LoadScene ("Credits");
+	}
 }
