@@ -78,7 +78,7 @@ public class MainMenuManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (playButtonDelay);
 		ggm.PlaySoundEffect (2);
-		SceneManager.LoadScene ("WorldSelect");
+		SceneManager.LoadScene ("Cutscene1");
 	}
 
 	public void AppQuit()

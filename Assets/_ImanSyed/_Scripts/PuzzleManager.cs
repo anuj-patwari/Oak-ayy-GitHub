@@ -43,7 +43,8 @@ public class PuzzleManager : MonoBehaviour {
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
-			ggm.WorldCompleted (worldNum);			//StartCoroutine (LevelCompleted ());
+			ggm.WorldCompleted (worldNum);			
+			StartCoroutine (LevelCompleted ());
 			completed = true;
 		}
 		if (completed && worldNum == 2) {
@@ -171,7 +172,7 @@ public class PuzzleManager : MonoBehaviour {
 	IEnumerator LevelCompleted ()
 	{
 		ggm.Save ();
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (10);
 		SceneManager.LoadScene ("World1LevelSelect");
 	}
 }
