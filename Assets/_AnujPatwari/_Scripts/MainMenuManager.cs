@@ -21,6 +21,9 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField]
 	float soundToggleDelay = 0.2f;
 
+	[SerializeField]
+	GameObject tapToStartButton;
+
 	GlobalGameManager ggm;
 
 
@@ -28,7 +31,9 @@ public class MainMenuManager : MonoBehaviour {
 		GlobalGameManager.ggm.Load ();
 	}
 
-	void Start () {
+	void Start () 
+	{
+		StartCoroutine (tapToStart (3));
 		screenTransition.SetActive (true);
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		toggleOrigSoundSprite = soundToggleButton.sprite;
@@ -37,6 +42,14 @@ public class MainMenuManager : MonoBehaviour {
 		}
 		else if (ggm.muted) {
 			toggleSoundSpriteFn ();
+		}
+	}
+
+	void Update()
+	{
+		if (Input.GetMouseButton(0)) {
+
+			MainMenuPlayButton ();
 		}
 	}
 
@@ -114,5 +127,15 @@ public class MainMenuManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene ("Credits");
+	}
+
+
+
+
+
+	IEnumerator tapToStart(float delay)
+	{
+		yield return new WaitForSeconds (delay);
+		tapToStartButton.SetActive (true);
 	}
 }
