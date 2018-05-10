@@ -33,7 +33,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Start () 
 	{
-		StartCoroutine (tapToStart (3));
+		StartCoroutine (tapToStart (2));
 		screenTransition.SetActive (true);
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		toggleOrigSoundSprite = soundToggleButton.sprite;
