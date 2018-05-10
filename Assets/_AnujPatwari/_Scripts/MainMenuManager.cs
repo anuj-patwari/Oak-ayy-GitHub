@@ -47,7 +47,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetMouseButton(0)) {
+		if (Input.GetMouseButton(0) && tapToStartButton.activeSelf) {
 
 			MainMenuPlayButton ();
 		}
