@@ -5,9 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TorchPuzzle : MonoBehaviour {
+
 	public short currentIndex = 0;
-
-
 
 	[SerializeField]
 	Text t;
@@ -19,6 +18,9 @@ public class TorchPuzzle : MonoBehaviour {
 	bool completed;
 
 	float lerp = 0;
+
+	[SerializeField]
+	string sceneToLoad;
 
 	[SerializeField]
 	GameObject planet, screenTransition;
@@ -33,7 +35,7 @@ public class TorchPuzzle : MonoBehaviour {
 			t.enabled = true;
 			ggm.WorldCompleted (worldNum);
 			completed = true;
-			//StartCoroutine (LevelCompleted ());
+			StartCoroutine (LevelCompleted ());
 		}
 		if (completed) {
 			lerp = Mathf.Lerp (lerp, 1, 0.0025f);
@@ -53,8 +55,6 @@ public class TorchPuzzle : MonoBehaviour {
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
-
-
 	public void MainMenu()
 	{
 		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
@@ -68,12 +68,10 @@ public class TorchPuzzle : MonoBehaviour {
 	}
 
 
-
-
 	IEnumerator LevelCompleted ()
 	{
 		ggm.Save ();
-		yield return new WaitForSeconds (2);
-		SceneManager.LoadScene ("World1LevelSelect");
+		yield return new WaitForSeconds (8);
+		SceneManager.LoadScene (sceneToLoad);
 	}
 }

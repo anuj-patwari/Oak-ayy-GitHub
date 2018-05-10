@@ -23,6 +23,9 @@ public class PuzzleManager : MonoBehaviour {
 	[SerializeField]
 	GameObject rainEffect, planet, planetCore, screenTransition;
 
+	[SerializeField]
+	string sceneToLoad;
+
 	GameObject highEffect;
 
 	[SerializeField]
@@ -172,7 +175,7 @@ public class PuzzleManager : MonoBehaviour {
 	IEnumerator LevelCompleted ()
 	{
 		ggm.Save ();
-		yield return new WaitForSeconds (10);
-		SceneManager.LoadScene ("World1LevelSelect");
+		yield return new WaitForSeconds (8);
+		SceneManager.LoadScene (sceneToLoad);
 	}
 }

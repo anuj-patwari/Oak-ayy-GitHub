@@ -17,6 +17,9 @@ public class PollutionPuzzle : MonoBehaviour {
 	[SerializeField]
 	GameObject screenTransition;
 
+	[SerializeField]
+	string sceneToLoad;
+
 	GlobalGameManager ggm;
 
 	void Start(){
@@ -43,9 +46,6 @@ public class PollutionPuzzle : MonoBehaviour {
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
-
-
-
 	public void MainMenu()
 	{
 		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
@@ -59,13 +59,10 @@ public class PollutionPuzzle : MonoBehaviour {
 	}
 
 
-
-
-
 	IEnumerator LevelCompleted ()
 	{
 		ggm.Save ();
 		yield return new WaitForSeconds (2);
-		SceneManager.LoadScene ("World1LevelSelect");
+		SceneManager.LoadScene (sceneToLoad);
 	}
 }
