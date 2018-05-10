@@ -20,7 +20,18 @@ public class WorldSelectManager : MonoBehaviour {
 
 	int w1Stars, w2Stars, w3Stars, w4Stars;
 
+	[SerializeField]
+	Sprite toggleSoundSprite, toggleOrigSoundSprite;
+
+	[SerializeField]
+	Image soundToggleButton;
+
+	[SerializeField]
+	float soundToggleDelay = 0.2f;
+
 	GlobalGameManager ggm;
+
+
 	void Start () {
 		ggm = GameObject.FindObjectOfType<GlobalGameManager> ();
 		screenTransition.SetActive (true);
@@ -99,5 +110,33 @@ public class WorldSelectManager : MonoBehaviour {
 		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
 		yield return new WaitForSeconds (1);
 		SceneManager.LoadScene (world);
+	}
+
+
+
+	public void toggleSoundSpriteFn()
+	{
+		StartCoroutine(toggleSound());
+	}
+
+	IEnumerator toggleSound()
+	{
+		yield return new WaitForSeconds (soundToggleDelay);
+		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
+			//when sound is on
+			soundToggleButton.sprite = toggleSoundSprite;
+			ggm.as1.mute = true;
+			ggm.as2.mute = true;
+			ggm.muted = true;
+			ggm.Save ();
+
+		} else {
+			//when sound is off
+			soundToggleButton.sprite = toggleOrigSoundSprite;
+			ggm.as1.mute = false;
+			ggm.as2.mute = false;
+			ggm.muted = false;
+			ggm.Save ();
+		}
 	}
 }
