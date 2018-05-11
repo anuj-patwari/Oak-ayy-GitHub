@@ -22,7 +22,7 @@ public class MainMenuManager : MonoBehaviour {
 	float soundToggleDelay = 0.2f;
 
 	[SerializeField]
-	GameObject tapToStartButton;
+	GameObject tapToStartButton, playButton, leftPanel;
 
 	GlobalGameManager ggm;
 
@@ -51,7 +51,10 @@ public class MainMenuManager : MonoBehaviour {
 	void Update()
 	{
 		if (Input.GetMouseButton(0) && canTap) {
-			MainMenuPlayButton ();
+			//MainMenuPlayButton ();
+			tapToStartButton.SetActive(false);
+			playButton.SetActive (true);
+			leftPanel.SetActive (true);
 			ggm.PlaySoundEffect (2);
 		}
 	}
