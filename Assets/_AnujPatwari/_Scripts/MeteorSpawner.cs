@@ -13,7 +13,7 @@ public class MeteorSpawner : MonoBehaviour {
 	[SerializeField]
 	float destroyTiming = 5;
 
-
+	float rot;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +27,8 @@ public class MeteorSpawner : MonoBehaviour {
 
 	void spawnMeteor ()
 	{
-		GameObject m = Instantiate (meteor, transform.position, Quaternion.identity);
-		m.GetComponent<Rigidbody2D> ().AddForce (transform.up * -500);
-		m.GetComponent<Rigidbody2D> ().AddForce (transform.right * -300);
+		GameObject m = Instantiate (meteor, transform.position, Quaternion.Euler(new Vector3(180 - transform.eulerAngles.z, 90, 0)));
+		m.GetComponent<Rigidbody2D> ().AddForce (transform.right * 500);
 		StartCoroutine (DestroyMeteor (destroyTiming, m));
 
 	}
