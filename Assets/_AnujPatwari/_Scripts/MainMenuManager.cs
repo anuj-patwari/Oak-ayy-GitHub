@@ -44,7 +44,7 @@ public class MainMenuManager : MonoBehaviour {
 		else if (ggm.muted) {
 			toggleSoundSpriteFn ();
 		}
-		Invoke ("CanTap", 9);
+		Invoke ("CanTap", 2);
 
 	}
 
