@@ -26,6 +26,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
+	bool canTap;
 
 	void Awake(){
 		GlobalGameManager.ggm.Load ();
@@ -43,13 +44,20 @@ public class MainMenuManager : MonoBehaviour {
 		else if (ggm.muted) {
 			toggleSoundSpriteFn ();
 		}
+		Invoke ("CanTap", 9);
+
 	}
 
 	void Update()
 	{
-		if (Input.GetMouseButton(0) && tapToStartButton.GetComponent<Image>().color.a > 0) {
+		if (Input.GetMouseButton(0) && canTap) {
 			MainMenuPlayButton ();
+			ggm.PlaySoundEffect (2);
 		}
+	}
+
+	void CanTap(){
+		canTap = true;
 	}
 
 	public void toggleSoundSpriteFn()
@@ -83,13 +91,13 @@ public class MainMenuManager : MonoBehaviour {
 	public void MainMenuPlayButton()
 	{
 		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		ggm.PlaySoundEffect (2);
 		StartCoroutine(MainMenuPlayButtonFn());
 	}
 
 	IEnumerator MainMenuPlayButtonFn()
 	{
 		yield return new WaitForSeconds (playButtonDelay);
-		ggm.PlaySoundEffect (2);
 		SceneManager.LoadScene ("Cutscene1");
 	}
 
