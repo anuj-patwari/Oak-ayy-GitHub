@@ -10,6 +10,9 @@ public class MeteorSpawner : MonoBehaviour {
     [SerializeField]
     float repeatValue = 4;
 
+	[SerializeField]
+	float destroyTiming = 5;
+
 
 
 	// Use this for initialization
@@ -27,7 +30,7 @@ public class MeteorSpawner : MonoBehaviour {
 		GameObject m = Instantiate (meteor, transform.position, Quaternion.identity);
 		m.GetComponent<Rigidbody2D> ().AddForce (transform.up * -500);
 		m.GetComponent<Rigidbody2D> ().AddForce (transform.right * -300);
-		StartCoroutine (DestroyMeteor (5, m));
+		StartCoroutine (DestroyMeteor (destroyTiming, m));
 
 	}
 
