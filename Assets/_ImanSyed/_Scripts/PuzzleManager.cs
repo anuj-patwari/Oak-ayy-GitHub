@@ -31,6 +31,10 @@ public class PuzzleManager : MonoBehaviour {
 	[SerializeField]
 	Material healedMaterial, currMaterial;
 
+	//Bandaids
+	[SerializeField]
+	GameObject bandaids;
+
 	private bool rayHit, completed;
 	float lerp = 0;
 
@@ -46,6 +50,7 @@ public class PuzzleManager : MonoBehaviour {
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
+			bandaids.SetActive (true);
 			ggm.WorldCompleted (worldNum);			
 			StartCoroutine (LevelCompleted ());
 			completed = true;
