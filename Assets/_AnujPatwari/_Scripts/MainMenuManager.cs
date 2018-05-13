@@ -149,4 +149,16 @@ public class MainMenuManager : MonoBehaviour {
 		yield return new WaitForSeconds (delay);
 		tapToStartButton.SetActive (true);
 	}
+
+	public void GoToHowToPlay()
+	{
+		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
+		StartCoroutine (GoToHowToPlayFn (1));
+	}
+
+	IEnumerator GoToHowToPlayFn(float delay)
+	{
+		yield return new WaitForSeconds (delay);
+		SceneManager.LoadScene ("HowToPlay");
+	}
 }
