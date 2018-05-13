@@ -31,18 +31,18 @@ public class PullPlanetScript : MonoBehaviour {
 		playerCharacter = FindObjectOfType<PC_UFO> ().GetComponent<Rigidbody2D> ();
 		if (areaOfEffect3 != null) {
 			if (planetType == Type.push) {
-				areaOfEffect1.GetComponent<SpriteRenderer> ().color = Color.cyan;
-				areaOfEffect2.GetComponent<SpriteRenderer> ().color = Color.cyan;
-				areaOfEffect3.GetComponent<SpriteRenderer> ().color = Color.cyan;
+				areaOfEffect1.GetComponent<SpriteRenderer> ().color = new Color (0.3f, 0.86f, 0.86f, 1);
+				areaOfEffect2.GetComponent<SpriteRenderer> ().color = new Color (0.3f, 0.86f, 0.86f, 1);
+				areaOfEffect3.GetComponent<SpriteRenderer> ().color = new Color (0.3f, 0.86f, 0.86f, 1);
 				aoe.GetComponent<Animator> ().SetFloat ("Mult", -1);
 			} else if (planetType == Type.none) {
 				areaOfEffect1.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect2.GetComponent<SpriteRenderer> ().enabled = false;
 				areaOfEffect3.GetComponent<SpriteRenderer> ().enabled = false;
 			} else if (planetType == Type.pull) {
-				areaOfEffect1.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.1f, 0.1f, 1);
-				areaOfEffect2.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.1f, 0.1f, 1);
-				areaOfEffect3.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.1f, 0.1f, 1);
+				areaOfEffect1.GetComponent<SpriteRenderer> ().color = new Color (0.905f, 0.26f, 0.26f, 1);
+				areaOfEffect2.GetComponent<SpriteRenderer> ().color = new Color (0.905f, 0.26f, 0.26f, 1);
+				areaOfEffect3.GetComponent<SpriteRenderer> ().color = new Color (0.905f, 0.26f, 0.26f, 1);
 			}
 		}
 		if (!hasMoon) {
