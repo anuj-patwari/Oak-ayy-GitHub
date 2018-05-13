@@ -62,7 +62,7 @@ public class PollutionPuzzle : MonoBehaviour {
 	IEnumerator LevelCompleted ()
 	{
 		ggm.Save ();
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (8);
 		SceneManager.LoadScene (sceneToLoad);
 	}
 }
