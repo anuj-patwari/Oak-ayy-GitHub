@@ -50,7 +50,9 @@ public class PuzzleManager : MonoBehaviour {
 	void Update () {
 		if (piecesPut == 4 && !tex.enabled) {
 			tex.enabled = true;
-			bandaids.SetActive (true);
+			if (worldNum == 1) {
+				bandaids.SetActive (true);
+			}
 			ggm.WorldCompleted (worldNum);			
 			StartCoroutine (LevelCompleted ());
 			completed = true;
