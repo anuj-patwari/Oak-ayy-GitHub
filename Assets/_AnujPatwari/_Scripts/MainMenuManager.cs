@@ -89,6 +89,10 @@ public class MainMenuManager : MonoBehaviour {
 		}
 	}
 
+	public void ImageURLButton(){
+		Application.OpenURL ("https://www.");
+	}
+
 
 
 	public void MainMenuPlayButton()
