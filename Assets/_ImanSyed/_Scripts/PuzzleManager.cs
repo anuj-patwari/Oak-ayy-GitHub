@@ -107,6 +107,7 @@ public class PuzzleManager : MonoBehaviour {
 									break;
 								}
 								puzzlePiece.transform.position = pos;
+								puzzlePiece.GetComponent<PuzzlePieceScript> ().put = true;
 							}
 							puzzlePiece.transform.SetParent (hit.collider.gameObject.transform);
 							puzzlePiece.transform.rotation = Quaternion.Euler (hit.collider.gameObject.GetComponent<PuzzleHoleScript> ().xRot);
@@ -119,7 +120,7 @@ public class PuzzleManager : MonoBehaviour {
 						} 
 					}
 				} else {
-					if (hit.collider.tag == "Puzzle Piece") {
+					if (hit.collider.tag == "Puzzle Piece" && !hit.collider.gameObject.GetComponent<PuzzlePieceScript>().put) {
 						rs.enabled = false;
 						rayHit = true;
 						if (puzzlePiece) {
@@ -162,9 +163,7 @@ public class PuzzleManager : MonoBehaviour {
 		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
-
-
-
+		
 	public void MainMenu()
 	{
 		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
@@ -176,9 +175,7 @@ public class PuzzleManager : MonoBehaviour {
 		yield return new WaitForSeconds (delay);
 		SceneManager.LoadScene ("MainMenu");
 	}
-
-
-
+		
 	IEnumerator LevelCompleted ()
 	{
 		ggm.Save ();
