@@ -123,10 +123,9 @@ public class PuzzleManager : MonoBehaviour {
 						if (puzzlePiece) {
 							CancelInvoke ();
 							puzzlePiece.GetComponentInChildren<MeshRenderer> ().enabled = true;
-						} else {
-							puzzlePiece = hit.collider.gameObject;
-							InvokeRepeating ("BlinkPiece", 0.25f, 0.25f);
 						}
+						puzzlePiece = hit.collider.gameObject;
+						InvokeRepeating ("BlinkPiece", 0.25f, 0.25f);
 					}
 				}
 			} else {
