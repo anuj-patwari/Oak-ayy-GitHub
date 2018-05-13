@@ -271,7 +271,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 225025490}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: -0.61399984, y: 0.000000074505785, z: -0.000000055851007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 255594985}
@@ -420,6 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
+  bandaid: {fileID: 1937547959091252, guid: eba1e0130f38e4444868b4ecfba1a896, type: 2}
   smokePos: {fileID: 225025491}
   rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &255594987
@@ -467,7 +468,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.15, y: 0, z: 0}
 --- !u!33 &255594989
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -596,7 +597,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 391153175}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.614, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1991742986}
@@ -831,6 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
+  bandaid: {fileID: 1937547959091252, guid: eba1e0130f38e4444868b4ecfba1a896, type: 2}
   smokePos: {fileID: 1697443666}
   rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &511873574
@@ -878,7 +880,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.15}
 --- !u!33 &511873576
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1407,7 +1409,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1697443665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0.61399984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 511873572}
@@ -1547,6 +1549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
+  bandaid: {fileID: 1937547959091252, guid: eba1e0130f38e4444868b4ecfba1a896, type: 2}
   smokePos: {fileID: 391153176}
   rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &1991742988
@@ -1594,7 +1597,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.15, y: 0, z: 0}
 --- !u!33 &1991742990
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1778,6 +1781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokeEffect: {fileID: 1667228891352928, guid: 6d6c45e4b82d94645903f965d81b9742,
     type: 2}
+  bandaid: {fileID: 1937547959091252, guid: eba1e0130f38e4444868b4ecfba1a896, type: 2}
   smokePos: {fileID: 2146336819}
   rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &2124578744
@@ -1825,7 +1829,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.15}
 --- !u!33 &2124578746
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1855,7 +1859,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2146336818}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0, z: -0.5}
+  m_LocalPosition: {x: 0, y: -0.00000022351742, z: -0.61399984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2124578742}

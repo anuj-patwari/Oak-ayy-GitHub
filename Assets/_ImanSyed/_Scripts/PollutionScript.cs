@@ -8,7 +8,7 @@ public class PollutionScript : MonoBehaviour {
 	bool smokeOn, closed;
 
 	[SerializeField]
-	GameObject smokeEffect;
+	GameObject smokeEffect, bandaid;
 
 	[SerializeField]
 	Transform smokePos;
@@ -56,10 +56,11 @@ public class PollutionScript : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if (!smokeOn) {
+		if (!smokeOn && !closed) {
 			closed = true;
 			StopCoroutine ("ToggleSmoke");
 			pp.closeCount++;
+			GameObject ba = Instantiate (bandaid, smokePos.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
 		}
 	}
 		
