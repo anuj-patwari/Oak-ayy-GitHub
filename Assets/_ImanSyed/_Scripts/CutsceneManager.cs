@@ -10,16 +10,19 @@ public class CutsceneManager : MonoBehaviour {
 	[SerializeField]
 	string sceneToLoad;
 
+	bool canTap;
+
 	GlobalGameManager ggm;
 
 	void Start(){
 		ggm = FindObjectOfType<GlobalGameManager> ();
 		ggm.as2.mute = true;
 		InvokeRepeating ("checkFrame", 0.5f, 0.5f);
+		Invoke ("CanTap", 4);
 	}
 
 	void Update () {
-		if (Input.GetMouseButton (0)) {
+		if (Input.GetMouseButton (0) && canTap) {
 			ggm.as2.mute = false;
 			SceneManager.LoadScene (sceneToLoad);
 		}
@@ -33,5 +36,8 @@ public class CutsceneManager : MonoBehaviour {
 		}
 	}
 
+	void CanTap(){
+		canTap = true;
+	}
 
 }
