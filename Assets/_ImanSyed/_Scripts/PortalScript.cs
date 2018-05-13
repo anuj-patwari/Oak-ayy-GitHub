@@ -32,25 +32,25 @@ public class PortalScript : MonoBehaviour {
 			ggm.StarsUpdate ();
 			if (worldCompleted == true) 
 			{
-				if (ggm.worldsComplete == 0) 
+				if (ggm.worldsComplete == 0 && levelNumber == 1.4f) 
 				{
 					ggm.worldsComplete = 1;
 					ggm.Save ();
 				}
 
-				if (ggm.worldsComplete == 1) 
+				if (ggm.worldsComplete == 1 && levelNumber == 2.6f) 
 				{
 					ggm.worldsComplete = 2;
 					ggm.Save ();
 				}
 
-				if (ggm.worldsComplete == 2) 
+				if (ggm.worldsComplete == 2 && levelNumber == 3.8f) 
 				{
 					ggm.worldsComplete = 3;
 					ggm.Save ();
 				}
 
-				if (ggm.worldsComplete == 3) 
+				if (ggm.worldsComplete == 3 && levelNumber == 4.91f) 
 				{
 					ggm.worldsComplete = 4;
 					ggm.Save ();
