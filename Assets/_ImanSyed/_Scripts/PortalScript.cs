@@ -11,6 +11,9 @@ public class PortalScript : MonoBehaviour {
 	[SerializeField]
 	float levelNumber;
 
+	[SerializeField]
+	bool worldCompleted;
+
 	GlobalGameManager ggm;
 	SceneManagerScript sms;
 
@@ -27,6 +30,32 @@ public class PortalScript : MonoBehaviour {
 			sms.LevelCompletePopup ();
 			sms.StarsCollected ();
 			ggm.StarsUpdate ();
+			if (worldCompleted == true) 
+			{
+				if (ggm.worldsComplete == 0) 
+				{
+					ggm.worldsComplete = 1;
+					ggm.Save ();
+				}
+
+				if (ggm.worldsComplete == 1) 
+				{
+					ggm.worldsComplete = 2;
+					ggm.Save ();
+				}
+
+				if (ggm.worldsComplete == 2) 
+				{
+					ggm.worldsComplete = 3;
+					ggm.Save ();
+				}
+
+				if (ggm.worldsComplete == 3) 
+				{
+					ggm.worldsComplete = 4;
+					ggm.Save ();
+				}
+			}
 		}
 	}
 }
