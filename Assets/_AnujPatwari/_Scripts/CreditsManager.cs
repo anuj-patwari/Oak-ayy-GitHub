@@ -18,7 +18,7 @@ public class CreditsManager : MonoBehaviour {
 	// Update is called once per frame
 	IEnumerator Effect ()
 	{
-		yield return new WaitForSeconds (32);
+		yield return new WaitForSeconds (35);
 		screenTransition.GetComponent<Animator> ().SetInteger ("e", 1);
 		StartCoroutine (BackToMainMenu (1));
 	}
