@@ -108,6 +108,7 @@ public class PC_UFO : MonoBehaviour {
 			Destroy (gameObject);
 		} else if (col.gameObject.tag == "Rubber") {
 			ggm.PlaySoundEffect (1);
+			col.gameObject.GetComponent<Animator> ().SetTrigger ("Rubber Bounce");
 		} 
 	}
 
