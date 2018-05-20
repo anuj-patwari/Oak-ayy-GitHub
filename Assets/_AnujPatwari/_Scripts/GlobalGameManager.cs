@@ -15,7 +15,7 @@ public class GlobalGameManager : MonoBehaviour {
 
 	//public short animationIsPlaying;
 
-	public bool canStart = true, tutorial1Skipped, tutorial2Skipped, muted;
+	public bool canStart = true, tutorial1Skipped, tutorial2Skipped, muted, menuState;
 
 	public AudioSource as1, as2;
 

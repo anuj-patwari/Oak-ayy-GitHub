@@ -50,9 +50,15 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Update()
 	{
+		if (ggm.menuState && !playButton.activeSelf) {
+			tapToStartButton.SetActive(false);
+			playButton.SetActive (true);
+			leftPanel.SetActive (true);
+		}
 		if (Input.GetMouseButton(0) && canTap) {
 			//MainMenuPlayButton ();
 			tapToStartButton.SetActive(false);
+			ggm.menuState = true;
 			playButton.SetActive (true);
 			leftPanel.SetActive (true);
 			ggm.PlaySoundEffect (2);
@@ -92,7 +98,6 @@ public class MainMenuManager : MonoBehaviour {
 	public void ImageURLButton(){
 		Application.OpenURL ("https://i.imgur.com/ponUrMV.png");
 	}
-
 
 
 	public void MainMenuPlayButton()
