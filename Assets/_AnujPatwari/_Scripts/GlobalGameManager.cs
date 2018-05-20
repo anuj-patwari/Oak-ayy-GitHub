@@ -44,16 +44,20 @@ public class GlobalGameManager : MonoBehaviour {
 		} else if (ggm != this) {
 			Destroy (gameObject);
 		}
-		if (SceneManager.GetActiveScene ().name == "MainMenu" || SceneManager.GetActiveScene ().name == "WorldSelect") {
-			as2.Play ();
-		} else {
-			as1.Play ();
-		}
-
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 	}
 
 	void Update(){
+
+		if (SceneManager.GetActiveScene ().name == "MainMenu" || SceneManager.GetActiveScene ().name == "WorldSelect") {
+			if (!as2.isPlaying) {
+				as2.Play ();
+			}
+		} else {
+			if (!as1.isPlaying) {
+				as1.Play ();
+			}
+		}
 
 		if (SceneManager.GetActiveScene ().name == "1.1") {
 
@@ -130,16 +134,30 @@ public class GlobalGameManager : MonoBehaviour {
 	}
 
 	public void PlaySoundEffect(int whichEffect){
-		switch (whichEffect) {
-		case 1:
-			as1.PlayOneShot (gameOverSoundEffect);
-			break;
-		case 2: 
-			as1.PlayOneShot (clickSoundEffect);
-			break;
-		case 3:
-			as1.PlayOneShot (starSoundEffect);
-			break;
+		if (as1.volume == 1) {
+			switch (whichEffect) {
+			case 1:
+				as1.PlayOneShot (gameOverSoundEffect);
+				break;
+			case 2: 
+				as1.PlayOneShot (clickSoundEffect);
+				break;
+			case 3:
+				as1.PlayOneShot (starSoundEffect);
+				break;
+			}
+		} else {
+			switch (whichEffect) {
+			case 1:
+				as2.PlayOneShot (gameOverSoundEffect);
+				break;
+			case 2: 
+				as2.PlayOneShot (clickSoundEffect);
+				break;
+			case 3:
+				as2.PlayOneShot (starSoundEffect);
+				break;
+			}
 		}
 	}
 
