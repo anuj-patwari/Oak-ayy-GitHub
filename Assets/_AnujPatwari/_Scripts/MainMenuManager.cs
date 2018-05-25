@@ -26,6 +26,8 @@ public class MainMenuManager : MonoBehaviour {
 
 	GlobalGameManager ggm;
 
+	short hack = 0;
+
 	bool canTap;
 
 	void Awake(){
@@ -76,6 +78,11 @@ public class MainMenuManager : MonoBehaviour {
 
 	IEnumerator toggleSound()
 	{
+		hack++;
+		if (hack == 4) {
+			hack = 0;
+			ggm.hax ();
+		}
 		yield return new WaitForSeconds (soundToggleDelay);
 		if (soundToggleButton.sprite == toggleOrigSoundSprite) {
 			//when sound is on
