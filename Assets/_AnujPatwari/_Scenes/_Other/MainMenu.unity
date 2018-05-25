@@ -1199,6 +1199,64 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1001 &499870944
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 34.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 34.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.5999503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861103525397738, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198461626741827064, guid: f7ecaa3954267204db29aede1c42d1f6,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1572227095
+      objectReference: {fileID: 0}
+    - target: {fileID: 198461626741827064, guid: f7ecaa3954267204db29aede1c42d1f6,
+        type: 2}
+      propertyPath: InheritVelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198461626741827064, guid: f7ecaa3954267204db29aede1c42d1f6,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 96063971085649290, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: f7ecaa3954267204db29aede1c42d1f6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &575751521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,6 +2622,7 @@ MonoBehaviour:
   tutorial1Skipped: 0
   tutorial2Skipped: 0
   muted: 0
+  menuState: 0
   as1: {fileID: 1754623082}
   as2: {fileID: 1754623081}
   musicMenu: {fileID: 8300000, guid: e43ba9368843a134a907d0ce7e3656e2, type: 3}
